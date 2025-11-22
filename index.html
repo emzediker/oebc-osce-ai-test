@@ -5,23 +5,36 @@
   <title>OEBC OSCE AI Feedback Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 20px; }
-    .box { max-width: 900px; margin: 0 auto; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 20px;
+      background: #f3f4f6;
+    }
+    .box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+    h2 {
+      margin-top: 0;
+    }
     .ai-box {
       display: none;
       margin-top: 16px;
-      padding: 16px;
+      padding: 16px 18px;
       border-radius: 8px;
       border: 1px dashed #f97316;
       background: #fff7ed;
       font-size: 0.95rem;
-      white-space: pre-wrap;
     }
     textarea {
       width: 100%;
       padding: 10px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #cbd5e1;
       font-family: inherit;
       font-size: 0.95rem;
     }
@@ -34,6 +47,28 @@
       font-weight: 600;
       cursor: pointer;
       margin-top: 10px;
+    }
+    .domain-row {
+      margin-bottom: 6px;
+    }
+    .badge {
+      display: inline-block;
+      min-width: 2.3rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-right: 6px;
+    }
+    .score-0 { background: #fee2e2; color: #b91c1c; }
+    .score-1 { background: #fef3c7; color: #92400e; }
+    .score-2 { background: #dcfce7; color: #166534; }
+    .overall-score {
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .overall-comment {
+      margin-top: 6px;
     }
   </style>
 </head>
@@ -49,7 +84,7 @@
 
   <div id="ai-box" class="ai-box">
     <h3 style="margin-top:0;">AI-style Feedback (from Supabase)</h3>
-    <p id="ai-text"></p>
+    <div id="ai-text"></div>
   </div>
 </div>
 
@@ -65,13 +100,14 @@
       return;
     }
 
+    // Show box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
     try {
       const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
         method: "POST",
-        headers: {
+            headers: {
   "Content-Type": "application/json",
   "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
@@ -89,11 +125,60 @@
       }
 
       const data = await res.json();
-      feedbackText.textContent = data.feedback || JSON.stringify(data, null, 2);
+      const rubric = data.rubric || data; // safety
+
+      // Build nice HTML from rubric scores
+      const htmlParts = [];
+
+      function row(label, key) {
+        if (!rubric[key]) return;
+        const score = rubric[key].score;
+        const comment = rubric[key].comment || "";
+        const cl = "score-" + (score ?? 0);
+        htmlParts.push(
+          `<div class="domain-row">
+             <span class="badge ${cl}">${score}/2</span>
+             <strong>${label}:</strong> ${escapeHtml(comment)}
+           </div>`
+        );
+      }
+
+      row("Diagnosis", "diagnosis");
+      row("Explanation", "explanation");
+      row("Management", "management");
+      row("Prognosis & follow-up", "prognosis_followup");
+      row("Communication", "communication");
+
+      const total = rubric.total_score ?? 0;
+      const overall = rubric.overall_comment || "";
+
+      htmlParts.push(
+        `<div class="overall-score">Total score: ${total}/10</div>`
+      );
+      if (overall) {
+        htmlParts.push(
+          `<div class="overall-comment">${escapeHtml(overall)}</div>`
+        );
+      }
+
+      feedbackText.innerHTML = htmlParts.join("");
     } catch (err) {
       feedbackText.textContent = "Network or setup error: " + err.message;
     }
   }
+
+  // Very small helper to avoid HTML injection
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 </script>
 </body>
 </html>
+
+
+
