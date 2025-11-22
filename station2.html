@@ -1,67 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>OEBC Mock OSCE – Station 2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 20px;
-      background: #f3f4f6;
-    }
-    .oebc-station-step {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(15,23,42,0.08);
-    }
-    .ai-box {
-      display: none;
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px dashed #f97316;
-      background: #fff7ed;
-      font-size: 0.95rem;
-      white-space: pre-wrap;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-    button {
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: none;
-      background: #0b6bcb;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button.secondary {
-      background: #fff;
-      color: #7f1d1d;
-      border: 1px solid #b91c1c;
-    }
-  </style>
-</head>
-<body>
-
-<!-- OEBC OSCE Station 2 – Myopia Progression Counselling with AI Feedback -->
-<div class="oebc-station-step">
+<!-- OEBC OSCE Station 2 – Interactive Myopia Progression Counseling (with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
   <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 2</h2>
-  <p style="margin-top: 0; color: #555;">
-    Refractive • Myopia (Interactive – Counselling &amp; Management)
-  </p>
+  <p style="margin-top: 0; color: #555;">Module 1 – Refractive • Myopia (Interactive – Counseling &amp; Management)</p>
 
   <!-- Step 1: Read -->
   <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
@@ -71,25 +12,23 @@
 
     <p><strong>Scenario:</strong></p>
 
-    <p>A 12-year-old patient presents with their parent. The child reports increasing difficulty seeing the board at school and squinting at the TV.
-    Previous spectacle prescription from one year ago was:</p>
+    <p>A 12-year-old patient presents with their parent. The child reports increasing difficulty seeing the board at school and squinting at the TV. Previous spectacle prescription from one year ago was:</p>
 
     <ul>
-      <li>OD: −1.50 DS</li>
-      <li>OS: −1.50 DS</li>
+      <li>OD: &minus;1.50 DS</li>
+      <li>OS: &minus;1.50 DS</li>
     </ul>
 
     <p>Today’s refraction is:</p>
 
     <ul>
-      <li>OD: −2.50 DS (20/20)</li>
-      <li>OS: −2.75 DS (20/20)</li>
+      <li>OD: &minus;2.50 DS (20/20)</li>
+      <li>OS: &minus;2.75 DS (20/20)</li>
     </ul>
 
     <p>Ocular health is normal. Axial length measurements (if available in your clinic) show a mild increase in both eyes over the past year.</p>
 
     <p><strong>Your task:</strong> Speak to the parent and child together. Explain:</p>
-
     <ul>
       <li>What myopia is and why the prescription has changed.</li>
       <li>What “myopia progression” means and why it matters long-term.</li>
@@ -97,7 +36,6 @@
       <li>Daily-living advice (near work, outdoor time, posture / working distance).</li>
       <li>Recommended follow-up interval and what to monitor over time.</li>
     </ul>
-
     <p>Use clear, reassuring, age-appropriate language.</p>
   </div>
 
@@ -106,15 +44,20 @@
     <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
 
     <p>Type what you would say to the child and parent:</p>
-    <textarea id="s2-response" rows="8"></textarea>
+    <textarea id="s2-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
 
-    <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap: 8px;">
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
       <button type="button"
-              onclick="document.getElementById('s2-key').style.display='block'; this.disabled=true;">
+        onclick="document.getElementById('s2-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
         Show Key Points &amp; Rubric
       </button>
 
-      <button type="button" class="secondary" onclick="getS2AiFeedback()">
+      <button type="button"
+        onclick="getS2AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
         Get AI-style Feedback (beta)
       </button>
     </div>
@@ -128,7 +71,7 @@
       <ul>
         <li><strong>Diagnosis:</strong> Clearly state that the child has myopia and that it has increased since last year.</li>
         <li><strong>Basic Explanation:</strong> Explain that light focuses in front of the retina without glasses, causing distance blur.</li>
-        <li><strong>Progression Concept:</strong> Describe “myopia progression” in simple terms and why keeping it from increasing too quickly can be important (e.g., higher myopia ⇒ higher risk of retinal problems, etc.).</li>
+        <li><strong>Progression Concept:</strong> Describe “myopia progression” in simple terms and why keeping it from increasing too quickly can be important (e.g., higher myopia → higher risk of retinal problems, etc.).</li>
         <li><strong>Management Options:</strong> Mention an updated spectacle prescription and, where appropriate in your scope/region, options such as:
           <ul>
             <li>Myopia-control spectacle lenses or contact lenses</li>
@@ -162,11 +105,15 @@
             <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained in simple terms how the eye focuses light and why distance vision is blurry without correction.</td>
           </tr>
           <tr>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Progression &amp; Risk</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Addressed what myopia progression means and why monitoring / limiting progression matters.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management Plan</strong></td>
             <td style="border-bottom: 1px solid #eee; padding: 6px;">Offered specific management strategies (updated Rx, possible myopia-control options) and involved parent/child in decision-making.</td>
           </tr>
           <tr>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Lifestyle &amp; Follow-Up</strong></td>
             <td style="border-bottom: 1px solid #eee; padding: 6px;">Included at least one concrete behavioural recommendation and a clear follow-up interval.</td>
           </tr>
           <tr>
@@ -177,35 +124,37 @@
       </table>
 
       <p style="margin-top:0.75rem; color:#555; font-style:italic;">
-        Consistently scoring 1–2 in all domains across stations is similar to OEBC interactive-station performance.
-      </p>
-    </div>
-
-    <!-- Example 10/10 answer -->
-    <div style="margin-top:1rem; padding:12px; border-radius:8px; border:1px solid #d4d4d8; background:#fafafa;">
-      <strong>Example 10/10 response (for self-study):</strong>
-      <p style="margin-top:6px; font-size:0.9rem;">
-        “Thanks for coming in today. Your child is nearsighted, which we call myopia. That means their eyes focus light a little bit in front of the retina,
-        so things far away like the school board or TV look blurry without glasses. Compared to last year, the prescription has become a bit stronger, which
-        is common at this age because children’s eyes are still growing.<br><br>
-        We call this ‘myopia progression’ – the prescription slowly increasing over time. Very high levels of myopia later in life can be associated with
-        a higher risk of certain eye problems, so we like to monitor it carefully and, when possible, use strategies that may help slow that progression.<br><br>
-        The first step is updating the glasses so vision is clear for school, sports, and daily activities. Depending on your preferences and what’s available
-        in our region, we can also discuss options like special myopia-control lenses or contact lenses, and in some cases low-dose atropine eye drops. We would
-        go over the pros and cons of each choice together so you can decide what feels right for your family.<br><br>
-        There are also some simple daily habits that can help: aiming for regular outdoor time each day, taking short breaks every 20–30 minutes when doing close work
-        like reading or using screens, and keeping things at a comfortable arm’s-length distance instead of very close.<br><br>
-        I’d like to see your child again in about 6–12 months to recheck the prescription, and sooner if you notice more squinting or difficulty seeing the board.
-        At those visits we’ll monitor how quickly the prescription is changing and keep you updated on whether we should adjust the plan. Do you have any questions
-        or concerns about this so far?”
+        If you are consistently scoring 1–2 in all domains across stations, you are practicing at a level similar to OEBC interactive stations.
       </p>
     </div>
   </div>
 
-  <!-- Step 4: AI feedback (always present; text filled on click) -->
-  <div id="s2-ai-box" class="ai-box">
-    <h3>AI-style Feedback (from Supabase)</h3>
-    <div id="s2-ai-text"></div>
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s2-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s2-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for coming in today. Your child is nearsighted, which means their eyes focus light
+      in front of the retina without glasses, so things far away look blurry. Since last year, their
+      prescription has increased from about &minus;1.50 in each eye to around &minus;2.50 and &minus;2.75.
+      That tells us the myopia is progressing, which is common at this age but something we want to
+      monitor closely because higher levels of myopia can be associated with a slightly higher risk of
+      retinal problems later in life.<br><br>
+
+      Today we’ll update the glasses so they can see clearly at school and for activities. We can also
+      talk about options designed to help slow down myopia progression, such as special spectacle lenses
+      or contact lenses made for myopia control, and in some cases low-dose atropine eye drops, depending
+      on what you’re comfortable with and what is appropriate for your child.<br><br>
+
+      Day to day, it helps to take regular breaks from close work like reading or screens and to spend more
+      time outdoors—those habits may support healthier eye growth. I recommend we recheck vision and the
+      prescription in about 6–12 months, or sooner if you notice they’re squinting again or struggling to see
+      the board. Do you have any questions or concerns about these options so far?”
+    </div>
   </div>
 </div>
 
@@ -221,6 +170,7 @@
       return;
     }
 
+    // Reveal the box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
@@ -247,21 +197,25 @@
       const data = await res.json();
       const rubric = data.rubric || {};
 
-      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
-      const explanationScore   = rubric.explanation?.score ?? 0;
-      const managementScore    = rubric.management?.score ?? 0;
-      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
-      const communicationScore = rubric.communication?.score ?? 0;
+      // Safely read scores
+      const diagnosisScore      = rubric.diagnosis?.score ?? 0;
+      const explanationScore    = rubric.explanation?.score ?? 0;
+      const managementScore     = rubric.management?.score ?? 0;
+      const prognosisScore      = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore  = rubric.communication?.score ?? 0;
 
       let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
       if (typeof data.total_score === "number") {
         totalScore = data.total_score;
       }
 
+      const overallComment = data.overall_comment || "";
+
       function badge(score) {
-        let bg = "#fee2e2", color = "#b91c1c";
-        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }
-        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
         return `<span style="
           display:inline-block;
           min-width:2.5rem;
@@ -275,29 +229,37 @@
         ">${score}/2</span>`;
       }
 
-      const overallComment = data.overall_comment || "";
-
       feedbackText.innerHTML = `
-        <div style="font-size:0.9rem;">
-          <p style="margin:0 0 6px;">${badge(diagnosisScore)}
-             &nbsp; <strong>Diagnosis:</strong>
-             ${rubric.diagnosis?.comment || ""}</p>
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
 
-          <p style="margin:0 0 6px;">${badge(explanationScore)}
-             &nbsp; <strong>Explanation:</strong>
-             ${rubric.explanation?.comment || ""}</p>
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
 
-          <p style="margin:0 0 6px;">${badge(managementScore)}
-             &nbsp; <strong>Management:</strong>
-             ${rubric.management?.comment || ""}</p>
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
 
-          <p style="margin:0 0 6px;">${badge(prognosisScore)}
-             &nbsp; <strong>Prognosis &amp; follow-up:</strong>
-             ${rubric.prognosis_followup?.comment || ""}</p>
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
 
-          <p style="margin:0 0 10px;">${badge(communicationScore)}
-             &nbsp; <strong>Communication:</strong>
-             ${rubric.communication?.comment || ""}</p>
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
 
           <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
           <p style="margin:0;">${overallComment}</p>
@@ -308,5 +270,3 @@
     }
   }
 </script>
-</body>
-</html>
