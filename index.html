@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC OSCE AI Feedback Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 20px; }
+    .box { max-width: 900px; margin: 0 auto; }
+    .ai-box {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <h2>OEBC OSCE – Station 1 (AI test)</h2>
+  <p><strong>Scenario (short):</strong> 26-year-old with basic myopia. You’ve explained the case; now type what you would say to the patient.</p>
+
+  <h3>Type your response</h3>
+  <textarea id="response" rows="8"></textarea>
+  <br />
+  <button type="button" onclick="getAiFeedback()">Get AI-style Feedback (beta)</button>
+
+  <div id="ai-box" class="ai-box">
+    <h3 style="margin-top:0;">AI-style Feedback (from Supabase)</h3>
+    <p id="ai-text"></p>
+  </div>
+</div>
+
+<script>
+  async function getAiFeedback() {
+    const textArea = document.getElementById("response");
+    const feedbackBox = document.getElementById("ai-box");
+    const feedbackText = document.getElementById("ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Show box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+        },
+        body: JSON.stringify({
+          station_number: 1,
+          user_response: userResponse
+        }),
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data = await res.json();
+      // Expecting something like { feedback: "text ..." }
+      feedbackText.textContent = data.feedback || JSON.stringify(data, null, 2);
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
+</body>
+</html>
