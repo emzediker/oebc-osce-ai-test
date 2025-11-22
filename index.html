@@ -1,3 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC OSCE – Station 1 (AI test)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 20px; }
+    .box { max-width: 900px; margin: 0 auto; }
+    .ai-box {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="box">
+  <h2>OEBC OSCE – Station 1</h2>
+  <p><strong>Scenario (short):</strong> 26-year-old with basic myopia. Explain the diagnosis and plan.</p>
+
+  <h3>Type your response</h3>
+  <textarea id="response" rows="8"></textarea>
+  <br />
+  <button type="button" onclick="getAiFeedback()">Get AI-style Feedback (beta)</button>
+
+  <div id="ai-box" class="ai-box">
+    <h3 style="margin-top:0;">AI-style Feedback (from Supabase)</h3>
+    <p id="ai-text"></p>
+  </div>
+</div>
+
 <script>
   async function getAiFeedback() {
     const textArea = document.getElementById("response");
@@ -10,7 +66,6 @@
       return;
     }
 
-    // Show box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
@@ -18,10 +73,10 @@
       const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
         method: "POST",
         headers: {
-  "Content-Type": "application/json",
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMjEzMTQ4OSwiZXhwIjoxOTg4OTg3NDg5fQ.TC6M9W07n1fkGgYk1ph9KdG3DvjfK7j_OrI9N1QbXgY",
-  "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMjEzMTQ4OSwiZXhwIjoxOTg4OTg3NDg5fQ.TC6M9W07n1fkGgYk1ph9KdG3DvjfK7j_OrI9N1QbXgY"
-}, 
+          "Content-Type": "application/json",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMjEzMTQ4OSwiZXhwIjoxOTg4OTg3NDg5fQa.TC6M9W07n1fkGgYk1ph9KdG3DvjfK7j_OrI9N1QbXgY",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMjEzMTQ4OSwiZXhwIjoxOTg4OTg3NDg5fQa.TC6M9W07n1fkGgYk1ph9KdG3DvjfK7j_OrI9N1QbXgY"
+        },
         body: JSON.stringify({
           station_number: 1,
           user_response: userResponse
@@ -37,66 +92,33 @@
       const data = await res.json();
       const rubric = data.rubric || {};
 
-      // Safely read scores for each domain
       const diagnosisScore   = rubric.diagnosis?.score ?? 0;
       const explanationScore = rubric.explanation?.score ?? 0;
       const managementScore  = rubric.management?.score ?? 0;
       const prognosisScore   = rubric.prognosis_followup?.score ?? 0;
       const communicationScore = rubric.communication?.score ?? 0;
 
-      // Default: sum of domain scores
-      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      let totalScore = data.total_score ?? (
+        diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore
+      );
 
-      // If the Edge Function also sent total_score, trust that
-      if (typeof data.total_score === "number") {
-        totalScore = data.total_score;
-      }
-
-      // Helper to make colored score badges
       function badge(score) {
-        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 = red
-        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }   // 1/2 = yellow
-        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }   // 2/2 = green
-
-        return `<span style="
-          display:inline-block;
-          min-width:2.5rem;
-          padding:2px 8px;
-          border-radius:999px;
-          font-size:0.75rem;
-          font-weight:600;
-          text-align:center;
-          background:${bg};
-          color:${color};
-        ">${score}/2</span>`;
+        let bg="#fee2e2", color="#b91c1c";
+        if(score===1){bg="#fef3c7";color="#92400e";}
+        if(score===2){bg="#dcfce7";color="#166534";}
+        return `<span style="display:inline-block;min-width:2.5rem;padding:2px 8px;border-radius:999px;font-size:0.75rem;font-weight:600;text-align:center;background:${bg};color:${color};">${score}/2</span>`;
       }
-
-      const overallComment = data.overall_comment || "";
 
       feedbackText.innerHTML = `
         <div style="font-size:0.9rem;">
-          <p style="margin:0 0 6px;"><strong>${badge(diagnosisScore)}</strong>
-             &nbsp; <strong>Diagnosis:</strong>
-             The candidate ${rubric.diagnosis?.comment || ""}</p>
+          <p><strong>${badge(diagnosisScore)}</strong> Diagnosis: ${rubric.diagnosis?.comment || ""}</p>
+          <p><strong>${badge(explanationScore)}</strong> Explanation: ${rubric.explanation?.comment || ""}</p>
+          <p><strong>${badge(managementScore)}</strong> Management: ${rubric.management?.comment || ""}</p>
+          <p><strong>${badge(prognosisScore)}</strong> Prognosis & follow-up: ${rubric.prognosis_followup?.comment || ""}</p>
+          <p><strong>${badge(communicationScore)}</strong> Communication: ${rubric.communication?.comment || ""}</p>
 
-          <p style="margin:0 0 6px;"><strong>${badge(explanationScore)}</strong>
-             &nbsp; <strong>Explanation:</strong>
-             ${rubric.explanation?.comment || ""}</p>
-
-          <p style="margin:0 0 6px;"><strong>${badge(managementScore)}</strong>
-             &nbsp; <strong>Management:</strong>
-             ${rubric.management?.comment || ""}</p>
-
-          <p style="margin:0 0 6px;"><strong>${badge(prognosisScore)}</strong>
-             &nbsp; <strong>Prognosis &amp; follow-up:</strong>
-             ${rubric.prognosis_followup?.comment || ""}</p>
-
-          <p style="margin:0 0 10px;"><strong>${badge(communicationScore)}</strong>
-             &nbsp; <strong>Communication:</strong>
-             ${rubric.communication?.comment || ""}</p>
-
-          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
-          <p style="margin:0;">${overallComment}</p>
+          <p><strong>Total score: ${totalScore}/10</strong></p>
+          <p>${data.overall_comment || ""}</p>
         </div>
       `;
     } catch (err) {
@@ -104,3 +126,6 @@
     }
   }
 </script>
+
+</body>
+</html>
