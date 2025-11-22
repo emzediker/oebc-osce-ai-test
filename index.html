@@ -1,267 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>OEBC OSCE – Station 1 (AI test, full case)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 20px;
-      background: #f5f5f7;
-    }
-    .oebc-station-step {
-      max-width: 900px;
-      margin: 0 auto;
-      background:#fff;
-      border-radius: 10px;
-      padding: 20px 20px 24px;
-      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
-    }
-    h2 {
-      margin-bottom: 0.25rem;
-    }
-    .muted {
-      margin-top: 0;
-      color: #555;
-      font-size: 0.9rem;
-    }
-    .box {
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #e0e0e0;
-      margin-bottom: 1rem;
-      background:#fff;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-      font-size: 0.95rem;
-      resize: vertical;
-    }
-    button {
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: none;
-      background: #0b6bcb;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-    button.secondary {
-      background:#fff;
-      color:#0b6bcb;
-      border:1px solid #0b6bcb;
-    }
-    .key-wrapper {
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #cfd8e3;
-      background: #f5f7fb;
-      margin-bottom: 1rem;
-    }
-    .rubric-box {
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #e0e0e0;
-      background: #fff;
-    }
-    .rubric-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    .rubric-table th,
-    .rubric-table td {
-      border-bottom: 1px solid #eee;
-      padding: 6px;
-      text-align: left;
-    }
-    .rubric-table th {
-      border-bottom: 1px solid #ddd;
-      font-weight: 600;
-    }
-    .ai-box {
-      display: none;
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px dashed #f97316;
-      background: #fff7ed;
-      font-size: 0.95rem;
-      white-space: normal;
-    }
-    .ai-box h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-  </style>
-</head>
-<body>
+<!-- OEBC OSCE Station 1 – Interactive Basic Myopia Counseling (with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-<!-- Full Station 1 layout + AI feedback -->
-<div class="oebc-station-step">
-
-  <h2>OEBC Mock OSCE – Station 1</h2>
-  <p class="muted">Refractive • Dioptric Defects / Basic Refractive Error (Interactive)</p>
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 1</h2>
+  <p style="margin-top: 0; color: #555;">Module 1 – Refractive • Basic myopia / dioptric defect (Interactive – Counseling &amp; Management)</p>
 
   <!-- Step 1: Read -->
-  <div class="box">
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
     <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
 
-    <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have 8 minutes.</p>
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE, you would have 8 minutes to complete this station.</p>
 
-    <p><strong>Scenario:</strong> 26-year-old complains of blurry vision at distance, especially at night.
-      Refraction: –2.00 DS OD / –2.25 DS OS, both correcting to 20/20. Ocular health is normal.</p>
+    <p><strong>Scenario:</strong></p>
 
-    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear,
-      patient-friendly language. Include: diagnosis, why vision is blurry, correction options,
-      long-term prescription changes, and when to return.</p>
+    <p>
+      A 26-year-old patient complains of blurry vision at distance, especially at night and while driving.
+      Today’s refraction is:
+    </p>
+
+    <ul>
+      <li>OD: &minus;2.00 DS (20/20)</li>
+      <li>OS: &minus;2.25 DS (20/20)</li>
+    </ul>
+
+    <p>
+      Ocular health is normal on slit lamp and dilated fundus exam. The patient has no systemic disease and no ocular medications.
+    </p>
+
+    <p><strong>Your task:</strong> Explain to the patient:</p>
+    <ul>
+      <li>What their diagnosis is and why their distance vision is blurry.</li>
+      <li>How myopia affects how light focuses in the eye.</li>
+      <li>Reasonable correction options (e.g., glasses, contact lenses; optional mention of surgery as a future choice).</li>
+      <li>How their prescription might change over time.</li>
+      <li>When they should return for routine follow-up.</li>
+    </ul>
+    <p>Use clear, patient-friendly, non-judgmental language.</p>
   </div>
 
   <!-- Step 2: Respond -->
-  <div class="box">
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
     <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
 
     <p>Type what you would say to the patient:</p>
-    <textarea id="s1-response" rows="8"></textarea>
+    <textarea id="s1-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
 
-    <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
       <button type="button"
-        onclick="document.getElementById('s1-key').style.display='block'; this.disabled=true;">
+        onclick="document.getElementById('s1-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
         Show Key Points &amp; Rubric
       </button>
 
-      <button type="button" class="secondary" onclick="getAiFeedback()">
+      <button type="button"
+        onclick="getS1AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
         Get AI-style Feedback (beta)
       </button>
     </div>
   </div>
 
-  <!-- Step 3: Key Points & Rubric (hidden by default) -->
-  <div id="s1-key" style="display:none;">
-    <div class="key-wrapper">
-      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s1-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-style Stations Expect)</h3>
       <ul>
-        <li>State the diagnosis (myopia / refractive error).</li>
-        <li>Explain that light focuses in front of the retina, causing blur.</li>
-        <li>Relate symptoms: distance blur, night driving difficulty.</li>
-        <li>Discuss correction choices: glasses, contacts; surgery as a future option if appropriate.</li>
-        <li>Reassure the patient that ocular health is normal.</li>
-        <li>Explain how prescriptions may change over time in young myopes.</li>
-        <li>Recommend an appropriate recall (for example, yearly exam).</li>
-        <li>Use clear, empathetic, patient-friendly language.</li>
+        <li><strong>Diagnosis:</strong> Clearly state that the patient has myopia (nearsightedness).</li>
+        <li><strong>Basic Explanation:</strong> Explain that light focuses in front of the retina without correction, causing distance blur.</li>
+        <li><strong>Symptom Link:</strong> Relate the diagnosis to their symptoms (night driving difficulty, distance blur).</li>
+        <li><strong>Correction Options:</strong> Discuss glasses, contact lenses, and optionally mention refractive surgery as a future option if appropriate.</li>
+        <li><strong>Ocular Health:</strong> Reassure that eye health is normal.</li>
+        <li><strong>Change Over Time:</strong> Briefly describe how prescriptions may change over time in young adults and what is typical vs concerning.</li>
+        <li><strong>Follow-Up:</strong> Recommend a reasonable recall interval (e.g., yearly exam, or sooner with vision changes).</li>
+        <li><strong>Tone &amp; Clarity:</strong> Use clear, empathetic, non-blaming language; invite questions.</li>
       </ul>
     </div>
 
-    <div class="rubric-box">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
       <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
-      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partially, 2 = clearly and completely addressed).</p>
 
-      <table class="rubric-table">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
           <tr>
-            <th>Domain</th>
-            <th>Criteria</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Diagnosis</strong></td>
-            <td>Clearly identified myopia and linked it to the patient’s symptoms.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Stated that the patient has myopia and linked it to their distance blur.</td>
           </tr>
           <tr>
-            <td><strong>Explanation</strong></td>
-            <td>Explained the focusing error in plain, patient-friendly language.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained, in simple terms, how light focuses in the eye and why distance is blurry.</td>
           </tr>
           <tr>
-            <td><strong>Management</strong></td>
-            <td>Offered appropriate correction options (glasses/CLs; surgery as optional future mention).</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management Plan</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Offered appropriate correction options (glasses/contacts; optional future surgery) and addressed the patient’s visual needs.</td>
           </tr>
           <tr>
-            <td><strong>Prognosis &amp; Follow-Up</strong></td>
-            <td>Mentioned that prescriptions can change and recommended a reasonable recall interval.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentioned how the prescription may change over time and recommended a recall interval.</td>
           </tr>
           <tr>
-            <td><strong>Communication</strong></td>
-            <td>Empathy, organization, and clarity appropriate for a lay person.</td>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Organized, empathetic, and easy to understand; invited questions or checked for understanding.</td>
           </tr>
         </tbody>
       </table>
 
       <p style="margin-top:0.75rem; color:#555; font-style:italic;">
-        Hitting all domains consistently means you’re performing at OEBC interactive-station level.
+        If you are consistently scoring 1–2 in all domains across stations, you are practicing at a level similar to OEBC interactive stations.
       </p>
     </div>
   </div>
 
-  <!-- Step 4: AI feedback (always present; text filled on click) -->
-  <div id="ai-box" class="ai-box">
-    <h3>AI-style Feedback (from Supabase)</h3>
-    <div id="ai-text"></div>
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s1-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s1-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for coming in today. From your testing, you are nearsighted, or myopic, which means
+      that without glasses your eyes focus light slightly in front of the retina instead of right on it.
+      When that happens, things far away – like street signs or cars at night – look blurry, but we can
+      make that image sharp again with the right prescription.<br><br>
+
+      Today we found that your prescription is about &minus;2.00 in the right eye and &minus;2.25 in the left,
+      and with that correction you can see 20/20 in each eye. The health of the front and back of your eyes
+      looks completely normal, which is great.<br><br>
+
+      The main ways to correct this are glasses or contact lenses. Glasses are the simplest and safest option,
+      and contacts can be a nice choice if you’re active or prefer not to wear glasses all the time, as long as
+      they’re cleaned and worn safely. In the future, if your prescription is stable and you’re interested, we
+      could also talk about laser vision correction, but that’s not something you need to decide on now.<br><br>
+
+      Because you’re in your twenties, it’s still possible for your prescription to change a little over the
+      next few years, but big rapid changes would be less typical. I recommend a full eye exam about once a year,
+      or sooner if you feel your distance vision is slipping again, especially at night. Do you have any questions
+      or concerns about your prescription or the options we’ve talked about?”
+    </div>
   </div>
 </div>
 
-    <!-- Sample 10/10 Response (Model Answer) -->
-  <div style="margin-top: 16px; padding: 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb;">
-    <details>
-      <summary style="cursor: pointer; font-weight: 600;">
-        See example 10/10 response (model answer)
-      </summary>
-      <div style="margin-top: 8px; font-size: 0.95rem; line-height: 1.5;">
-        <p>
-          “Thanks for explaining your symptoms. From your exam today, we found that you are
-          <strong>nearsighted</strong>, which we call <strong>myopia</strong>. That means your eyes focus
-          light just a little bit in front of the retina—the ‘film’ or camera sensor in the back of your
-          eye—instead of directly on it. When that happens, things in the distance, like road signs or TV
-          subtitles, look blurry, and it’s often more noticeable at night when there’s less contrast and
-          more glare from headlights.
-        </p>
-        <p>
-          The good news is that your eye health is completely normal. There are no signs of disease or
-          damage in the back or front of your eyes. This is purely a focusing issue, and it’s very common,
-          especially in younger adults like you.
-        </p>
-        <p>
-          Your prescription today is about –2 in each eye, which is considered mild to moderate myopia.
-          With glasses or contact lenses, we can bend the light so that it focuses exactly on your retina,
-          which should make distance vision clear again, including night driving.
-        </p>
-        <p>
-          In terms of options, we can start with <strong>glasses</strong>—that’s the simplest and safest.
-          If you’re interested, we can also talk about <strong>contact lenses</strong> for things like
-          sports or all-day wear, as long as they’re cared for properly. In the future, if your prescription
-          is stable and your eyes are otherwise healthy, you might be a candidate for
-          <strong>laser vision correction</strong>, but that’s not something we rush into. We’d want to see
-          a stable prescription over time first.
-        </p>
-        <p>
-          Because you’re in your 20s, your prescription may still change a little over the next several
-          years. That’s normal. I recommend a full eye exam <strong>once a year</strong>, or sooner if you
-          notice your distance vision getting blurrier, more strain, or more difficulty at night. If you
-          ever notice sudden flashing lights, a shower of new floaters, or a dark curtain in your vision,
-          that’s not from simple myopia—that would be an emergency, and you should call us right away or go
-          to emergency care.
-        </p>
-        <p>
-          Do you have any questions about what myopia is, how the glasses will help, or which option might
-          fit your lifestyle best?”
-        </p>
-      </div>
-    </details>
-  </div>
-
 <script>
-  async function getAiFeedback() {
-    const textArea    = document.getElementById("s1-response");
-    const feedbackBox = document.getElementById("ai-box");
-    const feedbackText = document.getElementById("ai-text");
+  async function getS1AiFeedback() {
+    const textArea     = document.getElementById("s1-response");
+    const feedbackBox  = document.getElementById("s1-ai-box");
+    const feedbackText = document.getElementById("s1-ai-text");
 
     const userResponse = textArea.value.trim();
     if (!userResponse) {
@@ -269,7 +162,7 @@
       return;
     }
 
-    // Show box immediately
+    // Reveal the box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
@@ -278,8 +171,8 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
-          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
         },
         body: JSON.stringify({
           station_number: 1,
@@ -296,26 +189,23 @@
       const data   = await res.json();
       const rubric = data.rubric || {};
 
-      // Safely read scores for each domain
-      const diagnosisScore      = rubric.diagnosis?.score ?? 0;
-      const explanationScore    = rubric.explanation?.score ?? 0;
-      const managementScore     = rubric.management?.score ?? 0;
-      const prognosisScore      = rubric.prognosis_followup?.score ?? 0;
-      const communicationScore  = rubric.communication?.score ?? 0;
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
 
-      // Default: sum of domain scores
       let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
-
-      // If the Edge Function also sent total_score, trust that
       if (typeof data.total_score === "number") {
         totalScore = data.total_score;
       }
 
-      // Helper to make colored score badges
+      const overallComment = data.overall_comment || "";
+
       function badge(score) {
         let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
-        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; } // 1/2 yellow
-        if (score === 2) { bg = "#dcfce7"; color = "#166534"; } // 2/2 green
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
 
         return `<span style="
           display:inline-block;
@@ -330,38 +220,36 @@
         ">${score}/2</span>`;
       }
 
-      const overallComment = data.overall_comment || "";
-
       feedbackText.innerHTML = `
-        <div style="font-size:0.9rem;">
+        <div>
           <p style="margin:0 0 6px;">
             ${badge(diagnosisScore)}
-            &nbsp; <strong>Diagnosis:</strong>
-            ${rubric.diagnosis?.comment || ""}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
           </p>
 
           <p style="margin:0 0 6px;">
             ${badge(explanationScore)}
-            &nbsp; <strong>Explanation:</strong>
-            ${rubric.explanation?.comment || ""}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
           </p>
 
           <p style="margin:0 0 6px;">
             ${badge(managementScore)}
-            &nbsp; <strong>Management:</strong>
-            ${rubric.management?.comment || ""}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
           </p>
 
           <p style="margin:0 0 6px;">
             ${badge(prognosisScore)}
-            &nbsp; <strong>Prognosis &amp; follow-up:</strong>
-            ${rubric.prognosis_followup?.comment || ""}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
           </p>
 
           <p style="margin:0 0 10px;">
             ${badge(communicationScore)}
-            &nbsp; <strong>Communication:</strong>
-            ${rubric.communication?.comment || ""}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
           </p>
 
           <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
@@ -373,6 +261,3 @@
     }
   }
 </script>
-
-</body>
-</html>
