@@ -2,20 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>OEBC OSCE – Station 1 (AI test)</title>
+  <title>OEBC OSCE – Station 1 (AI test, full case)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 20px; }
-    .box { max-width: 900px; margin: 0 auto; }
-    .ai-box {
-      display: none;
-      margin-top: 16px;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 20px;
+      background: #f5f5f7;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background:#fff;
+      border-radius: 10px;
+      padding: 20px 20px 24px;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+    }
+    h2 {
+      margin-bottom: 0.25rem;
+    }
+    .muted {
+      margin-top: 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .box {
       padding: 16px;
       border-radius: 8px;
-      border: 1px dashed #f97316;
-      background: #fff7ed;
-      font-size: 0.95rem;
-      white-space: pre-wrap;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 1rem;
+      background:#fff;
     }
     textarea {
       width: 100%;
@@ -24,6 +40,7 @@
       border: 1px solid #ccc;
       font-family: inherit;
       font-size: 0.95rem;
+      resize: vertical;
     }
     button {
       padding: 9px 16px;
@@ -33,30 +50,167 @@
       color: #fff;
       font-weight: 600;
       cursor: pointer;
-      margin-top: 10px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    button.secondary {
+      background:#fff;
+      color:#0b6bcb;
+      border:1px solid #0b6bcb;
+    }
+    .key-wrapper {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      margin-bottom: 1rem;
+    }
+    .rubric-box {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+    }
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .rubric-table th,
+    .rubric-table td {
+      border-bottom: 1px solid #eee;
+      padding: 6px;
+      text-align: left;
+    }
+    .rubric-table th {
+      border-bottom: 1px solid #ddd;
+      font-weight: 600;
+    }
+    .ai-box {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.95rem;
+      white-space: normal;
+    }
+    .ai-box h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1rem;
     }
   </style>
 </head>
-
 <body>
-<div class="box">
-  <h2>OEBC OSCE – Station 1</h2>
-  <p><strong>Scenario (short):</strong> 26-year-old with basic myopia. Explain the diagnosis and plan.</p>
 
-  <h3>Type your response</h3>
-  <textarea id="response" rows="8"></textarea>
-  <br />
-  <button type="button" onclick="getAiFeedback()">Get AI-style Feedback (beta)</button>
+<!-- Full Station 1 layout + AI feedback -->
+<div class="oebc-station-step">
 
+  <h2>OEBC Mock OSCE – Station 1</h2>
+  <p class="muted">Refractive • Dioptric Defects / Basic Refractive Error (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div class="box">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have 8 minutes.</p>
+
+    <p><strong>Scenario:</strong> 26-year-old complains of blurry vision at distance, especially at night.
+      Refraction: –2.00 DS OD / –2.25 DS OS, both correcting to 20/20. Ocular health is normal.</p>
+
+    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear,
+      patient-friendly language. Include: diagnosis, why vision is blurry, correction options,
+      long-term prescription changes, and when to return.</p>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div class="box">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s1-response" rows="8"></textarea>
+
+    <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+      <button type="button"
+        onclick="document.getElementById('s1-key').style.display='block'; this.disabled=true;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button" class="secondary" onclick="getAiFeedback()">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3: Key Points & Rubric (hidden by default) -->
+  <div id="s1-key" style="display:none;">
+    <div class="key-wrapper">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+      <ul>
+        <li>State the diagnosis (myopia / refractive error).</li>
+        <li>Explain that light focuses in front of the retina, causing blur.</li>
+        <li>Relate symptoms: distance blur, night driving difficulty.</li>
+        <li>Discuss correction choices: glasses, contacts; surgery as a future option if appropriate.</li>
+        <li>Reassure the patient that ocular health is normal.</li>
+        <li>Explain how prescriptions may change over time in young myopes.</li>
+        <li>Recommend an appropriate recall (for example, yearly exam).</li>
+        <li>Use clear, empathetic, patient-friendly language.</li>
+      </ul>
+    </div>
+
+    <div class="rubric-box">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table class="rubric-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diagnosis</strong></td>
+            <td>Clearly identified myopia and linked it to the patient’s symptoms.</td>
+          </tr>
+          <tr>
+            <td><strong>Explanation</strong></td>
+            <td>Explained the focusing error in plain, patient-friendly language.</td>
+          </tr>
+          <tr>
+            <td><strong>Management</strong></td>
+            <td>Offered appropriate correction options (glasses/CLs; surgery as optional future mention).</td>
+          </tr>
+          <tr>
+            <td><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td>Mentioned that prescriptions can change and recommended a reasonable recall interval.</td>
+          </tr>
+          <tr>
+            <td><strong>Communication</strong></td>
+            <td>Empathy, organization, and clarity appropriate for a lay person.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem; color:#555; font-style:italic;">
+        Hitting all domains consistently means you’re performing at OEBC interactive-station level.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 4: AI feedback (always present; text filled on click) -->
   <div id="ai-box" class="ai-box">
-    <h3 style="margin-top:0;">AI-style Feedback (from Supabase)</h3>
-    <p id="ai-text"></p>
+    <h3>AI-style Feedback (from Supabase)</h3>
+    <div id="ai-text"></div>
   </div>
 </div>
 
 <script>
   async function getAiFeedback() {
-    const textArea = document.getElementById("response");
+    const textArea    = document.getElementById("s1-response");
     const feedbackBox = document.getElementById("ai-box");
     const feedbackText = document.getElementById("ai-text");
 
@@ -66,6 +220,7 @@
       return;
     }
 
+    // Show box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
@@ -74,8 +229,8 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
-          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          "Authorization": "Bearer YOUR_SUPABASE_ANON_KEY_HERE",
+          "apikey": "YOUR_SUPABASE_ANON_KEY_HERE"
         },
         body: JSON.stringify({
           station_number: 1,
@@ -89,36 +244,79 @@
         return;
       }
 
-      const data = await res.json();
+      const data   = await res.json();
       const rubric = data.rubric || {};
 
-      const diagnosisScore   = rubric.diagnosis?.score ?? 0;
-      const explanationScore = rubric.explanation?.score ?? 0;
-      const managementScore  = rubric.management?.score ?? 0;
-      const prognosisScore   = rubric.prognosis_followup?.score ?? 0;
-      const communicationScore = rubric.communication?.score ?? 0;
+      // Safely read scores for each domain
+      const diagnosisScore      = rubric.diagnosis?.score ?? 0;
+      const explanationScore    = rubric.explanation?.score ?? 0;
+      const managementScore     = rubric.management?.score ?? 0;
+      const prognosisScore      = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore  = rubric.communication?.score ?? 0;
 
-      let totalScore = data.total_score ?? (
-        diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore
-      );
+      // Default: sum of domain scores
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
 
-      function badge(score) {
-        let bg="#fee2e2", color="#b91c1c";
-        if(score===1){bg="#fef3c7";color="#92400e";}
-        if(score===2){bg="#dcfce7";color="#166534";}
-        return `<span style="display:inline-block;min-width:2.5rem;padding:2px 8px;border-radius:999px;font-size:0.75rem;font-weight:600;text-align:center;background:${bg};color:${color};">${score}/2</span>`;
+      // If the Edge Function also sent total_score, trust that
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
       }
+
+      // Helper to make colored score badges
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; } // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; } // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      const overallComment = data.overall_comment || "";
 
       feedbackText.innerHTML = `
         <div style="font-size:0.9rem;">
-          <p><strong>${badge(diagnosisScore)}</strong> Diagnosis: ${rubric.diagnosis?.comment || ""}</p>
-          <p><strong>${badge(explanationScore)}</strong> Explanation: ${rubric.explanation?.comment || ""}</p>
-          <p><strong>${badge(managementScore)}</strong> Management: ${rubric.management?.comment || ""}</p>
-          <p><strong>${badge(prognosisScore)}</strong> Prognosis & follow-up: ${rubric.prognosis_followup?.comment || ""}</p>
-          <p><strong>${badge(communicationScore)}</strong> Communication: ${rubric.communication?.comment || ""}</p>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp; <strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || ""}
+          </p>
 
-          <p><strong>Total score: ${totalScore}/10</strong></p>
-          <p>${data.overall_comment || ""}</p>
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp; <strong>Explanation:</strong>
+            ${rubric.explanation?.comment || ""}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp; <strong>Management:</strong>
+            ${rubric.management?.comment || ""}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp; <strong>Prognosis &amp; follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || ""}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp; <strong>Communication:</strong>
+            ${rubric.communication?.comment || ""}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
         </div>
       `;
     } catch (err) {
