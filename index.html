@@ -1,39 +1,162 @@
-<!-- OEBC OSCE Station 1 – Full Case with AI Feedback (Beta) -->
-<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC OSCE – Station 1 (AI test)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 20px;
+      background: #f3f4f6;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-bottom: 0.25rem;
+    }
+    p {
+      line-height: 1.45;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      background: #0b6bcb;
+      color: #fff;
+    }
+    .btn-outline {
+      border: 1px solid #b91c1c;
+      background: #fff5f5;
+      color: #7f1d1d;
+    }
+    .card {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      margin-bottom: 1rem;
+    }
+    .card-soft {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      margin-bottom: 1rem;
+    }
 
-  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 1</h2>
-  <p style="margin-top: 0; color: #555;">Refractive &bull; Dioptric Defects / Basic Refractive Error (Interactive)</p>
+    /* AI feedback box */
+    .ai-box {
+      display: none;
+      margin-top: 1rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.95rem;
+    }
+    .ai-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+
+    /* Rubric rows */
+    .rubric-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 0.4rem;
+    }
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #111827;
+      background: #e5e7eb;
+    }
+    .score-0 {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .score-1 {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .score-2 {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .rubric-label {
+      font-weight: 600;
+    }
+    .total-score {
+      margin-top: 0.75rem;
+      border-top: 1px solid #fed7aa;
+      padding-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .overall-comment {
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+<div class="oebc-station-step">
+
+  <h2>OEBC Mock OSCE – Station 1</h2>
+  <p style="margin-top: 0; color: #555;">
+    Refractive • Dioptric Defects / Basic Refractive Error (Interactive)
+  </p>
 
   <!-- Step 1: Read -->
-  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
-    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
-
-    <p><strong>Instructions:</strong> Read the scenario once. Note: on the real OEBC OSCE you will have 8 minutes.</p>
-
-    <p><strong>Scenario:</strong> 26-year-old complains of blurry vision at distance, especially at night. Refraction: &ndash;2.00 DS OD / &ndash;2.25 DS OS, both correcting to 20/20. Ocular health normal.</p>
-
-    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear, patient-friendly language. Include: diagnosis, why vision is blurry, correction options, long-term changes, and when to return.</p>
+  <div class="card">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+    <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have 8 minutes.</p>
+    <p><strong>Scenario:</strong> 26-year-old complains of blurry vision at distance, especially at night.
+      Refraction: –2.00 DS OD / –2.25 DS OS, both correcting to 20/20. Ocular health normal.</p>
+    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear,
+      patient-friendly language. Include: diagnosis, why vision is blurry, correction options, long-term
+      changes, and when to return.</p>
   </div>
 
   <!-- Step 2: Respond -->
-  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
-    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+  <div class="card">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
     <p>Type what you would say to the patient:</p>
-
-    <textarea id="s1-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
-
+    <textarea id="s1-response" rows="8"></textarea>
     <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
-      <!-- Show Key Points button -->
-      <button type="button"
-        onclick="document.getElementById('s1-key').style.display='block'; this.disabled=true;"
-        style="padding: 9px 16px; border-radius: 999px; border: none; background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+      <button
+        type="button"
+        class="btn-primary"
+        onclick="document.getElementById('s1-key').style.display='block'; this.disabled=true;">
         Show Key Points &amp; Rubric
       </button>
-
-      <!-- AI Feedback button -->
-      <button type="button"
-        onclick="getS1AiFeedback()"
-        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c; background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+      <button
+        type="button"
+        class="btn-outline"
+        onclick="getS1AiFeedback()">
         Get AI-style Feedback (beta)
       </button>
     </div>
@@ -41,25 +164,23 @@
 
   <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
   <div id="s1-key" style="display: none;">
-    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
-                background: #f5f7fb; margin-bottom: 1rem;">
+    <div class="card-soft">
       <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
       <ul>
         <li>State the diagnosis (myopia / refractive error).</li>
         <li>Explain that light focuses in front of the retina, causing blur.</li>
         <li>Relate symptoms: distance blur, night driving difficulty.</li>
         <li>Discuss correction choices: glasses, contacts; surgery optional future consideration.</li>
-        <li>Reassure ocular health is normal.</li>
+        <li>Reassure the patient that ocular health is normal.</li>
         <li>Explain how prescriptions may change over time.</li>
-        <li>Recommend an appropriate recall (e.g., yearly exam).</li>
-        <li>Use clear, empathetic patient-friendly language.</li>
+        <li>Recommend an appropriate recall (for example, yearly exam).</li>
+        <li>Use clear, empathetic, patient-friendly language.</li>
       </ul>
     </div>
 
-    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+    <div class="card">
       <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
-      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
-
+      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete).</p>
       <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
           <tr>
@@ -90,24 +211,40 @@
           </tr>
         </tbody>
       </table>
-
       <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
-        Hitting all domains consistently means you&rsquo;re performing at OEBC interactive-station level.
+        Hitting all domains consistently means you’re performing at OEBC interactive-station level.
       </p>
     </div>
   </div>
 
-  <!-- Step 5: AI Feedback box (hidden until button pressed) -->
-  <div id="s1-ai-box"
-       style="display: none; margin-top: 1rem; padding: 14px; border-radius: 8px;
-              border: 1px dashed #f97316; background: #fff7ed;">
-    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
-    <p id="s1-ai-text" style="margin: 0; font-size: 0.95rem; white-space: pre-wrap;"></p>
+  <!-- AI Feedback Box -->
+  <div id="s1-ai-box" class="ai-box">
+    <h3>AI-style Feedback (from Supabase)</h3>
+    <div id="s1-ai-text">Working on your feedback…</div>
   </div>
+
 </div>
 
-<!-- Station 1 AI Feedback Script -->
 <script>
+  // Helper: build one rubric row
+  function buildRubricRow(label, item) {
+    if (!item) {
+      return '';
+    }
+    const score = typeof item.score === "number" ? item.score : 0;
+    const comment = item.comment || "";
+    const scoreClass = score === 2 ? "score-2" : score === 1 ? "score-1" : "score-0";
+    return `
+      <div class="rubric-row">
+        <span class="score-badge ${scoreClass}">${score}/2</span>
+        <div>
+          <span class="rubric-label">${label}:</span>
+          <span> ${comment}</span>
+        </div>
+      </div>
+    `;
+  }
+
   async function getS1AiFeedback() {
     const textArea = document.getElementById("s1-response");
     const feedbackBox = document.getElementById("s1-ai-box");
@@ -115,25 +252,25 @@
 
     const userResponse = textArea.value.trim();
     if (!userResponse) {
-      alert("Type your response first so the AI has something to review.");
+      alert("Type something first so the AI has something to grade!");
       return;
     }
 
-    // Show box immediately with a loading message
+    // Show box immediately
     feedbackBox.style.display = "block";
     feedbackText.textContent = "Working on your feedback…";
 
     try {
       const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
         method: "POST",
-       headers: {
+        headers: {
   "Content-Type": "application/json",
   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
   "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
-},       body: JSON.stringify({
+}, 
+        body: JSON.stringify({
           station_number: 1,
           user_response: userResponse
-          // In the future we can also send a 'rubric' field here if we update the Edge Function to use it.
         })
       });
 
@@ -144,32 +281,30 @@
       }
 
       const data = await res.json();
+      const rubric = data.rubric || {};
 
-      // If in the future the Edge Function returns numeric scores, we can format them here.
-      if (data.scores) {
-        const s = data.scores;
-        let summary = "";
-        if (s.total !== undefined && s.max !== undefined) {
-          summary += `Overall score: ${s.total}/${s.max}\n\n`;
-        }
-        if (s.diagnosis !== undefined)   summary += `Diagnosis: ${s.diagnosis}/2\n`;
-        if (s.explanation !== undefined) summary += `Explanation: ${s.explanation}/2\n`;
-        if (s.management !== undefined)  summary += `Management: ${s.management}/2\n`;
-        if (s.risk_follow_up !== undefined) summary += `Risk & Follow-Up: ${s.risk_follow_up}/2\n`;
-        if (s.communication !== undefined)  summary += `Communication: ${s.communication}/2\n`;
-        if (data.feedback) {
-          summary += `\nFeedback:\n${data.feedback}`;
-        }
-        feedbackText.textContent = summary;
-      } else {
-        // Current behaviour: your existing Edge Function that just returns { feedback: "..." }
-        feedbackText.textContent = data.feedback || JSON.stringify(data, null, 2);
-      }
+      const rowsHtml = [
+        buildRubricRow("Diagnosis", rubric.diagnosis),
+        buildRubricRow("Explanation", rubric.explanation),
+        buildRubricRow("Management", rubric.management),
+        buildRubricRow("Prognosis & follow-up", rubric.prognosis_followup),
+        buildRubricRow("Communication", rubric.communication)
+      ].join("");
 
+      const total = typeof data.total_score === "number" ? data.total_score : 0;
+      const overall = data.overall_comment || "";
+
+      feedbackText.innerHTML = `
+        ${rowsHtml}
+        <div class="total-score">
+          <strong>Total score: ${total}/10</strong>
+          <div class="overall-comment">${overall}</div>
+        </div>
+      `;
     } catch (err) {
       feedbackText.textContent = "Network or setup error: " + err.message;
     }
   }
 </script>
-
-
+</body>
+</html>
