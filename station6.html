@@ -1,0 +1,266 @@
+<!-- OEBC OSCE Station 6 – Keratoconus / Irregular Astigmatism (Interactive with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 6</h2>
+  <p style="margin-top: 0; color: #555;">Module 1 – Refractive • Keratoconus / Irregular Astigmatism (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have about 8 minutes to complete this type of station.</p>
+
+    <p><strong>Scenario:</strong></p>
+
+    <p>A 22-year-old university student reports worsening blurry vision over the last 2–3 years and “ghosting” of letters, especially in the left eye. They rub their eyes frequently due to itchiness.</p>
+
+    <p><strong>Findings (summary):</strong></p>
+    <ul>
+      <li>Refraction shows increasing, irregular astigmatism OS &gt; OD.</li>
+      <li>Best-corrected VA: 20/25 OD, 20/40 OS in glasses.</li>
+      <li>Corneal topography: inferior steepening and thinning OS consistent with keratoconus.</li>
+      <li>Ocular health otherwise unremarkable.</li>
+    </ul>
+
+    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear, patient-friendly language. Be sure to cover:</p>
+    <ul>
+      <li>What keratoconus is and why their vision is distorted.</li>
+      <li>How eye rubbing may contribute.</li>
+      <li>Short-term optical options (e.g., specialty contact lenses, spectacles limits).</li>
+      <li>Long-term options (e.g., corneal cross-linking / referral).</li>
+      <li>Follow-up and when to seek urgent care.</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s6-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s6-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS6AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s6-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-style Stations Expect)</h3>
+      <ul>
+        <li><strong>Diagnosis:</strong> Clearly state the diagnosis as keratoconus / irregular corneal shape.</li>
+        <li><strong>Basic Explanation:</strong> Explain in simple terms that the front surface of the eye is thinning and bulging, which bends light unevenly and causes distorted, “ghosted” vision.</li>
+        <li><strong>Symptom Link:</strong> Connect progressive blur and ghosting (especially OS) to the corneal changes.</li>
+        <li><strong>Eye Rubbing:</strong> Explain that frequent eye rubbing can make keratoconus worse, and the importance of avoiding it.</li>
+        <li><strong>Management Options:</strong> Discuss:
+          <ul>
+            <li>Limits of spectacles, especially in more irregular cases.</li>
+            <li>Specialty contact lenses (e.g., RGP, hybrid, scleral lenses) for better quality of vision.</li>
+          </ul>
+        </li>
+        <li><strong>Long-term / Cross-linking:</strong> Mention referral for corneal cross-linking (if available/appropriate) to help stabilize progression.</li>
+        <li><strong>Follow-up:</strong> Recommend a reasonable monitoring schedule (e.g., 6–12 months, sooner if rapid change) and what symptoms should prompt earlier review.</li>
+        <li><strong>Tone &amp; Clarity:</strong> Use clear, empathetic language; avoid overly alarming wording while still emphasizing the importance of follow-up.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partially, 2 = clearly and completely addressed).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named keratoconus / irregular cornea and linked to the patient’s symptoms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described thinning/bulging of the cornea and why this causes distorted or “ghosted” vision, in lay terms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Discussed realistic optical options (spectacles limits, specialty CLs) and possible referral for cross-linking or specialist care.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Addressed progression, importance of avoiding eye rubbing, and appropriate monitoring interval / red-flag symptoms.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Calm, empathetic, organized explanation; avoided jargon; invited questions or checked understanding.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem; color:#555; font-style:italic;">
+        If you are consistently scoring 1–2 in all domains across stations, you are practicing at a level similar to OEBC interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s6-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s6-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for explaining what you’ve been noticing. You have a condition called keratoconus, which means
+      the clear front surface of the eye – the cornea – has become a bit thinner and more cone-shaped instead of
+      smoothly rounded. Because of that irregular shape, light doesn’t focus in one sharp point, and that’s why
+      things can look blurry or ‘ghosted,’ especially in your left eye.<br><br>
+
+      The glasses you’re wearing help to a point, but with this kind of irregular shape they can’t fully correct
+      the distortion. That’s why we often recommend special contact lenses, such as rigid or scleral lenses, that
+      create a more regular surface so light can focus more clearly. We’ll talk about whether those are a good fit
+      for your lifestyle and comfort.<br><br>
+
+      One really important thing is eye rubbing. Rubbing can put extra stress on the cornea and may make this
+      condition worse over time, so we’ll work on treating the itchiness and avoiding rubbing as much as possible.
+      In terms of longer-term care, there’s a procedure called corneal cross-linking that doesn’t cure keratoconus
+      but can help strengthen the cornea and reduce the risk of further progression. I’d like to refer you to a
+      corneal specialist to see if that might be appropriate for you.<br><br>
+
+      We’ll keep monitoring your vision, your prescription, and the shape of your cornea regularly – usually at
+      least once or twice a year, or sooner if you notice a sudden change in vision, more ghosting, or pain or
+      redness. How does that sound so far, and what questions do you have about these options?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS6AiFeedback() {
+    const textArea     = document.getElementById("s6-response");
+    const feedbackBox  = document.getElementById("s6-ai-box");
+    const feedbackText = document.getElementById("s6-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 6,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      // Safely read scores
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c";     // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
