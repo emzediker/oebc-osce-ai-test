@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC OSCE – Station 7 (Refractive Surgery Candidacy)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f9fafb;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 16px 16px 24px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+    .ai-box {
+      display: none;
+      margin-top: 1rem;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.9rem;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- OEBC OSCE Station 7 – Non-Interactive Refractive Surgery Candidacy (with AI feedback) -->
+<div class="oebc-station-step">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 7</h2>
+  <p style="margin-top: 0; color: #555;">
+    Module 1 – Refractive • Refractive Surgery Candidacy (Non-interactive)
+  </p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Review the Case Information</h3>
+
+    <p style="margin-bottom: 0.5rem;"><strong>Exam Context (Non-interactive Station):</strong></p>
+
+    <p style="margin-top: 0.25rem;">
+      You are reviewing the chart of a patient who has been referred for possible corneal refractive surgery.
+      There is no standardized patient in the room; your task is to interpret the data and decide on an appropriate plan.
+    </p>
+
+    <p><strong>Patient:</strong></p>
+    <ul>
+      <li>Age: 27 years</li>
+      <li>Occupation: Software developer (long hours on computer)</li>
+      <li>
+        Chief concern: “I’m so tired of glasses and contacts — I want laser eye surgery if I’m a good candidate.”
+      </li>
+    </ul>
+
+    <p><strong>Refraction (stable over last 3 years):</strong></p>
+    <ul>
+      <li>OD: −5.50 −1.00 × 180 → 20/20</li>
+      <li>OS: −5.75 −0.75 × 170 → 20/20</li>
+    </ul>
+
+    <p><strong>Corneal / Anterior Segment Findings:</strong></p>
+    <ul>
+      <li>Corneal thickness (pachymetry): OD 485 μm, OS 480 μm</li>
+      <li>Topography: with-the-rule astigmatism; borderline inferior steepening OS &gt; OD</li>
+      <li>No scarring; tear film mildly reduced (reports dryness with CL wear at day’s end)</li>
+    </ul>
+
+    <p><strong>General Health:</strong></p>
+    <ul>
+      <li>No systemic disease, no autoimmune disease reported</li>
+      <li>Medications: None</li>
+    </ul>
+
+    <p><strong>Your task (non-interactive):</strong></p>
+    <p style="margin-top: 0.25rem;">Based on the information provided, outline:</p>
+    <ol>
+      <li>Your assessment of this patient’s suitability for corneal refractive surgery.</li>
+      <li>Key risk factors or “red flags” in this case.</li>
+      <li>Your recommended management plan (including any additional testing, referrals, or alternative options).</li>
+    </ol>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Type Your Assessment &amp; Plan</h3>
+
+    <p>Type how you would document your assessment and management plan for this case:</p>
+    <textarea id="s7-response" rows="8"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s7-key').style.display='block'; this.disabled=true;"
+        style="background:#0b6bcb; color:#fff;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS7AiFeedback()"
+        style="border:1px solid #b91c1c; background:#fff5f5; color:#7f1d1d;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3: Key Points & Rubric (Hidden by Default) -->
+  <div id="s7-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Clinical Points (What OEBC-type Stations Expect)</h3>
+
+      <ul>
+        <li>
+          <strong>Assess candidacy:</strong> Recognize that this patient is a
+          <em>borderline / potentially poor candidate</em> for standard LASIK due to relatively thin corneas
+          and borderline inferior steepening (possible early keratoconus / ectasia risk).
+        </li>
+        <li>
+          <strong>Identify red flags:</strong> Thin pachymetry (&lt;500 μm), asymmetric inferior steepening,
+          high myopia, and existing dry eye symptoms with CL wear.
+        </li>
+        <li>
+          <strong>Safety first:</strong> Emphasize the need to <em>avoid</em> procedures that significantly weaken
+          the cornea if ectasia risk is present.
+        </li>
+        <li>
+          <strong>Further workup:</strong> Consider or recommend additional tests (e.g., tomography, posterior
+          elevation maps, Belin–Ambrosio indices) or referral to a corneal/refractive specialist center.
+        </li>
+        <li>
+          <strong>Alternative options:</strong> Discuss non-surgical options such as updated spectacles,
+          soft toric lenses, daily disposables, or orthokeratology if appropriate and safe.
+        </li>
+        <li>
+          <strong>Patient-centred explanation:</strong> Frame the decision in terms of long-term corneal
+          health and vision stability rather than “withholding” surgery.
+        </li>
+        <li>
+          <strong>Follow-up:</strong> Suggest appropriate monitoring for corneal stability (especially if early
+          keratoconus is suspected) and ongoing dry eye management.
+        </li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score yourself from 0–2 in each area (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">What to Look For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk Recognition</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">
+              Clearly identified thin corneas and inferior steepening as ectasia risk factors;
+              did not treat this as a straightforward LASIK case.
+            </td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Candidacy Assessment</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">
+              Provided a clear judgment on suitability (e.g., “borderline / poor candidate for standard LASIK”)
+              with justification.
+            </td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Further Testing / Referral</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">
+              Recommended appropriate additional imaging or referral to a corneal/refractive specialist
+              before any surgical decision.
+            </td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Alternative Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">
+              Suggested realistic non-surgical options (spectacles, CLs, Ortho-K if safe) and addressed dry eye management.
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Organization &amp; Clarity</strong></td>
+            <td style="padding: 6px;">
+              Response was structured, logical, and would be understandable to both examiner and patient if communicated verbally.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        If you consistently recognize red flags and prioritize corneal safety in cases like this, you are aligning
+        well with OEBC expectations for non-interactive refractive surgery candidacy stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 4: AI-style Feedback -->
+  <div id="s7-ai-box" class="ai-box">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s7-ai-text"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “27-year-old myopic patient seeking laser refractive surgery. Today’s data show moderate myopia with
+      good best-corrected acuity, but there are several corneal risk factors: both corneas are relatively
+      thin (in the 480–485 μm range) and the topography shows borderline inferior steepening in the left eye.
+      Combined with the higher myopic correction, this raises concern for possible early keratoconus or
+      increased ectasia risk if the cornea is further thinned by standard LASIK.<br><br>
+
+      Given these findings, I would consider this patient a borderline to poor candidate for standard corneal
+      refractive surgery such as LASIK, and I would not proceed based on this data alone. Instead, I would
+      recommend additional corneal imaging (tomography with posterior elevation and Belin–Ambrosio analysis)
+      and referral to a corneal/refractive specialist centre to more fully assess ectasia risk.<br><br>
+
+      In the meantime, I would review non-surgical options to address the patient’s concerns about glasses,
+      including updated spectacle lenses, daily disposable soft toric lenses for comfort, or orthokeratology
+      only if corneal stability is confirmed and it is deemed safe. I would also address the mild dry eye
+      symptoms associated with long computer use by optimizing the tear film (lubricants, screen breaks,
+      ergonomics).<br><br>
+
+      I would explain to the patient that our priority is protecting the long-term health and stability of
+      their corneas and that, while laser surgery may not be the safest option right now, there are good
+      alternatives to improve vision and comfort. Follow-up would include monitoring refraction and corneal
+      measurements at least yearly, or sooner if symptoms change, especially if any signs of progressive
+      ectasia appear.”
+    </div>
+  </div>
+
+</div>
+
+<script>
+  async function getS7AiFeedback() {
+    const textArea    = document.getElementById("s7-response");
+    const feedbackBox = document.getElementById("s7-ai-box");
+    const feedbackText = document.getElementById("s7-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 7,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data = await res.json();
+      const rubric = data.rubric || {};
+
+      // Safely read scores for each domain
+      const riskScore        = rubric.risk_recognition?.score       ?? 0;
+      const candidacyScore   = rubric.candidacy_assessment?.score   ?? 0;
+      const testingScore     = rubric.further_testing_referral?.score ?? 0;
+      const altMgmtScore     = rubric.alternative_management?.score ?? 0;
+      const orgScore         = rubric.organization_clarity?.score   ?? 0;
+
+      let totalScore = riskScore + candidacyScore + testingScore + altMgmtScore + orgScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(riskScore)}
+            &nbsp;<strong>Risk recognition:</strong>
+            ${rubric.risk_recognition?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(candidacyScore)}
+            &nbsp;<strong>Candidacy assessment:</strong>
+            ${rubric.candidacy_assessment?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(testingScore)}
+            &nbsp;<strong>Further testing / referral:</strong>
+            ${rubric.further_testing_referral?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(altMgmtScore)}
+            &nbsp;<strong>Alternative management:</strong>
+            ${rubric.alternative_management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(orgScore)}
+            &nbsp;<strong>Organization &amp; clarity:</strong>
+            ${rubric.organization_clarity?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
+
+</body>
+</html>
