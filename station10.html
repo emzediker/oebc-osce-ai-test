@@ -1,0 +1,272 @@
+<!-- OEBC OSCE Station 10 – Pediatric Esotropia (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 10</h2>
+  <p style="margin-top: 0; color: #555;">Oculomotor • Esotropia / Pediatric Strabismus (Interactive)</p>
+
+  <!-- Step 1: Read the Station -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have 8 minutes to complete this type of communication station.</p>
+
+    <p><strong>Scenario:</strong><br>
+      A 4-year-old child is brought in by their parents because they have “noticed one eye turning in” for the past 6–8 months. It seems worse when the child is tired or looking at near. There is no history of trauma or serious illness. Birth history is normal.
+    </p>
+
+    <p>On exam, you find:</p>
+    <ul>
+      <li>Best corrected visual acuity: 20/25 OD, 20/40 OS</li>
+      <li>Constant esotropia OS at near and distance (Cover test and alternate cover test)</li>
+      <li>No obvious neurological signs; anterior segment and fundus appear normal in both eyes</li>
+      <li>Hyperopic refractive error with greater hyperopia OS than OD</li>
+    </ul>
+
+    <p><strong>Your task:</strong> In <em>clear, parent-friendly language</em>, explain to the parents:</p>
+    <ul>
+      <li>What the condition is and why the eye is turning in</li>
+      <li>How this can affect vision and depth perception (including amblyopia risk)</li>
+      <li>The main treatment options (e.g., glasses, possible patching/penalization, and potential surgical referral)</li>
+      <li>Why early treatment and follow-up are important</li>
+      <li>What to expect over time and how you will monitor their child</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say directly to the parents:</p>
+    <textarea id="s10-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s10-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS10AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s10-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+      <ul>
+        <li><strong>Clear diagnosis:</strong> Explain that the child has an eye turn called <em>esotropia</em>, where one eye turns inward.</li>
+        <li><strong>Cause in simple terms:</strong> Relate it to how the brain is using the two eyes together and/or the child’s farsighted prescription (accommodative component if appropriate).</li>
+        <li><strong>Impact on vision:</strong> Explain that if one eye is constantly turned in, the brain may “ignore” that eye, causing weaker vision (amblyopia) and reduced depth perception.</li>
+        <li><strong>Treatment options:</strong>
+          <ul>
+            <li>Glasses to correct the hyperopia and help straighten the eyes.</li>
+            <li>Possible patching or penalization to strengthen the weaker eye.</li>
+            <li>Discuss potential referral to a pediatric ophthalmologist/strabismus surgeon if needed.</li>
+          </ul>
+        </li>
+        <li><strong>Urgency &amp; follow-up:</strong> Emphasize that early, consistent treatment is important to maximize vision and binocularity, and that the child will need regular follow-up.</li>
+        <li><strong>Prognosis &amp; expectations:</strong> Give realistic but reassuring expectations: many children improve very well with glasses and therapy, but some still require surgery.</li>
+        <li><strong>Parent-centered communication:</strong> Use supportive, non-blaming language; invite questions; reassure that they are doing the right thing by bringing the child in.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete). Total possible = 10.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis &amp; Cause</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named esotropia and explained in simple terms why the eye is turning in (including prescription/binocularity explanation).</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Impact on Vision</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described risk of amblyopia and reduced depth perception if untreated.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Treatment Plan</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Outlined glasses, possible patching/penalization, and when surgical referral may be needed.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Emphasized importance of early, ongoing care and specified follow-up interval/monitoring.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication &amp; Support</strong></td>
+            <td style="padding: 6px;">Used clear, empathetic language, avoided blame, and invited questions from the parents.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem; color:#555; font-style:italic;">
+        If you can consistently cover all five domains across pediatric strabismus cases, you’re very close to OEBC-level performance on these interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s10-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s10-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thank you for bringing your child in today – you’ve done the right thing by getting this checked.  
+      What we’re seeing is something called <strong>esotropia</strong>, which means that one eye is turning
+      inward. In your child’s case, the left eye is turning in most of the time, both at distance and at
+      near.<br><br>
+
+      Because the eye is turning in, the brain has trouble using both eyes together as a team. To avoid
+      seeing double, the brain can start to ‘ignore’ the eye that is turned in, and over time that eye can
+      become weaker – we call that <strong>amblyopia</strong> or ‘lazy eye.’ That’s why we’re seeing a little
+      difference in the vision between the two eyes today.<br><br>
+
+      We also found that your child is a bit farsighted, especially in the left eye. When a young child has
+      extra farsightedness, they have to work harder to focus, and that extra focusing effort can trigger the
+      eye turn. The first step in treatment is usually a pair of glasses that fully correct that farsighted
+      prescription. Very often, the glasses alone help the eyes line up much better.<br><br>
+
+      In addition, because the left eye is currently the weaker eye, we may recommend <strong>patching</strong>
+      or a drop in the stronger eye for part of the day. That gently ‘forces’ the brain to use the weaker eye
+      and helps strengthen its vision. Later on, if the eyes are still turning after we’ve done the best we can
+      with glasses and patching, we might talk about a referral to a pediatric eye surgeon to discuss whether
+      surgery would help with alignment.<br><br>
+
+      The most important thing is that we start and stick with treatment while your child is still young –
+      this is the time when we can make the biggest difference. I’d like to see you back in a few months to
+      check how the glasses are working, monitor the eye turn, and see how the vision in the left eye is
+      improving. In the meantime, please don’t feel guilty – this is a common condition and nothing you did
+      caused it. Do you have any questions or worries I can go over with you?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS10AiFeedback() {
+    const textArea     = document.getElementById("s10-response");
+    const feedbackBox  = document.getElementById("s10-ai-box");
+    const feedbackText = document.getElementById("s10-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 10,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      // Safely read scores (0–2) for each domain
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
