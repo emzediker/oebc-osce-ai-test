@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC Mock OSCE – Station 9 (Convergence Insufficiency)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 20px;
+      background: #f9fafb;
+      color: #111827;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px 20px 24px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+    h2 {
+      margin-bottom: 0.25rem;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .primary-btn {
+      background: #0b6bcb;
+      color: #fff;
+    }
+    .ai-btn {
+      border: 1px solid #b91c1c;
+      background: #fff5f5;
+      color: #7f1d1d;
+    }
+    .ai-box {
+      display: none;
+      margin-top: 1rem;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px dashed #f97316;
+      background: #fff7ed;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- OEBC OSCE Station 9 – Convergence Insufficiency (Interactive, with AI feedback) -->
+<div class="oebc-station-step">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 9</h2>
+  <p style="margin-top: 0; color: #555;">
+    Oculomotor • Convergence Insufficiency (Interactive)
+  </p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE, you will have 8 minutes for the entire interaction.</p>
+
+    <p><strong>Scenario:</strong><br>
+      A 15-year-old student reports headaches, blurry vision, and words “moving on the page” after reading for
+      10–15 minutes. They say they avoid homework because it gives them eye strain. Near VA is 20/20 OU. Cover
+      test shows 6Δ exophoria at near. NPC is receded at 14 cm with break, 20 cm with recovery. No other ocular
+      findings.
+    </p>
+
+    <p><strong>Your task:</strong>
+      Explain the diagnosis of convergence insufficiency and provide a clear, patient-friendly plan that includes:
+      what CI is, why symptoms occur, what home therapy looks like, expected timeline, and when to follow up.
+    </p>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient (and/or parent):</p>
+    <textarea id="s9-response" rows="8"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        class="primary-btn"
+        onclick="document.getElementById('s9-key').style.display='block'; this.disabled=true;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        class="ai-btn"
+        onclick="getS9AiFeedback()">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s9-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+      <ul>
+        <li>State the diagnosis clearly: convergence insufficiency.</li>
+        <li>Explain that the eyes have difficulty turning inward for near tasks.</li>
+        <li>Link to symptoms: headaches, eye strain, words moving, difficulty sustaining near work.</li>
+        <li>Describe home therapy options (e.g., pencil push-ups, Brock string, jump convergence).</li>
+        <li>Set expectations: improvement usually takes weeks, with consistent daily practice.</li>
+        <li>Reassure: the condition is common and treatable.</li>
+        <li>Recommend follow-up to monitor progress (e.g., 4–6 weeks).</li>
+        <li>Use reassuring, clear, patient (and parent) friendly language.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e5e7eB; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Said “convergence insufficiency” and explained the inward-eye misalignment.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Connected the eye teaming issue to the child’s symptoms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Outlined appropriate home therapy &amp; expectations.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Discussed timeline of improvement &amp; follow-up timing.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Clear, empathetic, adapted for youth and parents.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        This mirrors the communication scoring used in OEBC interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback -->
+  <div id="s9-ai-box" class="ai-box">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s9-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for explaining what’s been going on. What you’re describing fits with something called
+      <strong>convergence insufficiency</strong>. That means your eyes have trouble turning in together and
+      staying aligned when you look up close to read or do homework. When the eyes don’t team well at near,
+      your brain has to work extra hard to keep things single and clear, which is why you notice headaches,
+      eye strain, and that ‘words moving on the page’ feeling after a short time.<br><br>
+
+      The good news is that this is <strong>common and very treatable</strong>. The main treatment is a set of
+      simple eye exercises you’ll do at home to train your eyes to work together better. Examples include
+      pencil push-ups, where you slowly bring a small target in toward your nose while keeping it single,
+      and exercises with a Brock string or other convergence activities. We’ll show you exactly how to do
+      these and give you clear instructions to take home.<br><br>
+
+      Usually we ask you to practice a few minutes a day, most days of the week. It can take several weeks
+      before you really notice a big difference, but many patients start to feel less strain and fewer
+      headaches as their eyes get stronger. I’d like to see you back in about 4–6 weeks to check your
+      progress, repeat some of the tests we did today, and adjust the plan if needed. If you notice any
+      sudden changes in your vision, double vision that doesn’t go away, or anything that worries you,
+      let us know sooner. Do you have any questions about what convergence insufficiency is or what the
+      home exercises will look like?”
+    </div>
+  </div>
+
+</div>
+
+<script>
+  async function getS9AiFeedback() {
+    const textArea     = document.getElementById("s9-response");
+    const feedbackBox  = document.getElementById("s9-ai-box");
+    const feedbackText = document.getElementById("s9-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 9,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
+
+</body>
+</html>
