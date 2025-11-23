@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OEBC OSCE – Station 4 (Astigmatism)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f6;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- OEBC OSCE Station 4 – Refractive Astigmatism (Interactive, with AI feedback) -->
+<div class="oebc-station-step">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 4</h2>
+  <p style="margin-top: 0; color: #555;">Module 1 – Refractive • Astigmatism / Dioptric Defects (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have about 8 minutes for this type of interactive station.</p>
+
+    <p><strong>Scenario:</strong><br>
+      A 32-year-old office worker reports that text looks “shadowy” and “streaky” both at distance and near,
+      especially after long computer sessions. She denies diplopia, flashes, or floaters. No headaches.
+      <br><br>
+      Refraction (subjective, best-corrected):<br>
+      OD: –1.00 –1.50 × 180 → 20/20<br>
+      OS: –0.50 –1.25 × 175 → 20/20<br>
+      Binocular balance is good. Ocular health is normal, including cornea and fundus.
+    </p>
+
+    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear, patient-friendly
+      language. Your explanation <em>must</em> include:
+    </p>
+    <ul>
+      <li>Diagnosis (astigmatism with myopia).</li>
+      <li>Simple explanation of how the eye focuses light in two meridians, causing “shadowy” or “smeared” vision.</li>
+      <li>Correction options (glasses vs contact lenses; note that lens adaptation may be needed).</li>
+      <li>Expectations and adaptation period to a new toric prescription.</li>
+      <li>Follow-up / recall recommendations and when to return sooner.</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient as if you were in the exam room:</p>
+    <textarea id="s4-response" rows="8"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s4-key').style.display='block'; this.disabled=true;"
+        style="background: #0b6bcb; color: #fff;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS4AiFeedback()"
+        style="border: 1px solid #b91c1c; background: #fff5f5; color: #7f1d1d;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s4-key" style="display:none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-style Stations Expect)</h3>
+      <ul>
+        <li><strong>Diagnosis:</strong> Clearly state that she has astigmatism (with a small amount of myopia), not an eye disease.</li>
+        <li><strong>Optics explanation:</strong> Describe that the front of the eye (cornea and/or lens) is shaped more like a football than a soccer ball, so light focuses at two different points.</li>
+        <li><strong>Symptom link:</strong> Connect this to “shadowy” or “streaky” letters and eye strain, especially with screens.</li>
+        <li><strong>Correction options:</strong>
+          <ul>
+            <li>Glasses with astigmatic (toric) lenses.</li>
+            <li>Contact lenses (toric soft lenses) if lifestyle-appropriate.</li>
+          </ul>
+        </li>
+        <li><strong>Adaptation:</strong> Explain that the new lenses may feel “different” or slightly distorted at first and that adaptation over several days to a couple of weeks is normal.</li>
+        <li><strong>Prognosis &amp; follow-up:</strong> Reassure that ocular health is normal; recommend a reasonable recall (e.g., yearly) and instructions to return sooner if vision changes or symptoms worsen.</li>
+        <li><strong>Communication style:</strong> Use plain language, check for understanding, and invite questions.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score each area 0–2 (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named astigmatism (with myopia) and reassured it is not a disease.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained the “football vs soccer ball” concept or equivalent, in plain language.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Symptom Link</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Connected optics to her shadowy/streaky vision and computer strain.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Outlined appropriate correction options and when toric CLs might be used.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Prognosis &amp; Communication</strong></td>
+            <td style="padding: 6px;">Mentioned adaptation, normal ocular health, recall interval, and used clear, empathetic language.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem; color:#555; font-style:italic;">
+        Use this rubric to see if your response hits the same communication domains that OEBC raters focus on
+        in interactive astigmatism cases.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s4-ai-box"
+       style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+              border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s4-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top:0.75rem; font-size:0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “What we found today is that you have a combination of a small amount of nearsightedness and something called
+      astigmatism. That means the front surface of your eye is a little more like a football than a perfectly round
+      soccer ball, so light doesn’t come to a single sharp focus. Instead it focuses in two directions, which is why
+      letters can look a bit shadowy or streaky, especially after long computer sessions.<br><br>
+
+      The good news is that this is very common and not an eye disease. Your eye health looks completely normal.
+      We can correct this with glasses that have special astigmatism power built in, or with toric contact lenses if
+      that suits your lifestyle. When you first start wearing the new prescription, things may feel slightly ‘off’ or
+      a bit distorted for a few days while your brain adapts, but most people adjust very well.<br><br>
+
+      I recommend that you wear the glasses consistently for computer and detailed work, and we’ll review how
+      you’re feeling at your next yearly checkup, or sooner if you notice any new changes like a big drop in vision,
+      flashes of light, or a curtain in your side vision. Do you have any questions or concerns about the prescription
+      or how things might look when you first put the glasses on?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS4AiFeedback() {
+    const textArea     = document.getElementById("s4-response");
+    const feedbackBox  = document.getElementById("s4-ai-box");
+    const feedbackText = document.getElementById("s4-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 4,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c";      // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; } // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; } // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
+
+</body>
+</html>
