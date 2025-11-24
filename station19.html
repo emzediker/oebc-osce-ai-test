@@ -1,174 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OEBC OSCE — Station 19</title>
-<style>
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #f7f7f7;
-  }
+<!-- OEBC OSCE Station 19 – Dry Eye / Lacrimal Dysfunction (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-  .oebc-station-step {
-    max-width: 900px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px 24px;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-  }
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 19</h2>
 
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-family: inherit;
-    font-size: 0.95rem;
-  }
+  <p style="margin-top: 0; color: #555;">Anterior Segment &bull; Dry Eye / Lacrimal Dysfunction (Interactive)</p>
 
-  button {
-    padding: 9px 16px;
-    border-radius: 999px;
-    font-weight: 600;
-    cursor: pointer;
-  }
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-  .primary-btn {
-    border: none;
-    background: #0b6bcb;
-    color: #fff;
-  }
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-  .section-box {
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #cfd8e3;
-    background: #f5f7fb;
-    margin-bottom: 1rem;
-  }
+    <p><strong>Scenario:</strong>
+      <br>A 42-year-old teacher reports burning, gritty irritation and fluctuating vision throughout the day. She says her eyes &ldquo;water all the time,&rdquo; especially outdoors or in air-conditioned rooms. She uses OTC redness-relief drops several times daily. Tear breakup time is reduced, and meibomian gland expression shows mild obstruction.</p>
 
-  .rubric-box {
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    background: #fff;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-
-  th, td {
-    padding: 6px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-</style>
-</head>
-
-<body>
-
-<div class="oebc-station-step">
-
-  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 19</h2>
-  <p style="margin-top: 0; color: #555;">Anterior Segment • Dry Eye / Lacrimal Dysfunction (Interactive)</p>
-
-  <!-- Step 1 -->
-  <div class="section-box">
-    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
-
-    <p><strong>Scenario:</strong><br>
-    A 42-year-old teacher reports burning, gritty irritation and fluctuating vision throughout the day. She says her eyes “water all the time,” especially outdoors or in air-conditioned rooms. She uses OTC redness-relief drops several times daily. Tear breakup time is reduced, and meibomian gland expression shows mild obstruction.</p>
-
-    <p><strong>Your task:</strong><br>
-    Explain the diagnosis and management plan in clear, patient-friendly language. Include: what dry eye means, why tearing happens despite dryness, recommended treatments, lifestyle modifications, expectations, and appropriate follow-up.</p>
+    <p><strong>Your task:</strong>
+      <br>Explain the diagnosis and management plan in clear, patient-friendly language. Include: what dry eye means, why tearing happens despite dryness, recommended treatments, lifestyle modifications, expectations, and appropriate follow-up.</p>
   </div>
 
-  <!-- Step 2 -->
-  <div class="section-box" style="background:#fff; border:1px solid #e0e0e0;">
-    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-    <textarea id="s19-response" rows="8"></textarea>
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
 
-    <button class="primary-btn" type="button"
-      onclick="document.getElementById('s19-key').style.display='block'; this.disabled=true;"
-      style="margin-top: 1rem;">
-      Show Key Points & Rubric
-    </button>
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s19-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s19-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS19AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
   </div>
 
-  <!-- Step 3 + 4 -->
-  <div id="s19-key" style="display:none;">
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s19-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
 
-    <div class="section-box">
       <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
 
       <ul>
-        <li>State the diagnosis clearly (dry eye disease; evaporative component due to MGD).</li>
-        <li>Explain reflex tearing and why “watering” occurs.</li>
-        <li>Discuss environmental triggers.</li>
-        <li>Provide treatment plan:
+        <li>State the diagnosis clearly (dry eye disease; evaporative component due to meibomian gland dysfunction).</li>
+        <li>Explain why eyes can water when dry (&ldquo;reflex tearing&rdquo; from irritation).</li>
+        <li>Discuss environmental/light sensitivity triggers (AC, fans, long teaching days).</li>
+        <li>Recommend proper treatment plan:
           <ul>
             <li>preservative-free artificial tears</li>
             <li>warm compresses + lid hygiene</li>
-            <li>reduce or eliminate redness-relief drops</li>
-            <li>possible omega-3 or meibomian gland therapies</li>
+            <li>reducing or eliminating redness-relief drops</li>
+            <li>possible omega-3 supplementation or gland expression</li>
           </ul>
         </li>
-        <li>Give realistic expectations (chronic condition, improves with consistency).</li>
-        <li>State follow-up interval (4–6 weeks).</li>
-        <li>Use clear, supportive communication.</li>
+        <li>Set expectations: chronic condition that improves with consistent care.</li>
+        <li>State when to return (e.g., 4&ndash;6 weeks for re-evaluation).</li>
+        <li>Use clear, supportive, patient-friendly language.</li>
       </ul>
     </div>
 
-    <div class="rubric-box">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
       <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
 
-      <table>
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
           <tr>
-            <th>Domain</th>
-            <th>Criteria</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Diagnosis</strong></td>
-            <td>Named dry eye disease + MGD; linked to symptoms.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named dry eye + MGD and connected symptoms.</td>
           </tr>
           <tr>
-            <td><strong>Explanation</strong></td>
-            <td>Explained dryness, reflex tearing, and fluctuating vision.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained dryness, reflex tearing, and fluctuation clearly.</td>
           </tr>
           <tr>
-            <td><strong>Management</strong></td>
-            <td>Provided realistic treatment options.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Provided realistic, safe treatment options.</td>
           </tr>
           <tr>
-            <td><strong>Prognosis & Follow-Up</strong></td>
-            <td>Set expectations + follow-up interval.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave expectations + appropriate follow-up interval.</td>
           </tr>
           <tr>
-            <td><strong>Communication</strong></td>
-            <td>Clear, empathetic, patient-friendly.</td>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Empathetic, clear, organized communication.</td>
           </tr>
         </tbody>
       </table>
 
-      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
-        Hitting all domains consistently means you’re communicating at OEBC interactive-station level.
-      </p>
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">Hitting all domains consistently means you&#39;re communicating at OEBC interactive-station level.</p>
     </div>
-
   </div>
 
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s19-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s19-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “From your symptoms and the tests we did today, you have something called <strong>dry eye disease</strong>,
+      mainly from the oil glands in your eyelids not working as well as they should. When the surface of the
+      eye gets dry and irritated, your eyes can actually <strong>water more</strong> as a reflex, which is why
+      you feel both dryness and tearing at the same time.<br><br>
+
+      The good news is this is very common and usually manageable. The plan I’m recommending is:
+      <strong>preservative-free artificial tears</strong> during the day to keep the surface moist, and
+      <strong>warm compresses and lid massage</strong> to help open up those oil glands so the tears don’t
+      evaporate as quickly. I’d also like you to cut back on the ‘redness’ drops, since they can actually
+      make dryness worse if used often.<br><br>
+
+      Because you’re in air-conditioned and dry environments a lot with teaching, taking short ‘blink breaks,’
+      staying hydrated, and using a humidifier if possible can also help. Dry eye is usually a <strong>chronic
+      condition</strong>, so it’s less about curing it overnight and more about keeping things comfortable and
+      stable over time.<br><br>
+
+      I’d like to see you again in about <strong>4–6 weeks</strong> to make sure your symptoms and the surface
+      of the eye are improving and to adjust the plan if needed. If you ever notice a big change in your
+      vision, severe pain, or a lot of discharge, let us know right away. Does this plan make sense, and do
+      you have any questions about the drops or lid treatments?”
+    </div>
+  </div>
 </div>
 
-</body>
-</html>
+<script>
+  async function getS19AiFeedback() {
+    const textArea     = document.getElementById("s19-response");
+    const feedbackBox  = document.getElementById("s19-ai-box");
+    const feedbackText = document.getElementById("s19-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 19,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
