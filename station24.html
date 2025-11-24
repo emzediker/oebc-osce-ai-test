@@ -1,175 +1,262 @@
 <!-- OEBC OSCE Station 24 – Episcleritis vs Scleritis (Interactive, with AI feedback) -->
-<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-  <h2 style="margin-bottom:0.25rem;">OEBC Mock OSCE – Station 24</h2>
-  <p style="margin-top:0;color:#555;">Anterior Segment • Episcleritis vs Scleritis (Interactive)</p>
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 24</h2>
 
-  <!-- Step 1 -->
-  <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
-    <h3 style="margin-top:0;">Step 1 – Read the Station</h3>
+  <p style="margin-top: 0; color: #555;">Ocular Disorders &ndash; Anterior Segment &bull; Episcleritis vs Scleritis (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have a limited time (e.g., 8 minutes) to complete the station.</p>
 
     <p><strong>Scenario:</strong></p>
-    <p>A 48-year-old patient presents with a red, painful right eye that has been worsening over 2–3 days. They report a deep, dull ache that may radiate to the brow/cheek and sometimes wakes them at night. Tears/OTC drops have not helped. Vision is slightly blurred.</p>
 
-    <p>On exam: sectoral deep redness with a violaceous hue, vessels do NOT fully blanch with phenylephrine, eye is tender to palpation. No discharge. Patient has rheumatoid arthritis.</p>
+    <p>A 48-year-old patient presents with a red, painful right eye that has been getting worse over the last 2&ndash;3 days. They describe a deep, dull ache that sometimes wakes them at night and radiates to the brow and cheek. Over-the-counter artificial tears have not helped. They deny discharge or itch. Vision is slightly blurred in the affected eye.</p>
+
+    <p>On exam, you note a sectoral area of deep redness with a violaceous hue. The vessels do not fully blanch with topical phenylephrine, and the eye is tender to palpation. There is no obvious corneal staining and no discharge. The patient has a history of rheumatoid arthritis.</p>
 
     <p><strong>Your task:</strong> Explain to the patient:</p>
+
     <ul>
-      <li>Likely diagnosis and difference from episcleritis</li>
-      <li>Why this is potentially serious</li>
-      <li>Systemic link (RA)</li>
-      <li>Next tests/referrals</li>
-      <li>Treatment urgency</li>
-      <li>Red-flag symptoms requiring urgent care</li>
+      <li>What the likely diagnosis is (and how it differs from a simple &ldquo;irritation&rdquo; or episcleritis).</li>
+      <li>Why this is potentially serious and how it may be related to their systemic condition.</li>
+      <li>What further tests/referrals are needed (e.g., systemic workup, rheumatology, imaging if indicated).</li>
+      <li>The treatment plan and urgency (e.g., topical vs systemic meds, co-management with ophthalmology).</li>
+      <li>Red-flag symptoms and when to seek urgent care.</li>
     </ul>
   </div>
 
-  <!-- Step 2 -->
-  <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
-    <h3 style="margin-top:0;">Step 2 – Speak (Type) Your Response</h3>
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-    <p>Type what you would say to the patient:</p>
-    <textarea id="s24-response" rows="8" style="width:100%;padding:10px;border-radius:6px;border:1px solid #ccc;font-family:inherit;font-size:0.95rem;"></textarea>
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
 
-    <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:8px;">
+    <p>Type what you would say to the patient in clear, patient-friendly language:</p>
+    <textarea id="s24-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
       <button type="button"
         onclick="document.getElementById('s24-key').style.display='block'; this.disabled=true;"
-        style="padding:9px 16px;border-radius:999px;border:none;background:#0b6bcb;color:#fff;font-weight:600;cursor:pointer;">
-        Show Key Points & Rubric
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
       </button>
 
       <button type="button"
         onclick="getS24AiFeedback()"
-        style="padding:9px 16px;border-radius:999px;border:1px solid #b91c1c;background:#fff5f5;color:#7f1d1d;font-weight:600;cursor:pointer;">
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
         Get AI-style Feedback (beta)
       </button>
     </div>
   </div>
 
-  <!-- Step 3 + 4 Key & Rubric -->
-  <div id="s24-key" style="display:none;">
-    <div style="padding:16px;border-radius:8px;border:1px solid #cfd8e3;background:#f5f7fb;margin-bottom:1rem;">
-      <h3 style="margin-top:0;">Key Communication Points (What OEBC Expects)</h3>
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s24-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-Style Stations Expect)</h3>
+
       <ul>
-        <li>Diagnosis likely <strong>scleritis</strong> vs simple episcleritis</li>
-        <li>Deeper violaceous redness, severe boring pain, night pain</li>
-        <li>Systemic RA link</li>
-        <li>Urgent co-management (ophthalmology ± rheumatology)</li>
-        <li>Systemic meds may be required</li>
-        <li>Red flags: worsening pain, reduced vision, new diplopia</li>
-        <li>Use clear, organized, empathetic style</li>
+        <li><strong>Diagnosis:</strong> Clearly state that this looks more like <em>scleritis</em> than simple &ldquo;surface irritation&rdquo; or episcleritis.</li>
+        <li><strong>Difference from episcleritis:</strong> Deeper, violaceous redness; more severe, boring pain; often worse at night; more strongly associated with systemic autoimmune disease.</li>
+        <li><strong>Systemic link:</strong> Explain that scleritis can be related to conditions like rheumatoid arthritis and that controlling the body&rsquo;s inflammation is important for the eye and overall health.</li>
+        <li><strong>Urgency &amp; referral:</strong> Emphasize that this requires prompt evaluation and treatment, often in co-management with ophthalmology and possibly rheumatology.</li>
+        <li><strong>Treatment concept:</strong> Mention that treatment often involves stronger anti-inflammatory or systemic medications (not just &ldquo;eye drops from the store&rdquo;) and may require blood tests or imaging.</li>
+        <li><strong>Red flags:</strong> Worsening pain, sudden drop in vision, new double vision, or pain with eye movement should prompt urgent reassessment.</li>
+        <li><strong>Communication style:</strong> Reassuring but clear about seriousness; avoid blame; invite questions and confirm understanding.</li>
       </ul>
     </div>
 
-    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;background:#fff;">
-      <h3 style="margin-top:0;">Self-Assessment Rubric</h3>
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
 
-      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = clear and complete). Total: 0&ndash;12.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
           <tr>
-            <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Domain</th>
-            <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Criteria</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Diagnosis</strong></td>
-            <td style="border-bottom:1px solid #eee;padding:6px;">Identified likely scleritis; distinguished from episcleritis</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly identified likely scleritis and distinguished it from simple &ldquo;red eye&rdquo; or episcleritis.</td>
           </tr>
           <tr>
-            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Explanation</strong></td>
-            <td style="border-bottom:1px solid #eee;padding:6px;">Explained deeper inflammation and severe pain</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described in plain language what the sclera is, why it hurts, and why this is deeper than a surface irritation.</td>
           </tr>
           <tr>
-            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Systemic Link</strong></td>
-            <td style="border-bottom:1px solid #eee;padding:6px;">Connected RA to scleritis</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Systemic Link</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Connected the eye condition to rheumatoid arthritis or autoimmune disease and explained why systemic workup matters.</td>
           </tr>
           <tr>
-            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Management & Urgency</strong></td>
-            <td style="border-bottom:1px solid #eee;padding:6px;">Explained urgent referral + possible systemic treatment</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Urgency</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained need for prompt treatment, possible systemic meds, and co-management with ophthalmology/rheumatology.</td>
           </tr>
           <tr>
-            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Red Flags</strong></td>
-            <td style="border-bottom:1px solid #eee;padding:6px;">Gave key symptoms requiring urgent care</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Red-Flag Education</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Listed key symptoms that should trigger urgent care (worsening pain, decreased vision, new symptoms).</td>
           </tr>
           <tr>
-            <td style="padding:6px;"><strong>Communication</strong></td>
-            <td style="padding:6px;">Clear, empathetic, patient-centered</td>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Tone was clear, organized, empathetic, and patient-centred; avoided jargon or explained it when used.</td>
           </tr>
         </tbody>
       </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">If you consistently meet all domains on stations like this, you&rsquo;re practicing at an OEBC-style interactive communication level for anterior segment inflammatory disease.</p>
     </div>
   </div>
 
-  <!-- Step 5: AI Feedback -->
-  <div id="s24-ai-box" style="display:none;margin-top:1rem;padding:14px;border-radius:8px;border:1px dashed #f97316;background:#fff7ed;">
-    <h3 style="margin-top:0;font-size:1rem;">AI-style Feedback (beta)</h3>
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s24-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
     <div id="s24-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;From your description and our exam today, the redness and deep aching pain look more like a problem in the
+      <strong>deeper white coat of the eye</strong>, called the sclera, rather than just a surface irritation. This is called
+      <strong>scleritis</strong>, and it&rsquo;s different from a mild &lsquo;red eye&rsquo; because the inflammation is deeper and can be
+      more serious, especially in people with conditions like rheumatoid arthritis.<br><br>
+
+      The pain you feel, especially at night and around the brow and cheek, fits with this deeper inflammation. The good news
+      is that we&rsquo;ve caught it, and your cornea and vision are still in relatively good shape, but we do need to treat it
+      promptly and look at how it ties in with your general health.<br><br>
+
+      The next steps are to arrange treatment with stronger anti-inflammatory medication, often in partnership with an
+      eye specialist (ophthalmologist) and your rheumatologist or family doctor. We may also need some blood work or imaging
+      to make sure there isn&rsquo;t a more aggressive underlying process. At home, there aren&rsquo;t over-the-counter drops that can
+      fix this on their own, so it&rsquo;s important to follow the prescription and follow-up plan closely.<br><br>
+
+      If you notice the pain suddenly worsening, your vision dropping, the eye becoming much more red, or new symptoms like
+      double vision or pain when you move the eye, those are signs to be seen urgently. Otherwise, we&rsquo;ll see you again very
+      soon to monitor how you&rsquo;re responding to treatment. Does this explanation fit with what you&rsquo;ve been feeling, and what
+      questions do you have?&rdquo;
+    </div>
   </div>
 </div>
 
 <script>
-async function getS24AiFeedback() {
-  const textArea     = document.getElementById("s24-response");
-  const feedbackBox  = document.getElementById("s24-ai-box");
-  const feedbackText = document.getElementById("s24-ai-text");
+  async function getS24AiFeedback() {
+    const textArea     = document.getElementById("s24-response");
+    const feedbackBox  = document.getElementById("s24-ai-box");
+    const feedbackText = document.getElementById("s24-ai-text");
 
-  const userResponse = textArea.value.trim();
-  if (!userResponse) {
-    alert("Type something first so the AI has something to grade!");
-    return;
-  }
-
-  feedbackBox.style.display = "block";
-  feedbackText.textContent = "Working on your feedback…";
-
-  try {
-    const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
-      },
-      body: JSON.stringify({
-        station_number: 24,
-        user_response: userResponse
-      })
-    });
-
-    const data = await res.json();
-    if (!res.ok) {
-      feedbackText.textContent = "Supabase error " + res.status + ":\n" + JSON.stringify(data);
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
       return;
     }
 
-    const rubric = data.rubric || {};
-    const score = name => rubric[name]?.score ?? 0;
-    const comment = name => rubric[name]?.comment || "No specific feedback.";
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
 
-    function badge(s) {
-      let bg = "#fee2e2", c = "#b91c1c";
-      if (s === 1) { bg="#fef3c7"; c="#92400e"; }
-      if (s === 2) { bg="#dcfce7"; c="#166534"; }
-      return `<span style="display:inline-block;min-width:2.5rem;padding:2px 8px;border-radius:999px;font-size:0.75rem;font-weight:600;text-align:center;background:${bg};color:${c};">${s}/2</span>`;
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 24,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/12</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
     }
-
-    const total = data.total_score ?? (
-      score("diagnosis") + score("explanation") + score("management") +
-      score("prognosis_followup") + score("communication")
-    );
-
-    feedbackText.innerHTML = `
-      <p>${badge(score("diagnosis"))} <strong>Diagnosis:</strong> ${comment("diagnosis")}</p>
-      <p>${badge(score("explanation"))} <strong>Explanation:</strong> ${comment("explanation")}</p>
-      <p>${badge(score("management"))} <strong>Management:</strong> ${comment("management")}</p>
-      <p>${badge(score("prognosis_followup"))} <strong>Follow-up:</strong> ${comment("prognosis_followup")}</p>
-      <p>${badge(score("communication"))} <strong>Communication:</strong> ${comment("communication")}</p>
-      <p><strong>Total:</strong> ${total}/10</p>
-      <p>${data.overall_comment || ""}</p>
-    `;
-  } catch (err) {
-    feedbackText.textContent = "Network/setup error: " + err.message;
   }
-}
 </script>
