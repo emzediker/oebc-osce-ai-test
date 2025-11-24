@@ -1,0 +1,264 @@
+<!-- OEBC OSCE Station 11 – Divergence Insufficiency in an Older Adult (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 11</h2>
+
+  <p style="margin-top: 0; color: #555;">Oculomotor &bull; Divergence Insufficiency in an Older Adult (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE you would have 8 minutes to complete this station.</p>
+
+    <p><strong>Scenario:</strong></p>
+
+    <p>A 68-year-old man reports that for the past 3&ndash;4 months he has been seeing double at <em>distance</em>, especially when driving and watching television. He says, &ldquo;If I close one eye the double goes away.&rdquo; He is comfortable for near tasks such as reading and using his tablet.</p>
+
+    <p>On exam, best-corrected acuity is 20/20 OU. Cover test shows a small, comitant esotropia at distance and only a small esophoria at near. Ocular motility is full in all gazes, pupils are normal, and there are no ptosis or neurological signs. Slit lamp and dilated fundus exam are unremarkable.</p>
+
+    <p><strong>Your task:</strong> In clear, patient-friendly language, explain:</p>
+
+    <ul>
+      <li>What is causing his double vision (diagnosis of divergence insufficiency&ndash;type deviation).</li>
+      <li>Why it mainly affects distance and not near.</li>
+      <li>How you can help him (e.g., prism in distance glasses, monitoring, and when neurologic workup is warranted).</li>
+      <li>What symptoms would be &ldquo;red flags&rdquo; requiring urgent reassessment.</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s11-response" rows="8" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s11-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS11AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s11-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-style Stations Expect)</h3>
+
+      <ul>
+        <li><strong>Name the problem</strong> in simple terms (e.g., &ldquo;a small eye misalignment at distance&rdquo; or &ldquo;a divergence insufficiency&ndash;type problem&rdquo;).</li>
+        <li>Clarify that <strong>both eyes are healthy</strong> and vision is good with each eye alone.</li>
+        <li>Explain that the eyes do not relax outward enough for distance, leading to a small inward turn at distance, which causes double vision.</li>
+        <li>Link the mechanism to his symptoms: distance-only diplopia, resolves with one eye closed, near vision comfortable.</li>
+        <li>Describe management:
+          <ul>
+            <li>Prism in distance glasses to help the eyes work together.</li>
+            <li>Possibility of adjusting prescription over time if symptoms change.</li>
+            <li>When you might consider further neurological workup (if atypical or progressive signs appear).</li>
+          </ul>
+        </li>
+        <li>Clearly outline <strong>red flag symptoms</strong> that require urgent reassessment: sudden worsening, new headache, weakness, numbness, droopy lid, trouble speaking, or new double vision in other directions.</li>
+        <li>Provide a reasonable follow-up plan (e.g., review after prism adaptation, sooner if symptoms change).</li>
+        <li>Use calm, reassuring, age-appropriate, patient-friendly language and check for understanding.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partially, 2 = clearly/fully). Total possible: 10 points.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly identified a distance eye-alignment problem (divergence insufficiency&ndash;type) and linked it to his distance-only double vision.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained in plain language why the eyes turn in slightly at distance but not at near, and why closing one eye stops the double.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described practical treatment options (e.g., prism in distance glasses; possible further testing if pattern changes).</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave a realistic expectation of symptom control and outlined a reasonable follow-up schedule.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Safety-Net &amp; Communication</strong></td>
+            <td style="padding: 6px;">Used clear, empathetic language and specifically mentioned red flag symptoms that would require urgent reassessment.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        If you are consistently covering all rubric domains across multiple oculomotor stations, you are practicing at a level similar to what OEBC expects on interactive communication stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s11-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s11-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for explaining what you’ve been noticing. The double vision you’re describing is coming from a
+      small eye alignment issue at <strong>distance</strong>, called a divergence insufficiency–type deviation.
+      With each eye on its own, you see very well, but when both eyes are open and you look far away, they
+      don’t relax outward quite enough, so one eye turns in a little and your brain gets two slightly different
+      images – that’s what makes things look double.<br><br>
+
+      The good news is that the health of your eyes and the nerves behind them looks normal on today’s exam.
+      This is more of a ‘pointing’ problem than a disease of the eye itself. Because the misalignment is small
+      and mainly at distance, we can often make you much more comfortable by adding a small amount of
+      <strong>prism</strong> into your distance glasses to help the eyes work together without you having to
+      strain. We’ll fine-tune that amount based on how you feel with the lenses on.<br><br>
+
+      I’d like to review you again after you’ve had some time with the new glasses to make sure the double vision
+      is under control. If anything changes – for example, if the double vision suddenly gets much worse, if you
+      notice it at near as well, or if you develop new symptoms like a droopy eyelid, trouble speaking, weakness,
+      or numbness – those would be red flags and I’d want to see you urgently or have you assessed right away.
+      Does this explanation make sense, and do you have any questions about how the prism glasses will help?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS11AiFeedback() {
+    const textArea     = document.getElementById("s11-response");
+    const feedbackBox  = document.getElementById("s11-ai-box");
+    const feedbackText = document.getElementById("s11-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 11,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
