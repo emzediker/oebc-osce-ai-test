@@ -1,0 +1,261 @@
+<!-- OEBC OSCE Station 14 – Amblyopia Treatment Counselling (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 14</h2>
+  <p style="margin-top: 0; color: #555;">Oculomotor &amp; Sensory Integrative • Amblyopia Treatment Counselling (Interactive)</p>
+
+  <!-- Step 1: Read the Station -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Scenario:</strong><br>
+      A 5-year-old presents for follow-up after a school vision screening. Best-corrected VA:
+      <strong>20/20 OD</strong>, <strong>20/60 OS</strong>. Cycloplegic refraction has been performed and the correct glasses prescription
+      was dispensed 6 weeks ago.
+      <br><br>
+      Today’s visit shows <strong>OS has improved slightly to 20/50</strong> but remains amblyopic. Ocular health is normal.
+      There is no strabismus on cover testing.
+    </p>
+
+    <p><strong>Your task:</strong><br>
+      Explain the diagnosis of amblyopia and counsel the parent on evidence-based treatment options, including patching,
+      atropine penalization, expected progress, and the role of consistent glasses wear.
+    </p>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the parent:</p>
+    <textarea id="s14-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s14-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS14AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s14-key" style="display: none;">
+    <!-- Key Points -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+      <ul>
+        <li>State the diagnosis clearly: unilateral amblyopia OS.</li>
+        <li>Explain that the brain is favoring the stronger eye, and the weaker eye needs stimulation.</li>
+        <li>Reinforce that <strong>glasses are the foundation</strong> of treatment — must be worn full-time.</li>
+        <li>Explain patching: typically 2–6 hours/day depending on severity.</li>
+        <li>Explain atropine penalization as an alternative: weekend or daily dosing in the stronger eye.</li>
+        <li>Address expected progress: vision improves gradually over weeks to months.</li>
+        <li>Discuss compliance challenges and normal parent concerns.</li>
+        <li>Give a realistic follow-up plan (4–8 weeks).</li>
+        <li>Use clear, encouraging, parent-friendly language.</li>
+      </ul>
+    </div>
+
+    <!-- Rubric -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+      <p>Score 0–2 in each domain (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named amblyopia and explained brain–eye communication.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Treatment Options</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained patching and atropine as standard of care.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Role of Glasses</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Stressed that full-time correction is essential.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave realistic expectations and follow-up interval.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Clear, empathetic, and organized.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        If you consistently hit all domains, your communication mirrors what OEBC graders look for in pediatric counselling stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s14-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s14-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for bringing your child in and for being so consistent with the glasses so far — that’s a really
+      important first step. What we’re seeing is something called <strong>amblyopia</strong>, or ‘lazy eye,’ in
+      the left eye. That means the left eye itself is healthy, but the brain has been relying more on the right
+      eye over time, so the connection between the brain and the left eye isn’t as strong as it should be.<br><br>
+
+      The glasses prescription you’ve already started is the <strong>foundation</strong> of treatment. Wearing the
+      glasses full-time gives the left eye the clearest image it can get. We’re already seeing a small improvement
+      from 20/60 to 20/50, which tells us we’re moving in the right direction, but we still have work to do to
+      strengthen that eye.<br><br>
+
+      The next step is to give the left eye some extra ‘exercise’ by <strong>temporarily reducing the help</strong>
+      the stronger right eye gets. One common way is <strong>patching</strong> — placing a patch over the right eye
+      for a few hours each day so the brain is encouraged to use the left eye. Another option, instead of a patch,
+      is a special drop called <strong>atropine</strong> in the right eye that blurs its near vision a bit, again
+      encouraging the brain to pay more attention to the left eye. Both approaches are well-studied and effective;
+      we’ll choose what fits best for your family’s routine.<br><br>
+
+      Improvement with amblyopia treatment is usually gradual — we think in terms of weeks to months, not days — and
+      it depends a lot on <strong>consistent glasses wear and patching or drops</strong>. The good news is that at
+      your child’s age, we still have a very good chance of improving the vision in that left eye if we stick with
+      the plan. I’d like to see you back in about 4–8 weeks to check how the vision is changing and adjust the
+      schedule if needed.<br><br>
+
+      I know patching or drops can sometimes be challenging for kids and parents, and it’s completely normal to have
+      questions or worries about that. We’ll give you written instructions and tips to make it as manageable as
+      possible. What concerns do you have about patching or drops, and what questions can I answer for you today?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS14AiFeedback() {
+    const textArea     = document.getElementById("s14-response");
+    const feedbackBox  = document.getElementById("s14-ai-box");
+    const feedbackText = document.getElementById("s14-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 14,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-Up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
