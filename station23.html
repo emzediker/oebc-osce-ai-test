@@ -1,163 +1,253 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OEBC OSCE – Station 23</title>
+<!-- OEBC OSCE Station 22 – Bacterial Keratitis (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-<style>
-    body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #f9fafb;
-        margin: 0;
-        padding: 20px;
-        color: #111;
-    }
-    .station-container {
-        max-width: 900px;
-        margin: 0 auto;
-        background: #fff;
-        padding: 20px 24px;
-        border-radius: 10px;
-        border: 1px solid #e5e7eb;
-    }
-    h2 {
-        margin-bottom: 4px;
-    }
-    h3 {
-        margin-top: 0;
-    }
-    textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 6px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-family: inherit;
-    }
-    button {
-        padding: 9px 16px;
-        border-radius: 999px;
-        font-weight: 600;
-        cursor: pointer;
-        border: none;
-    }
-    .primary-btn {
-        background: #0b6bcb;
-        color: #fff;
-    }
-    .key-box {
-        display: none;
-        margin-top: 1rem;
-    }
-    .info-box {
-        padding: 16px;
-        border-radius: 8px;
-        border: 1px solid #cfd8e3;
-        background: #f5f7fb;
-        margin-bottom: 1rem;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9rem;
-    }
-    th, td {
-        padding: 6px;
-        border-bottom: 1px solid #e5e7eb;
-        text-align: left;
-    }
-</style>
-</head>
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 22</h2>
 
-<body>
+  <p style="margin-top: 0; color: #555;">Ocular Disorders &bull; Bacterial Keratitis (Interactive)</p>
 
-<div class="station-container">
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-    <h2>OEBC Mock OSCE – Station 23</h2>
-    <p style="color:#555; margin-top:0;">Ocular Disorders – Anterior Segment • Uveitis / Systemic Workup (Interactive)</p>
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-    <!-- Step 1 -->
-    <div style="padding:16px; border:1px solid #e0e0e0; border-radius:8px; margin-bottom:1rem;">
-        <h3>Step 1 – Read the Station</h3>
+    <p><strong>Scenario:</strong>
+      <br>A 27-year-old soft contact lens wearer presents with <em>severe pain, redness, photophobia, and decreased vision</em> in the right eye. They admit to sleeping in their lenses and occasionally rinsing them with tap water. Slit lamp (not shown) reveals a focal epithelial defect with a suppurative infiltrate and surrounding stromal edema.
+    </p>
 
-        <p><strong>Scenario:</strong><br>
-        A 32-year-old presents with a <strong>red, painful right eye</strong> for 3 days with <strong>photophobia</strong> and blurred vision. No trauma or CL wear. They had a similar episode 2 years ago.</p>
+    <p><strong>Your task:</strong>
+      <br>Explain to the patient what bacterial keratitis is, why it is serious, the role of contact lens hygiene, the need for urgent treatment, and the risks of delaying therapy. Provide clear, urgent but calm counselling.
+    </p>
 
-        <p><strong>Exam (OD):</strong><br>
-        VA: 20/40 → 20/25 PH<br>
-        Ciliary flush<br>
-        Cornea clear<br>
-        AC: 2+ cells, 1+ flare<br>
-        IOP: 18 OD / 15 OS<br>
-        Pupil: miotic, sluggish<br>
-        Fundus: normal</p>
+    <p style="color:#555; font-style:italic;">Note: The real OEBC OSCE allows 8 minutes total for an interactive communication station.</p>
+  </div>
 
-        <p><strong>Your task:</strong> Explain the diagnosis and management in patient-friendly terms, including:</p>
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-        <ul>
-            <li>Diagnosis: anterior uveitis / iritis</li>
-            <li>Why the eye is red / painful</li>
-            <li>Steroid & cycloplegic drops and how to use them</li>
-            <li>Need for close follow-up & IOP monitoring</li>
-            <li>Possible systemic workup due to recurrence</li>
-            <li>Urgent symptoms that require reevaluation</li>
-        </ul>
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s22-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s22-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS22AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden) -->
+  <div id="s22-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>Clearly state the diagnosis: <strong>bacterial keratitis (corneal infection)</strong>.</li>
+        <li>Explain the seriousness: risk of <strong>corneal scarring, vision loss, or perforation</strong>.</li>
+        <li>Link the infection to their behavior (sleeping in CLs, tap water exposure) without shaming.</li>
+        <li>Stress that this is an <strong>ocular emergency</strong> requiring immediate intensive antibiotics.</li>
+        <li>Explain the treatment plan: strong drops, frequent dosing, no contact lenses.</li>
+        <li>Stress the need for <strong>close follow-up</strong> (daily or as recommended).</li>
+        <li>Communicate urgency calmly and empathetically.</li>
+      </ul>
     </div>
 
-    <!-- Step 2 -->
-    <div style="padding:16px; border:1px solid #e0e0e0; border-radius:8px; margin-bottom:1rem;">
-        <h3>Step 2 – Speak (Type) Your Response</h3>
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
 
-        <textarea id="s23-response" rows="8" placeholder="Type your response here..."></textarea>
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
 
-        <button class="primary-btn" onclick="document.getElementById('s23-key').style.display='block'; this.disabled=true;" style="margin-top:1rem;">
-            Show Key Points & Rubric
-        </button>
+      <p>Score each category 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named bacterial keratitis clearly and accurately.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained why the condition is dangerous and linked to their symptoms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described intensive antibiotic therapy + no CL wear.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Urgency, vision risk, and required close monitoring.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Clear, organized, non-judgmental, and empathetic wording.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 
-    <!-- Key Points & Rubric -->
-    <div id="s23-key" class="key-box">
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s22-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s22-ai-text" style="font-size:0.9rem;"></div>
 
-        <div class="info-box">
-            <h3>Key Communication Points (What OEBC Expects)</h3>
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “What’s going on today is a <strong>bacterial infection of the clear front window of your eye</strong>,
+      called <strong>bacterial keratitis</strong>. The germs have gotten into the surface of the cornea and are
+      causing the pain, redness, light sensitivity, and blurry vision you’re feeling.<br><br>
 
-            <ul>
-                <li><strong>Diagnosis:</strong> Clearly state anterior uveitis / iritis.</li>
-                <li><strong>Mechanism:</strong> Inflammation inside the eye → redness, pain, photophobia.</li>
-                <li><strong>Treatment:</strong>
-                    <ul>
-                        <li>Topical <strong>steroids</strong> (explain dosing & taper concept)</li>
-                        <li><strong>Cycloplegic</strong> (pain relief, prevents synechiae)</li>
-                    </ul>
-                </li>
-                <li><strong>Monitoring:</strong> IOP checks + follow-up; do NOT stop steroids abruptly.</li>
-                <li><strong>Systemic Workup:</strong> Possible autoimmune/infectious causes due to recurrence.</li>
-                <li><strong>Red Flags:</strong> Worsening pain, vision loss, new floaters, flashes, severe headache.</li>
-                <li><strong>Style:</strong> Simple, reassuring, patient-centered.</li>
-            </ul>
-        </div>
+      This is something we take very seriously because if it is not treated quickly and aggressively, it can
+      leave a permanent scar on the cornea and, in severe cases, can even threaten the eye itself. The good
+      news is that you came in promptly, and we can start treatment right away.<br><br>
 
-        <div style="padding:16px; border:1px solid #e0e0e0; border-radius:8px;">
-            <h3>Self-Assessment Rubric</h3>
+      The most important part of treatment is <strong>strong antibiotic eye drops</strong> that you’ll use very
+      frequently at first – often every hour while you’re awake. We’ll give you very specific instructions on
+      how often to use them. It’s also essential that you <strong>do not wear your contact lenses</strong> at all
+      while this is healing, and that you throw away the current lenses and case so we’re not re-exposing your
+      eye to the same germs.<br><br>
 
-            <table>
-                <thead>
-                    <tr><th>Domain</th><th>Criteria</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Diagnosis</strong></td><td>Clearly named anterior uveitis + linked to symptoms</td></tr>
-                    <tr><td><strong>Explanation</strong></td><td>Explained inflammation & symptom cause</td></tr>
-                    <tr><td><strong>Treatment</strong></td><td>Steroid + cycloplegic with basic dosing concepts</td></tr>
-                    <tr><td><strong>Monitoring & Workup</strong></td><td>Mentioned follow-up, IOP checks, systemic evaluation</td></tr>
-                    <tr><td><strong>Communication</strong></td><td>Clear, empathetic, gave red-flag instructions</td></tr>
-                </tbody>
-            </table>
-        </div>
+      This type of infection is strongly linked to sleeping in lenses and exposing them to tap water, so in the
+      future we’ll talk about much stricter hygiene and safer wearing habits if you go back into contacts. For
+      now, our focus is on clearing the infection and protecting your vision.<br><br>
 
+      I’m going to have you back for <strong>very close follow-up</strong>, usually tomorrow and then again after
+      that, so we can make sure the infection is responding. If at any point you notice your pain suddenly getting
+      worse, your vision dropping rapidly, or the eye becoming much more red or swollen, those are signs to be
+      seen urgently – even after hours. Does this explanation make sense, and what questions do you have before we
+      get started with the drops?”
     </div>
-
+  </div>
 </div>
 
-</body>
-</html>
+<script>
+  async function getS22AiFeedback() {
+    const textArea     = document.getElementById("s22-response");
+    const feedbackBox  = document.getElementById("s22-ai-box");
+    const feedbackText = document.getElementById("s22-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 22,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
