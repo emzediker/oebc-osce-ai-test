@@ -1,0 +1,248 @@
+<!-- OEBC OSCE Station 15 – Colour Vision Defect & Occupational Implications (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 15</h2>
+
+  <p style="margin-top: 0; color: #555;">Oculomotor &amp; Sensory Integrative • Colour Vision Deficiency (Interactive)</p>
+
+  <!-- Step 1: Read the Station -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Scenario:</strong><br>
+      A 22-year-old male university student presents for a routine eye exam. VA is 20/20 OU. During testing,
+      the patient misses several Ishihara colour plates and becomes visibly frustrated. He says:
+      “No one has ever told me this. Does this mean I can't do certain jobs?” Ocular health is normal.
+    </p>
+
+    <p><strong>Your task:</strong> Explain the colour vision diagnosis, how it affects daily life, and discuss realistic occupational considerations. Provide reassurance and clear next steps while maintaining empathy.</p>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+    <h3 style="margin-top: 0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s15-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s15-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS15AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3: Key Points + Rubric (Hidden Initially) -->
+  <div id="s15-key" style="display: none;">
+    <!-- Key Points -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>Clearly state the diagnosis (likely congenital red-green deficiency).</li>
+        <li>Explain in simple terms how colour vision works and what causes the defect.</li>
+        <li>Reassure that this is common and stable throughout life.</li>
+        <li>Discuss realistic occupational considerations (e.g., aviation, police, electrician).</li>
+        <li>Emphasize that <em>most</em> careers remain fully accessible.</li>
+        <li>Validate the patient’s emotional response and provide supportive communication.</li>
+        <li>Offer options: further colour testing, counselling on adaptive strategies.</li>
+      </ul>
+    </div>
+
+    <!-- Rubric -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score yourself 0–2 per category (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">States congenital colour deficiency and what type is suspected.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explains cone function and why certain hues are hard to differentiate.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Impact</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Addresses day-to-day challenges without exaggeration.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Occupational Guidance</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentions restricted fields AND reassures that most careers are unaffected.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Empathetic, supportive, clear, and patient-centered.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        Strong performance across these domains closely matches OEBC expectations for interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box is present but empty until button is clicked) -->
+  <div id="s15-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s15-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Thanks for letting me know how you’re feeling about this. From your colour testing today, it looks like
+      you have a congenital colour vision difference, most likely a red–green type. That means the cells in the
+      back of your eye that detect certain colours work a bit differently, so some shades of red and green
+      (and related colours) can be harder to tell apart.<br><br>
+
+      This is actually quite common and it’s something you’re born with – it doesn’t usually get worse over time
+      and it doesn’t lead to you going blind. Most people with this type of colour vision can do the vast
+      majority of jobs and live completely independent lives. There are a few careers that have stricter colour
+      requirements, like some roles in aviation, police work, or electrical trades, so if you’re interested in
+      those we can look up the exact standards together and see where you stand.<br><br>
+
+      Day to day, you’ve probably already found ways to adapt without realizing it – like using position instead
+      of colour on charts or traffic lights, or asking for clarification when something is colour-coded. If you’d
+      like, we can do more detailed colour testing and talk about practical strategies and resources. I’ll also
+      note this in your chart so you don’t have to re-explain it every time you see an eye care provider.
+      Do you have any questions or specific careers you’re worried about that we can talk through?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS15AiFeedback() {
+    const textArea     = document.getElementById("s15-response");
+    const feedbackBox  = document.getElementById("s15-ai-box");
+    const feedbackText = document.getElementById("s15-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 15,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management / Impact:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
