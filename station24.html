@@ -1,0 +1,175 @@
+<!-- OEBC OSCE Station 24 – Episcleritis vs Scleritis (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+
+  <h2 style="margin-bottom:0.25rem;">OEBC Mock OSCE – Station 24</h2>
+  <p style="margin-top:0;color:#555;">Anterior Segment • Episcleritis vs Scleritis (Interactive)</p>
+
+  <!-- Step 1 -->
+  <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
+    <h3 style="margin-top:0;">Step 1 – Read the Station</h3>
+
+    <p><strong>Scenario:</strong></p>
+    <p>A 48-year-old patient presents with a red, painful right eye that has been worsening over 2–3 days. They report a deep, dull ache that may radiate to the brow/cheek and sometimes wakes them at night. Tears/OTC drops have not helped. Vision is slightly blurred.</p>
+
+    <p>On exam: sectoral deep redness with a violaceous hue, vessels do NOT fully blanch with phenylephrine, eye is tender to palpation. No discharge. Patient has rheumatoid arthritis.</p>
+
+    <p><strong>Your task:</strong> Explain to the patient:</p>
+    <ul>
+      <li>Likely diagnosis and difference from episcleritis</li>
+      <li>Why this is potentially serious</li>
+      <li>Systemic link (RA)</li>
+      <li>Next tests/referrals</li>
+      <li>Treatment urgency</li>
+      <li>Red-flag symptoms requiring urgent care</li>
+    </ul>
+  </div>
+
+  <!-- Step 2 -->
+  <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
+    <h3 style="margin-top:0;">Step 2 – Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s24-response" rows="8" style="width:100%;padding:10px;border-radius:6px;border:1px solid #ccc;font-family:inherit;font-size:0.95rem;"></textarea>
+
+    <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:8px;">
+      <button type="button"
+        onclick="document.getElementById('s24-key').style.display='block'; this.disabled=true;"
+        style="padding:9px 16px;border-radius:999px;border:none;background:#0b6bcb;color:#fff;font-weight:600;cursor:pointer;">
+        Show Key Points & Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS24AiFeedback()"
+        style="padding:9px 16px;border-radius:999px;border:1px solid #b91c1c;background:#fff5f5;color:#7f1d1d;font-weight:600;cursor:pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4 Key & Rubric -->
+  <div id="s24-key" style="display:none;">
+    <div style="padding:16px;border-radius:8px;border:1px solid #cfd8e3;background:#f5f7fb;margin-bottom:1rem;">
+      <h3 style="margin-top:0;">Key Communication Points (What OEBC Expects)</h3>
+      <ul>
+        <li>Diagnosis likely <strong>scleritis</strong> vs simple episcleritis</li>
+        <li>Deeper violaceous redness, severe boring pain, night pain</li>
+        <li>Systemic RA link</li>
+        <li>Urgent co-management (ophthalmology ± rheumatology)</li>
+        <li>Systemic meds may be required</li>
+        <li>Red flags: worsening pain, reduced vision, new diplopia</li>
+        <li>Use clear, organized, empathetic style</li>
+      </ul>
+    </div>
+
+    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;background:#fff;">
+      <h3 style="margin-top:0;">Self-Assessment Rubric</h3>
+
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Domain</th>
+            <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom:1px solid #eee;padding:6px;">Identified likely scleritis; distinguished from episcleritis</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom:1px solid #eee;padding:6px;">Explained deeper inflammation and severe pain</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Systemic Link</strong></td>
+            <td style="border-bottom:1px solid #eee;padding:6px;">Connected RA to scleritis</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Management & Urgency</strong></td>
+            <td style="border-bottom:1px solid #eee;padding:6px;">Explained urgent referral + possible systemic treatment</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Red Flags</strong></td>
+            <td style="border-bottom:1px solid #eee;padding:6px;">Gave key symptoms requiring urgent care</td>
+          </tr>
+          <tr>
+            <td style="padding:6px;"><strong>Communication</strong></td>
+            <td style="padding:6px;">Clear, empathetic, patient-centered</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Step 5: AI Feedback -->
+  <div id="s24-ai-box" style="display:none;margin-top:1rem;padding:14px;border-radius:8px;border:1px dashed #f97316;background:#fff7ed;">
+    <h3 style="margin-top:0;font-size:1rem;">AI-style Feedback (beta)</h3>
+    <div id="s24-ai-text" style="font-size:0.9rem;"></div>
+  </div>
+</div>
+
+<script>
+async function getS24AiFeedback() {
+  const textArea     = document.getElementById("s24-response");
+  const feedbackBox  = document.getElementById("s24-ai-box");
+  const feedbackText = document.getElementById("s24-ai-text");
+
+  const userResponse = textArea.value.trim();
+  if (!userResponse) {
+    alert("Type something first so the AI has something to grade!");
+    return;
+  }
+
+  feedbackBox.style.display = "block";
+  feedbackText.textContent = "Working on your feedback…";
+
+  try {
+    const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+      },
+      body: JSON.stringify({
+        station_number: 24,
+        user_response: userResponse
+      })
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      feedbackText.textContent = "Supabase error " + res.status + ":\n" + JSON.stringify(data);
+      return;
+    }
+
+    const rubric = data.rubric || {};
+    const score = name => rubric[name]?.score ?? 0;
+    const comment = name => rubric[name]?.comment || "No specific feedback.";
+
+    function badge(s) {
+      let bg = "#fee2e2", c = "#b91c1c";
+      if (s === 1) { bg="#fef3c7"; c="#92400e"; }
+      if (s === 2) { bg="#dcfce7"; c="#166534"; }
+      return `<span style="display:inline-block;min-width:2.5rem;padding:2px 8px;border-radius:999px;font-size:0.75rem;font-weight:600;text-align:center;background:${bg};color:${c};">${s}/2</span>`;
+    }
+
+    const total = data.total_score ?? (
+      score("diagnosis") + score("explanation") + score("management") +
+      score("prognosis_followup") + score("communication")
+    );
+
+    feedbackText.innerHTML = `
+      <p>${badge(score("diagnosis"))} <strong>Diagnosis:</strong> ${comment("diagnosis")}</p>
+      <p>${badge(score("explanation"))} <strong>Explanation:</strong> ${comment("explanation")}</p>
+      <p>${badge(score("management"))} <strong>Management:</strong> ${comment("management")}</p>
+      <p>${badge(score("prognosis_followup"))} <strong>Follow-up:</strong> ${comment("prognosis_followup")}</p>
+      <p>${badge(score("communication"))} <strong>Communication:</strong> ${comment("communication")}</p>
+      <p><strong>Total:</strong> ${total}/10</p>
+      <p>${data.overall_comment || ""}</p>
+    `;
+  } catch (err) {
+    feedbackText.textContent = "Network/setup error: " + err.message;
+  }
+}
+</script>
