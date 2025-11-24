@@ -1,0 +1,254 @@
+<!-- OEBC OSCE Station 25 – Chalazion / Hordeolum & Lid Hygiene (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 25</h2>
+
+  <p style="margin-top: 0; color: #555;">Anterior Segment &bull; Chalazion / Hordeolum &amp; Lid Hygiene (Interactive)</p>
+
+  <!-- Step 1: Read the Station -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Scenario:</strong>
+      <br>A 32-year-old presents with a tender bump on the upper right eyelid for 3 days. It started red and painful, and is now slightly less painful but still swollen. Vision is normal. No fever or discharge. You diagnose a <strong>hordeolum that is beginning to evolve toward a chalazion</strong>.
+    </p>
+
+    <p><strong>Your task:</strong>
+      <br>Explain the diagnosis, expected course, home treatment, lid hygiene routine, red flags, and follow-up recommendations using clear, patient-friendly communication.</p>
+
+    <p style="color:#666; font-style: italic;">Note: On the real OEBC OSCE, candidates have 8 minutes total for an interactive station.</p>
+  </div>
+
+  <!-- Step 2: Response -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s25-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s25-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS25AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s25-key" style="display: none;">
+    <!-- Key Communication Points -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>Explain the diagnosis clearly (stye/hordeolum turning into a chalazion).</li>
+        <li>Describe the cause: blocked and inflamed oil gland.</li>
+        <li>Set expectations: painful early &rarr; less painful lump as it becomes a chalazion.</li>
+        <li>Explain warm compresses (10&ndash;15 minutes, 3&ndash;4&times;/day).</li>
+        <li>Teach lid hygiene: gentle massage, lid wipes, warm water cleansing.</li>
+        <li>Explain when antibiotics are needed (rare unless infected).</li>
+        <li>State red flags: spreading redness, fever, worsening pain &rarr; urgent care.</li>
+        <li>Give follow-up plan (e.g., 2&ndash;4 weeks or sooner if worsening).</li>
+        <li>Use simple, friendly, reassuring language.</li>
+      </ul>
+    </div>
+
+    <!-- Self-Assessment Rubric -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained hordeolum/chalazion and gland blockage clearly.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described symptoms, cause, and expected course.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave detailed warm compress and lid hygiene steps.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Set expectations and recommended appropriate recall.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Clear, empathetic, patient-friendly language.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">This mirrors how OEBC assesses interactive communication during eyelid/anterior segment stations.</p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s25-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s25-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;What you have on the eyelid is something we call a <strong>stye</strong> or <strong>hordeolum</strong>, and it&rsquo;s starting to
+      settle down into more of a <strong>chalazion</strong>, which is a small lump from a blocked oil gland in the lid. Early on,
+      these bumps are often red, tender, and a bit painful; as the active infection or inflammation calms down, they can feel
+      more like a firm, painless or mildly tender lump.<br><br>
+
+      The oil glands along the eyelid margin can get clogged, and when that happens, the trapped oil and inflammation create
+      this bump. The good news is that most of these clear with simple home care. The main treatment is <strong>warm compresses</strong>:
+      holding a clean, warm (not hot) washcloth over the closed eye for about 10&ndash;15 minutes at a time, 3&ndash;4 times a day, then
+      gently massaging the lid toward the lash line to help the oil drain.<br><br>
+
+      We&rsquo;ll also talk about a regular <strong>lid hygiene</strong> routine &mdash; things like using lid wipes or diluted baby shampoo
+      on the lashes and lids to keep the oil glands flowing well. Antibiotics are only needed if we see signs of a more
+      widespread infection, such as spreading redness into the skin around the eye or if you develop fever or feel unwell,
+      which you do <em>not</em> have right now.<br><br>
+
+      Over the next couple of weeks, the bump should gradually shrink. If it becomes very large, doesn&rsquo;t improve after a few
+      weeks of good home care, or if you notice spreading redness, worsening pain, or any change in your vision, I&rsquo;d want to
+      see you sooner or arrange a surgical option. Otherwise, a check-in in a few weeks is reasonable. Does this plan sound
+      manageable, and what questions do you have about the warm compresses or lid cleaning?&rdquo;
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS25AiFeedback() {
+    const textArea     = document.getElementById("s25-response");
+    const feedbackBox  = document.getElementById("s25-ai-box");
+    const feedbackText = document.getElementById("s25-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 25,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
