@@ -1,24 +1,42 @@
-<!-- OEBC OSCE Station 22 – Bacterial Keratitis (Interactive, with AI feedback) -->
+<!-- OEBC OSCE Station 23 – Uveitis: Systemic Workup & Steroid Counselling (Interactive, with AI feedback) -->
 <div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 22</h2>
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 23</h2>
 
-  <p style="margin-top: 0; color: #555;">Ocular Disorders &bull; Bacterial Keratitis (Interactive)</p>
+  <p style="margin-top: 0; color: #555;">Ocular Disorders &ndash; Anterior Segment &bull; Anterior Uveitis / Systemic Workup (Interactive)</p>
 
   <!-- Step 1: Read -->
   <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
     <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-    <p><strong>Scenario:</strong>
-      <br>A 27-year-old soft contact lens wearer presents with <em>severe pain, redness, photophobia, and decreased vision</em> in the right eye. They admit to sleeping in their lenses and occasionally rinsing them with tap water. Slit lamp (not shown) reveals a focal epithelial defect with a suppurative infiltrate and surrounding stromal edema.
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you would have 8 minutes to complete this station.</p>
+
+    <p><strong>Scenario:</strong><br>
+      A 32-year-old reports a <strong>red, painful right eye</strong> for the past 3 days with <strong>photophobia</strong> and mild blurred vision. They deny trauma or contact lens wear. They had a &ldquo;similar episode&rdquo; in the same eye 2 years ago that was treated with drops by another eye doctor.
     </p>
 
-    <p><strong>Your task:</strong>
-      <br>Explain to the patient what bacterial keratitis is, why it is serious, the role of contact lens hygiene, the need for urgent treatment, and the risks of delaying therapy. Provide clear, urgent but calm counselling.
+    <p><strong>Exam (right eye):</strong><br>
+      VA: 20/40, improving to 20/25 with pinhole<br>
+      Conjunctiva: ciliary flush<br>
+      Cornea: clear<br>
+      Anterior chamber: 2+ cells, 1+ flare<br>
+      IOP: 18 mmHg OD, 15 mmHg OS<br>
+      Pupil: mildly miotic, sluggish to light<br>
+      Fundus: normal
     </p>
 
-    <p style="color:#555; font-style:italic;">Note: The real OEBC OSCE allows 8 minutes total for an interactive communication station.</p>
+    <p><strong>Your task:</strong><br>
+      Explain the diagnosis and management plan to the patient in clear, patient-friendly language. Your explanation should:
+    </p>
+
+    <ul>
+      <li>State the likely diagnosis (anterior uveitis / iritis) and why the eye is red and painful.</li>
+      <li>Describe the main treatments (topical steroids and a cycloplegic) and how to use them safely.</li>
+      <li>Mention the need for close follow-up and monitoring for side effects (e.g., IOP, cataract risk).</li>
+      <li>Briefly explain that recurrent uveitis can be associated with systemic conditions and that a medical workup may be needed.</li>
+      <li>Give clear return/urgent symptoms (worsening pain, vision loss, new floaters, etc.).</li>
+    </ul>
   </div>
 
   <!-- Step 2: Respond -->
@@ -27,19 +45,19 @@
     <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
 
     <p>Type what you would say to the patient:</p>
-    <textarea id="s22-response" rows="8"
+    <textarea id="s23-response" rows="8"
       style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
 
     <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
       <button type="button"
-        onclick="document.getElementById('s22-key').style.display='block'; this.disabled=true;"
+        onclick="document.getElementById('s23-key').style.display='block'; this.disabled=true;"
         style="padding: 9px 16px; border-radius: 999px; border: none;
                background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
         Show Key Points &amp; Rubric
       </button>
 
       <button type="button"
-        onclick="getS22AiFeedback()"
+        onclick="getS23AiFeedback()"
         style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
                background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
         Get AI-style Feedback (beta)
@@ -47,21 +65,28 @@
     </div>
   </div>
 
-  <!-- Step 3 + 4: Key Points & Rubric (Hidden) -->
-  <div id="s22-key" style="display: none;">
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s23-key" style="display: none;">
     <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
                 background: #f5f7fb; margin-bottom: 1rem;">
 
-      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC-Style Stations Expect)</h3>
+
+      <p><strong>Essential elements your answer should include:</strong></p>
 
       <ul>
-        <li>Clearly state the diagnosis: <strong>bacterial keratitis (corneal infection)</strong>.</li>
-        <li>Explain the seriousness: risk of <strong>corneal scarring, vision loss, or perforation</strong>.</li>
-        <li>Link the infection to their behavior (sleeping in CLs, tap water exposure) without shaming.</li>
-        <li>Stress that this is an <strong>ocular emergency</strong> requiring immediate intensive antibiotics.</li>
-        <li>Explain the treatment plan: strong drops, frequent dosing, no contact lenses.</li>
-        <li>Stress the need for <strong>close follow-up</strong> (daily or as recommended).</li>
-        <li>Communicate urgency calmly and empathetically.</li>
+        <li><strong>Diagnosis:</strong> Clearly state that this is likely <strong>anterior uveitis / iritis</strong>, an inflammation inside the eye.</li>
+        <li><strong>Mechanism / Symptoms:</strong> Explain that inflammation in the front of the eye causes redness, pain, light sensitivity, and blur.</li>
+        <li><strong>Treatment plan:</strong>
+          <ul>
+            <li>Topical <strong>steroid drops</strong> (e.g., to reduce inflammation) with a clear dosing concept (frequent at first, then taper under supervision).</li>
+            <li>A <strong>cycloplegic drop</strong> to relax the inside of the eye, reduce pain, and prevent synechiae.</li>
+          </ul>
+        </li>
+        <li><strong>Monitoring / side effects:</strong> Mention that steroids require close follow-up to monitor <strong>eye pressure</strong> and lens changes, and that the dose must not be stopped abruptly without guidance.</li>
+        <li><strong>Systemic workup:</strong> Briefly state that because this is a recurrent uveitis, you may need to coordinate with their family doctor or a specialist to look for underlying systemic causes (e.g., autoimmune or infectious disease).</li>
+        <li><strong>Follow-up &amp; red flags:</strong> Give a clear follow-up interval (e.g., within a few days) and explain when to return urgently (worsening pain, decreased vision, new floaters, flashes, or severe headache).</li>
+        <li><strong>Communication style:</strong> Use simple, reassuring language; check understanding and invite questions.</li>
       </ul>
     </div>
 
@@ -69,7 +94,7 @@
 
       <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
 
-      <p>Score each category 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+      <p>Score yourself from 0&ndash;2 in each area (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
 
       <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
@@ -81,70 +106,60 @@
         <tbody>
           <tr>
             <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named bacterial keratitis clearly and accurately.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named anterior uveitis/iritis and linked it to the patient&rsquo;s symptoms.</td>
           </tr>
           <tr>
             <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained why the condition is dangerous and linked to their symptoms.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained what inflammation inside the eye is and why it causes redness, pain, and light sensitivity.</td>
           </tr>
           <tr>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described intensive antibiotic therapy + no CL wear.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Treatment</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described steroid and cycloplegic drops, including basic dosing ideas and why they are used.</td>
           </tr>
           <tr>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
-            <td style="border-bottom: 1px solid #eee; padding: 6px;">Urgency, vision risk, and required close monitoring.</td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Monitoring &amp; Workup</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentioned follow-up, IOP/side-effect monitoring, and the possibility of systemic testing due to recurrence.</td>
           </tr>
           <tr>
             <td style="padding: 6px;"><strong>Communication</strong></td>
-            <td style="padding: 6px;">Clear, organized, non-judgmental, and empathetic wording.</td>
+            <td style="padding: 6px;">Used clear, empathetic, patient-friendly language and gave return/urgent instructions.</td>
           </tr>
         </tbody>
       </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        If you are consistently hitting all domains on uveitis-type stations, you are practicing at an OEBC-style level for inflammatory anterior segment cases.
+      </p>
     </div>
   </div>
 
   <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
-  <div id="s22-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+  <div id="s23-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
                              border: 1px dashed #f97316; background: #fff7ed;">
     <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
-    <div id="s22-ai-text" style="font-size:0.9rem;"></div>
+    <div id="s23-ai-text" style="font-size:0.9rem;"></div>
 
     <!-- Example 10/10 response (static) -->
     <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
       <strong>Example 10/10 response:</strong><br>
-      “What’s going on today is a <strong>bacterial infection of the clear front window of your eye</strong>,
-      called <strong>bacterial keratitis</strong>. The germs have gotten into the surface of the cornea and are
-      causing the pain, redness, light sensitivity, and blurry vision you’re feeling.<br><br>
+      &ldquo;What you&rsquo;re experiencing today is something we call <strong>anterior uveitis</strong>, or <strong>iritis</strong>. That means there is inflammation inside the front part of your eye, not just on the surface. That inflammation is what causes the redness, the deep aching pain, and the light sensitivity you&rsquo;ve noticed over the last few days.<br><br>
 
-      This is something we take very seriously because if it is not treated quickly and aggressively, it can
-      leave a permanent scar on the cornea and, in severe cases, can even threaten the eye itself. The good
-      news is that you came in promptly, and we can start treatment right away.<br><br>
+      The good news is that we&rsquo;ve caught this at a stage where we can usually treat it very effectively with eye drops. I&rsquo;m going to prescribe a <strong>steroid drop</strong> to calm down the inflammation, and a second drop that helps relax the inside muscles of the eye. The steroid drop needs to be used quite frequently at first and then slowly reduced over time &mdash; we will give you a clear schedule and adjust it together at each visit. It&rsquo;s very important not to stop the steroid suddenly without us guiding you, because that can cause the inflammation to rebound.<br><br>
 
-      The most important part of treatment is <strong>strong antibiotic eye drops</strong> that you’ll use very
-      frequently at first – often every hour while you’re awake. We’ll give you very specific instructions on
-      how often to use them. It’s also essential that you <strong>do not wear your contact lenses</strong> at all
-      while this is healing, and that you throw away the current lenses and case so we’re not re-exposing your
-      eye to the same germs.<br><br>
+      With steroid drops, we also need to keep an eye on the <strong>pressure inside the eye</strong> and on the lens, because in some people long-term or heavy steroid use can raise the pressure or contribute to cataract. That&rsquo;s why I&rsquo;d like to see you again within the next few days and then regularly while we&rsquo;re treating this, so we can make sure things are improving and that the drops are safe for you.<br><br>
 
-      This type of infection is strongly linked to sleeping in lenses and exposing them to tap water, so in the
-      future we’ll talk about much stricter hygiene and safer wearing habits if you go back into contacts. For
-      now, our focus is on clearing the infection and protecting your vision.<br><br>
+      You mentioned that you had a similar episode in the past. When uveitis comes back more than once, it can sometimes be linked with conditions in the rest of the body, such as autoimmune or inflammatory diseases. Once we get this flare under control, we may coordinate with your family doctor or a specialist to see whether any blood tests or imaging are needed to look for an underlying cause.<br><br>
 
-      I’m going to have you back for <strong>very close follow-up</strong>, usually tomorrow and then again after
-      that, so we can make sure the infection is responding. If at any point you notice your pain suddenly getting
-      worse, your vision dropping rapidly, or the eye becoming much more red or swollen, those are signs to be
-      seen urgently – even after hours. Does this explanation make sense, and what questions do you have before we
-      get started with the drops?”
+      I want you to come back or seek urgent care if you notice <strong>worsening pain</strong>, a sudden drop in vision, a big increase in floaters, flashing lights, or a very bad headache or nausea. Otherwise, we&rsquo;ll plan to see you again in a few days to make sure the inflammation and your comfort are both heading in the right direction. Does this plan make sense, and what questions do you have about the diagnosis or the drops?&rdquo;
     </div>
   </div>
 </div>
 
 <script>
-  async function getS22AiFeedback() {
-    const textArea     = document.getElementById("s22-response");
-    const feedbackBox  = document.getElementById("s22-ai-box");
-    const feedbackText = document.getElementById("s22-ai-text");
+  async function getS23AiFeedback() {
+    const textArea     = document.getElementById("s23-response");
+    const feedbackBox  = document.getElementById("s23-ai-box");
+    const feedbackText = document.getElementById("s23-ai-text");
 
     const userResponse = textArea.value.trim();
     if (!userResponse) {
@@ -165,7 +180,7 @@
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
         },
         body: JSON.stringify({
-          station_number: 22,
+          station_number: 23,
           user_response: userResponse
         })
       });
