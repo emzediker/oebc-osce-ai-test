@@ -1,0 +1,289 @@
+<!-- OEBC OSCE Station 39 – CRVO Counselling (AI-enabled) -->
+<div class="oebc-station-step" style="
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 39</h2>
+
+  <p style="margin-top: 0; color: #555;">Posterior Segment &bull; Central Retinal Vein Occlusion (Interactive)</p>
+
+  <!-- Step 1 – Read the Station -->
+  <div style="
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Scenario:</strong>
+      <br>A 68-year-old presents with sudden blurry vision in the right eye for 24 hours. Visual acuity OD: 20/200. Fundus exam shows diffuse retinal hemorrhages, dilated tortuous veins, and macular edema. IOP, pupils, and anterior segment are normal. The patient has a history of hypertension and takes no anticoagulation.
+    </p>
+
+    <p><strong>Your task:</strong>
+      <br>Explain the diagnosis, required systemic workup, expected vision prognosis, and follow-up plan to the patient using clear, patient-friendly language.
+    </p>
+
+    <p style="color:#666; font-style: italic;">Note: The real OEBC OSCE station for a case like this would allow 8 minutes.</p>
+  </div>
+
+  <!-- Step 2 – Student Response -->
+  <div style="
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s39-response" rows="8" style="
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+      <button onclick="document.getElementById('s39-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;" type="button">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS39AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points + Rubric (Hidden Initially) -->
+  <div id="s39-key" style="display: none;">
+    <!-- Key Communication Points -->
+    <div style="
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>State the diagnosis clearly: <strong>Central Retinal Vein Occlusion (CRVO)</strong>.</li>
+        <li>Explain in simple language that a “blood vessel in the eye became blocked,” causing swelling and bleeding.</li>
+        <li>Discuss risk factors: hypertension, cholesterol, diabetes, glaucoma, vascular conditions.</li>
+        <li>Explain necessary systemic workup: BP evaluation, fasting glucose/A1c, lipid panel, +/- hypercoagulable screening (especially in younger patients).</li>
+        <li>Explain that macular edema is the main cause of reduced vision and requires retina specialist care.</li>
+        <li>Describe treatment expectations: anti-VEGF injections; possible steroid options depending on retina specialist’s plan.</li>
+        <li>Provide realistic prognosis: vision may improve but may not return to normal; outcomes depend on ischemic vs non-ischemic type.</li>
+        <li>Emphasize close follow-up and monitoring for neovascular complications (e.g., neovascular glaucoma).</li>
+        <li>Communicate with empathy, clarity, and reassurance.</li>
+      </ul>
+    </div>
+
+    <!-- Self-Assessment Rubric -->
+    <div style="
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Rate yourself 0&ndash;2 for each domain (0 = not addressed, 1 = partial, 2 = fully covered). Total: 10 points.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom:1px solid #ddd; padding:6px; text-align:left;">Domain</th>
+            <th style="border-bottom:1px solid #ddd; padding:6px; text-align:left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Named CRVO and explained mechanism simply.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Explained why bleeding/swelling affects vision in clear terms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Management</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Discussed retina referral, anti-VEGF, and need for close follow-up.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Prognosis</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Gave realistic vision expectations and risks (ischemic vs non-ischemic, neovascular complications).</td>
+          </tr>
+          <tr>
+            <td style="padding:6px;"><strong>Communication</strong></td>
+            <td style="padding:6px;">Clear, empathetic, and patient-friendly.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color:#555; font-style:italic;">
+        Strong performance across all areas aligns with OEBC standards for interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 4: AI-style Feedback (box appears after click) -->
+  <div id="s39-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s39-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “Today’s findings show that you’ve had a <strong>central retinal vein occlusion</strong>, or CRVO, in your right eye.
+      In simple terms, one of the main veins that drains blood from the back of the eye has become blocked. When that
+      happens, blood and fluid back up in the retina, causing bleeding and swelling in the area responsible for your
+      detailed vision. That explains why your vision in this eye dropped quite suddenly over the last day.<br><br>
+
+      One of the most important things we’ll do is make sure we’ve checked for and controlled <strong>risk factors</strong>
+      for this kind of blockage. High blood pressure is a major contributor, and we’ll also want your family doctor to
+      review your cholesterol, blood sugar, and overall cardiovascular health. In some people, especially if they’re
+      younger or if this is unusual, additional blood tests to look for clotting or circulation problems may be needed.<br><br>
+
+      The decrease in your vision is mainly due to <strong>swelling in the macula</strong>, the central part of the retina.
+      For that, I’m going to refer you to a <strong>retina specialist</strong>. They will likely recommend a series of
+      injections of a medication called an <strong>anti-VEGF</strong> drug, and sometimes steroid-based treatments. These
+      medicines help reduce the swelling and leakage. Many patients see improvement in vision with treatment, although
+      it may not return all the way to what it was before this happened.<br><br>
+
+      It’s also important for you to know that there are two general types of CRVO—non-ischemic and ischemic. The more
+      ischemic type has a higher risk of complications like new, fragile blood vessels growing in the eye. That’s one of
+      the main reasons we’ll be <strong>monitoring you closely</strong> with regular follow-up visits, even once your vision
+      starts to stabilize.<br><br>
+
+      In terms of prognosis, we’ll do everything we can to improve and protect your vision, but it’s important to be honest
+      that this eye may always be weaker than it was. The good news is that we’ve caught this early, and you’ve come in
+      quickly, which gives us the best chance with treatment. We’ll also keep a close watch on your other eye, make sure
+      your blood pressure and other risk factors are well controlled, and coordinate care with your family doctor.<br><br>
+
+      You’re not alone in this—we’ll walk through the treatment plan together and answer any questions as we go. Our goal
+      is to protect as much vision as possible and support you through the process.”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS39AiFeedback() {
+    const textArea     = document.getElementById("s39-response");
+    const feedbackBox  = document.getElementById("s39-ai-box");
+    const feedbackText = document.getElementById("s39-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 39,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
