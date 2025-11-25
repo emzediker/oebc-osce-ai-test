@@ -1,0 +1,277 @@
+<!-- OEBC OSCE Station 26 – Thyroid Eye Disease (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 26</h2>
+
+  <p style="margin-top: 0; color: #555;">Ocular Disorders &ndash; Thyroid Eye Disease / Orbital Signs (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE you will have 8 minutes for the full station.</p>
+
+    <p><strong>Scenario:</strong>
+      <br>A 38-year-old female presents complaining that her eyes look &ldquo;bulgy&rdquo; and feel dry and irritated. She sometimes has double vision when she looks up or to the side. She notices her eyelids seem higher than before in photos. She has a history of Graves&rsquo; disease and is currently on medication from her endocrinologist, but says her thyroid levels were &ldquo;recently off again.&rdquo; She smokes half a pack of cigarettes per day.
+      <br>
+      <br>On examination you note:</p>
+
+    <ul>
+      <li>Lid retraction OU and mild lagophthalmos</li>
+      <li>Conjunctival injection and exposure keratopathy staining</li>
+      <li>Mild proptosis OU, R &gt; L</li>
+      <li>Restrictive motility on upgaze with intermittent diplopia</li>
+      <li>Visual acuity 20/20 OU, colour vision full, pupils normal</li>
+    </ul>
+
+    <p><strong>Your task:</strong>
+      <br>In clear, patient-friendly language, explain:</p>
+
+    <ul>
+      <li>The likely diagnosis and how it is related to her thyroid condition and smoking.</li>
+      <li>How thyroid eye disease can affect the eyes (appearance, comfort, double vision, and potential vision risk).</li>
+      <li>Your immediate management plan (surface protection, symptom relief) and when urgent reassessment is needed.</li>
+      <li>The need for coordination with her endocrinologist and possible referral to an orbital/oculoplastic specialist.</li>
+      <li>Specific lifestyle advice, including smoking cessation and sleep/positioning tips.</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s26-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s26-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS26AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s26-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li><strong>Diagnosis:</strong> Clearly name thyroid eye disease / Graves&rsquo; eye disease and link it to her thyroid condition.</li>
+        <li><strong>Mechanism:</strong> Briefly explain that inflammation and swelling of tissues around the eye cause the eyes to look more prominent, lids to pull back, and muscles to become tight.</li>
+        <li><strong>Symptoms:</strong> Connect her symptoms (bulging, irritation, exposure, and intermittent double vision) to the disease process.</li>
+        <li><strong>Vision risk / red flags:</strong> Explain that rarely the nerve or cornea can be threatened and that sudden vision loss, colour desaturation, severe pain/pressure, or rapidly worsening double vision are urgent signs.</li>
+        <li><strong>Management today:</strong> Suggest lubrication (drops/ointment), lid hygiene if needed, night-time protection (taping or moisture goggles), and possibly short-term prism or patching for diplopia depending on severity.</li>
+        <li><strong>Interprofessional care:</strong> Emphasize close coordination with her endocrinologist to stabilize thyroid control and possible referral to an orbital/oculoplastic or neuro-ophthalmology service for further evaluation.</li>
+        <li><strong>Smoking cessation:</strong> Clearly state that smoking worsens thyroid eye disease and that quitting is one of the most important things she can do to protect her vision.</li>
+        <li><strong>Follow-up:</strong> Provide a reasonable follow-up interval and stress earlier review if red-flag symptoms appear.</li>
+        <li><strong>Communication style:</strong> Use empathetic, reassuring language acknowledging cosmetic and functional concerns, and invite questions.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named thyroid eye disease / Graves&rsquo; eye disease and connected it to her thyroid history.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained in plain language why the eyes look more prominent, feel dry, and why double vision occurs.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Outlined surface protection, comfort measures, and the plan for specialist referral / imaging if appropriate.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentioned red-flag symptoms and provided a clear follow-up plan or urgency guidance.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Empathetic, organized, non-alarming; addressed cosmetic and functional concerns and encouraged questions.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">If you can consistently cover these domains across thyroid eye disease and similar systemic&ndash;ocular stations, you are practicing at the level OEBC expects for interactive communication cases.</p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s26-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s26-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;Thanks for sharing what you&rsquo;ve been noticing with your eyes. What I&rsquo;m seeing today fits with a condition called
+      <strong>thyroid eye disease</strong>, which is related to the same thyroid problem you&rsquo;re being treated for. In this condition,
+      the tissues and muscles around the eyes can become a bit swollen and tight, which makes the eyes look more
+      &lsquo;bulgy,&rsquo; pulls the eyelids up, and can leave the surface of the eye more exposed and dry.<br><br>
+
+      That swelling and tightness can also affect how the eye muscles move, which is why you sometimes notice
+      <strong>double vision</strong> when you look up or to the side. The good news is that your vision and the nerve behind the eye
+      look healthy today, so we&rsquo;re not seeing signs of permanent damage, but this is something we do need to keep a
+      close eye on.&rdquo;<br><br>
+
+      &ldquo;In terms of treatment, there are a few important pieces. First, we want to <strong>protect the surface</strong> of your
+      eyes: I&rsquo;ll recommend lubricating drops during the day and possibly a thicker gel or ointment at night, along with
+      tips like using a humidifier, avoiding fans blowing straight at your face, and maybe taping the lids or using
+      moisture goggles at night if they don&rsquo;t fully close. If the double vision is bothering you, we can look at short-term
+      options like a prism or even simply patching one eye at times when it&rsquo;s worst.<br><br>
+
+      Second, we need to work closely with your <strong>endocrinologist</strong> to get your thyroid levels as stable as possible,
+      because good thyroid control helps keep the eye disease calmer. I&rsquo;d also strongly encourage you to consider
+      <strong>quitting smoking</strong>, because smoking is one of the biggest factors that makes thyroid eye disease worse and
+      more likely to progress.&rdquo;<br><br>
+
+      &ldquo;Very rarely, thyroid eye disease can start to press on the optic nerve or severely dry out the front of the eye.
+      I&rsquo;d want you to contact us or be seen urgently if you notice sudden vision loss, colours looking washed out,
+      a big jump in double vision, severe pain or pressure behind the eye, or if one eye suddenly looks much more
+      swollen or pushed forward. Otherwise, I&rsquo;d like to see you back in [X] weeks to reassess your comfort, eye
+      surface, and eye movements, and we can also talk about a referral to an orbital specialist if needed. Does that
+      explanation fit with what you&rsquo;ve been feeling, and what questions do you have about the plan?&rdquo;
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS26AiFeedback() {
+    const textArea     = document.getElementById("s26-response");
+    const feedbackBox  = document.getElementById("s26-ai-box");
+    const feedbackText = document.getElementById("s26-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 26,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
