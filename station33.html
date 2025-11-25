@@ -1,0 +1,261 @@
+<!-- OEBC OSCE Station 33 – New Primary Open-Angle Glaucoma Diagnosis (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 33</h2>
+
+  <p style="margin-top: 0; color: #555;">Posterior Segment &bull; Optic Nerve &bull; New POAG Diagnosis (Interactive)</p>
+
+  <!-- Step 1 – Read the Station -->
+  <div style="padding:16px; border-radius:8px; border:1px solid #e0e0e0; margin-bottom:1rem;">
+
+    <h3 style="margin-top:0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Scenario:</strong> A 58-year-old patient presents for a routine exam. Findings today include:</p>
+
+    <ul>
+      <li>IOP: 25 mmHg OD / 26 mmHg OS</li>
+      <li>C/D: 0.75 OD / 0.80 OS with inferior rim thinning OS</li>
+      <li>RNFL OCT: borderline inferior thinning OU, worse OS</li>
+      <li>24-2 Visual Field: early inferior arcuate defect OS</li>
+      <li>Corneas: thin (CCT 505 / 498 &micro;m)</li>
+    </ul>
+    <p>You have determined that the patient meets diagnostic criteria for <strong>primary open-angle glaucoma</strong>.</p>
+
+    <p><strong>Your task:</strong> Explain the new diagnosis to the patient in clear, patient-friendly language. Include: what glaucoma is, why the optic nerve is being damaged, long-term risks, treatment options (e.g., drops, SLT), and what the next steps will be.</p>
+
+    <p style="font-style:italic; color:#666;">Note: On the real OEBC OSCE, you would have 8 minutes.</p>
+  </div>
+
+  <!-- Step 2 – Student Responds -->
+  <div style="padding:16px; border-radius:8px; border:1px solid #e0e0e0; margin-bottom:1rem;">
+
+    <h3 style="margin-top:0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s33-response" rows="8"
+      style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; font-family:inherit; font-size:0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s33-key').style.display='block'; this.disabled=true;"
+        style="padding:9px 16px; border-radius:999px; border:none;
+               background:#0b6bcb; color:#fff; font-weight:600; cursor:pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS33AiFeedback()"
+        style="padding:9px 16px; border-radius:999px; border:1px solid #b91c1c;
+               background:#fff5f5; color:#7f1d1d; font-weight:600; cursor:pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden Key Points + Rubric -->
+  <div id="s33-key" style="display:none;">
+    <!-- Key Communication Points -->
+    <div style="padding:16px; border-radius:8px; border:1px solid #cfd8e3; background:#f5f7fb; margin-bottom:1rem;">
+
+      <h3 style="margin-top:0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>State the diagnosis clearly: &ldquo;You have primary open-angle glaucoma.&rdquo;</li>
+        <li>Explain that glaucoma damages the optic nerve slowly over time.</li>
+        <li>Describe that elevated or high-normal pressure contributes to nerve damage (especially with thin corneas).</li>
+        <li>Connect findings: thin corneas, large optic nerve cups, OCT thinning, visual field defect.</li>
+        <li>Emphasize that early glaucoma often has no symptoms.</li>
+        <li>Explain goals of treatment: lowering eye pressure to prevent further damage.</li>
+        <li>Discuss treatment options: prescription drops vs SLT laser, possibly combination over time.</li>
+        <li>Outline next steps: begin therapy, schedule follow-up for IOP check and monitoring of fields/OCT.</li>
+        <li>Reassure that with treatment, vision can often be preserved long-term.</li>
+      </ul>
+    </div>
+
+    <!-- Self-Assessment Rubric -->
+    <div style="padding:16px; border-radius:8px; border:1px solid #e0e0e0; background:#fff;">
+
+      <h3 style="margin-top:0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area from 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom:1px solid #ddd; padding:6px; text-align:left;">Domain</th>
+            <th style="border-bottom:1px solid #ddd; padding:6px; text-align:left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Clearly stated glaucoma diagnosis (POAG) and why it applies to this patient.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Described optic nerve damage, eye pressure, and lack of symptoms in patient-friendly words.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Management</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Explained treatment options (drops, SLT), why lowering IOP helps, and adherence.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px solid #eee; padding:6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom:1px solid #eee; padding:6px;">Discussed long-term monitoring, need for regular fields/OCT, and realistic prognosis.</td>
+          </tr>
+          <tr>
+            <td style="padding:6px;"><strong>Communication</strong></td>
+            <td style="padding:6px;">Clear, structured, empathetic, appropriate for a non-medical audience; invited questions.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem; color:#555; font-style:italic;">If you consistently address all domains, you are performing at OEBC interactive-station standard.</p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s33-ai-box" style="display:none; margin-top:1rem; padding:14px; border-radius:8px;
+                             border:1px dashed #f97316; background:#fff7ed;">
+    <h3 style="margin-top:0; font-size:1rem;">AI-style Feedback (beta)</h3>
+    <div id="s33-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top:0.75rem; font-size:0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;Thanks for going through all of these tests with me today. Based on what we found, you have a condition called
+      <strong>primary open-angle glaucoma</strong>. That means the pressure inside your eyes has been a bit too high for
+      your optic nerve over time, and we can already see some early changes on the nerve and on your visual field test,
+      especially in the left eye.<br><br>
+
+      The optic nerve is like the cable that carries the picture from your eye to your brain. In glaucoma, that nerve is
+      slowly being damaged. The tricky part is that you don&rsquo;t feel it happening &mdash; your vision can seem totally
+      normal until more advanced stages. That&rsquo;s why catching this early, like we have today, is so important.<br><br>
+
+      Our main goal now is to <strong>lower the pressure</strong> in your eyes to a safer level so we can prevent further
+      damage. There are two main ways we can start: one is using prescription <strong>eye drops</strong> every day to
+      bring the pressure down; another option is a gentle laser treatment called <strong>SLT</strong> that helps the eye
+      drain fluid more efficiently. Both approaches are aimed at protecting the optic nerve for the long term.<br><br>
+
+      I&rsquo;d like to start treatment and then see you back in a few weeks to re-check your eye pressure and make sure
+      it&rsquo;s responding. Over time, we&rsquo;ll also repeat your visual field and nerve scans to make sure things
+      stay stable. With regular follow-up and good pressure control, most people are able to keep useful vision for the
+      rest of their lives.<br><br>
+
+      Does this explanation make sense so far? What questions do you have about glaucoma or the treatment options I&rsquo;ve
+      mentioned?&rdquo;
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS33AiFeedback() {
+    const textArea     = document.getElementById("s33-response");
+    const feedbackBox  = document.getElementById("s33-ai-box");
+    const feedbackText = document.getElementById("s33-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 33,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
