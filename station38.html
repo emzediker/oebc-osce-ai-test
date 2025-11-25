@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 38 (PVD vs Retinal Tear)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .ai-panel {
+      margin-top: 1.25rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      font-size: 0.9rem;
+    }
+    .ai-score {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .ai-error {
+      color: #b00020;
+      font-weight: 600;
+    }
+    .ai-loading {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 38 – PVD vs Retinal Tear Triage (Interactive) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 38</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Posterior Segment &bull; PVD vs Retinal Tear Triage (Interactive)
+    </p>
+
+    <!-- Step 1: Read -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario carefully. Note: on the real OEBC OSCE you will have approximately 8 minutes for a station like this.</p>
+
+      <p><strong>Scenario:</strong></p>
+
+      <p>
+        A 58-year-old patient presents urgently, saying:
+        <br>&ldquo;Yesterday evening I started seeing flashes of light in my right eye and a bunch of new floaters. It&rsquo;s freaking me out. I don&rsquo;t have any pain, but I&rsquo;m scared I might go blind.&rdquo;
+        <br><br>
+        Best-corrected visual acuity is 20/20 OD and 20/20 OS. Intraocular pressures are normal. Dilated fundus exam of the right eye shows a posterior vitreous detachment with a Weiss ring, no retinal tears or detachments seen on careful peripheral exam with scleral depression. The left eye is unremarkable.
+      </p>
+
+      <p><strong>Your task:</strong> Explain your findings and plan to the patient in clear, patient-friendly language. You must:</p>
+
+      <ul>
+        <li>State the likely diagnosis (posterior vitreous detachment).</li>
+        <li>Reassure the patient about what you did <em>not</em> find today (no tear/detachment on exam).</li>
+        <li>Explain the difference between a benign PVD and a retinal tear/detachment in simple terms.</li>
+        <li>List the specific warning symptoms that require urgent re-evaluation.</li>
+        <li>Describe your follow-up plan and why close monitoring is important.</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Respond -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s38-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <button id="s38-ai-btn" type="button">Get AI Feedback &amp; Score</button>
+        <button type="button"
+                onclick="document.getElementById('s38-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+    <div id="s38-key" style="display: none;">
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li><strong>Diagnosis stated:</strong> Clearly identifies a posterior vitreous detachment (PVD) in the right eye.</li>
+          <li><strong>Findings &amp; reassurance:</strong> Explains that today&rsquo;s exam did <em>not</em> show a retinal tear or detachment.</li>
+          <li><strong>Simple pathophysiology:</strong> Briefly describes that the &ldquo;gel&rdquo; in the eye is pulling away from the retina with age, creating flashes/floaters.</li>
+          <li><strong>Risk explanation:</strong> Explains that a PVD can sometimes lead to a retinal tear or detachment, especially in the first weeks.</li>
+          <li><strong>Red-flag symptoms:</strong> Clearly lists urgent symptoms such as:
+            <ul>
+              <li>sudden increase in floaters (a &ldquo;shower&rdquo; of spots),</li>
+              <li>new or worsening flashes,</li>
+              <li>a dark curtain/veil or shadow in peripheral or central vision,</li>
+              <li>sudden drop in vision.</li>
+            </ul>
+          </li>
+          <li><strong>Action plan for red flags:</strong> States that the patient must call immediately or go for emergency care if those symptoms occur.</li>
+          <li><strong>Follow-up:</strong> Recommends an appropriate follow-up interval (e.g., recheck in 4&ndash;6 weeks, sooner if any changes).</li>
+          <li><strong>Communication style:</strong> Uses calm, empathetic, non-alarming language while still conveying the seriousness of potential complications.</li>
+        </ul>
+      </div>
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = clearly and complete). Total: 0&ndash;10.</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis &amp; Findings</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly named PVD and explained that no retinal tear or detachment was seen today.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Described in plain language how the vitreous separates and why this causes flashes/floaters.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk &amp; Red Flags</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained potential risk of retinal tear/detachment and clearly listed urgent warning symptoms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Follow-Up Plan</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave a specific follow-up timeframe and instructions on what to do if symptoms change.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Organized, empathetic, and clear; balanced reassurance with appropriate urgency.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you consistently cover all domains on PVD / flashes &amp; floaters cases like this,
+          you are practicing at the level expected for OEBC interactive posterior segment triage stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- AI Feedback Panel -->
+    <div id="s38-ai-panel" class="ai-panel">
+      <div id="s38-ai-status" class="ai-loading" style="display:none;"></div>
+      <div id="s38-ai-score" class="ai-score"></div>
+      <div id="s38-ai-feedback"></div>
+      <div id="s38-ai-error" class="ai-error"></div>
+    </div>
+  </div>
+
+  <!-- Your shared JS that talks to the Supabase Edge Function -->
+  <!-- Adjust src path to match your repo (this is just a placeholder) -->
+  <script>
+    // Station-specific config for the shared AI grading script
+    const STATION_ID = 38;
+  </script>
+  <script src="osce_ai_feedback.js"></script>
+  <script>
+    // Wire up button to shared submit function
+    const btn38 = document.getElementById('s38-ai-btn');
+    const statusEl = document.getElementById('s38-ai-status');
+    const scoreEl = document.getElementById('s38-ai-score');
+    const feedbackEl = document.getElementById('s38-ai-feedback');
+    const errorEl = document.getElementById('s38-ai-error');
+
+    btn38.addEventListener('click', async () => {
+      const responseText = document.getElementById('s38-response').value.trim();
+      if (!responseText) {
+        errorEl.textContent = "Please type your response first.";
+        scoreEl.textContent = "";
+        feedbackEl.textContent = "";
+        return;
+      }
+      errorEl.textContent = "";
+      scoreEl.textContent = "";
+      feedbackEl.textContent = "";
+      statusEl.style.display = "block";
+      statusEl.textContent = "Asking AI to review your response...";
+      btn38.disabled = true;
+
+      try {
+        // This function should be defined in your shared osce_ai_feedback.js
+        const result = await submitOsceResponse({
+          stationId: STATION_ID,
+          userResponse: responseText
+        });
+
+        statusEl.style.display = "none";
+        if (result && typeof result.score === "number") {
+          scoreEl.textContent = `AI Score: ${result.score}/10`;
+        }
+        if (result && result.feedback) {
+          feedbackEl.innerHTML = result.feedback;
+        }
+      } catch (err) {
+        statusEl.style.display = "none";
+        console.error(err);
+        errorEl.textContent = "There was a problem getting AI feedback. Please try again.";
+      } finally {
+        btn38.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
