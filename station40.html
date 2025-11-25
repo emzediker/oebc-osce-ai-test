@@ -90,7 +90,8 @@
       </p>
 
       <p><strong>Your task:</strong>
-        <br>You have just completed your examination and you have diagnosed <strong>non-arteritic anterior ischemic optic neuropathy (NAION)</strong> in the right eye.
+        <br>You have just completed your examination and you have diagnosed
+        <strong>non-arteritic anterior ischemic optic neuropathy (NAION)</strong> in the right eye.
         <br>Explain the diagnosis and management plan to the patient in clear, patient-friendly language. Your explanation should include:
       </p>
 
@@ -182,8 +183,8 @@
         </table>
 
         <p style="margin-top: 0.75rem; font-style: italic; color: #555;">
-          If you consistently address all domains at this level, you&rsquo;re practicing at (or above) typical OEBC expectations
-          for interactive posterior segment / optic nerve counselling stations.
+          If you consistently address all domains at this level, you&rsquo;re practicing at (or above)
+          typical OEBC expectations for interactive posterior segment / optic nerve counselling stations.
         </p>
       </div>
     </div>
@@ -197,9 +198,8 @@
     </div>
   </div>
 
-  <!-- Station-specific config + shared JS that talks to the Supabase Edge Function -->
+  <!-- Station-specific config for the shared AI grading script -->
   <script>
-    // Station-specific config for the shared AI grading script
     const STATION_ID = 40;
   </script>
   <script src="osce_ai_feedback.js"></script>
@@ -219,7 +219,6 @@
         feedbackEl40.textContent = "";
         return;
       }
-
       errorEl40.textContent = "";
       scoreEl40.textContent = "";
       feedbackEl40.textContent = "";
@@ -228,7 +227,7 @@
       btn40.disabled = true;
 
       try {
-        // submitOsceResponse should be defined in your shared osce_ai_feedback.js
+        // submitOsceResponse is defined in osce_ai_feedback.js (same as station 38)
         const result = await submitOsceResponse({
           stationId: STATION_ID,
           userResponse: responseText
