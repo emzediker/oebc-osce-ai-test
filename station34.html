@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC OSCE – Station 34 (Ocular Hypertension)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="margin:0; padding:16px; background:#f9fafb; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <!-- OEBC OSCE Station 34 – Ocular Hypertension Counselling (Interactive, with AI feedback) -->
+  <div class="oebc-station-step" style="max-width: 900px; margin: 0 auto;">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 34</h2>
+
+    <p style="margin-top: 0; color: #555;">Posterior Segment &amp; Optic Nerve &bull; Ocular Hypertension (Interactive)</p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem; background:#fff;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have 8 minutes.</p>
+
+      <p><strong>Scenario:</strong>
+        <br>A 56-year-old patient was referred to you after being told his eye pressure was &quot;high.&quot; Today&#39;s findings:
+        <br>&bull; IOP: 26 mmHg OD / 25 mmHg OS
+        <br>&bull; CCT: 540 &micro;m OD / 538 &micro;m OS (slightly thin)
+        <br>&bull; Optic nerves: C/D 0.45 OU, healthy rims
+        <br>&bull; Visual fields: normal
+        <br>&bull; RNFL OCT: within normal limits
+        <br>&bull; Family history: mother with glaucoma
+        <br>&bull; Systemic history: migraines, no steroids
+      </p>
+
+      <p><strong>Your task:</strong> Explain ocular hypertension to the patient in simple language. Include: what ocular hypertension means, why pressure matters, their risk factors, your recommended monitoring or treatment plan, and what symptoms require urgent care.</p>
+    </div>
+
+    <!-- Step 2: Respond -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem; background:#fff;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s34-response" rows="8"
+        style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+        <button type="button"
+          onclick="document.getElementById('s34-key').style.display='block'; this.disabled=true;"
+          style="padding: 9px 16px; border-radius: 999px; border: none;
+                 background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS34AiFeedback()"
+          style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 & 4: Key Points + Rubric (Hidden Initially) -->
+    <div id="s34-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li>Define ocular hypertension clearly (IOP above normal without damage).</li>
+          <li>Explain why eye pressure matters (risk of glaucoma over time).</li>
+          <li>Relate the patient&rsquo;s <strong>specific risk factors:</strong> slightly thin corneas, family history, age, and overall profile.</li>
+          <li>Clarify what is <strong>NOT</strong> present: no optic nerve damage; normal OCT &amp; visual fields.</li>
+          <li>Discuss management options:
+            <br>&ndash; Close monitoring vs starting drops depending on risk profile.
+            <br>&ndash; Lifestyle contributions (avoid steroid misuse, good systemic health).</li>
+          <li>Give expected follow-up schedule (e.g., &ldquo;pressure, nerve check, OCT every 6&ndash;12 months&rdquo;).</li>
+          <li>Explain symptoms that need urgent care (sudden pain, blur, halos, vision loss).</li>
+          <li>Use reassuring, patient-friendly language.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself from 0&ndash;2 in each domain (0 = not addressed, 1 = partial, 2 = fully met).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained ocular hypertension accurately and simply.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk &amp; Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Described why pressure matters, noted specific risk factors, and highlighted absence of current damage.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management Plan</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Monitoring vs treatment options explained clearly.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Appropriate follow-up intervals &amp; warning signs provided.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Clear, organized, empathetic delivery.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          This structure closely mirrors OEBC interactive communication stations for glaucoma risk counselling.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+    <div id="s34-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                               border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s34-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Thanks for coming in and for sharing your concerns. The main thing we found today is that the <strong>pressure inside your eyes is higher than average</strong>, but the optic nerve and all of our tests
+        for glaucoma damage are still <strong>normal</strong>. We call this situation <strong>ocular hypertension</strong> &mdash; it means the pressure is elevated, but we have not yet seen any damage from it.<br><br>
+
+        Pressure matters because, over many years, it can put extra stress on the optic nerve, which is the cable that connects the eye to the brain. With your slightly thinner corneas, family history of glaucoma,
+        and your age, you are at a <strong>higher-than-average risk</strong> of developing glaucoma in the future, even though your vision and nerve look healthy right now.<br><br>
+
+        Our goal is to <strong>protect your optic nerve long-term</strong>. There are two reasonable options: we can simply monitor you closely with pressures, optic nerve scans, and visual field tests every few
+        months to a year, or we can consider starting a pressure-lowering eye drop to reduce your risk further. We&rsquo;ll talk through the pros and cons together and decide what feels right for you.<br><br>
+
+        If you ever notice <strong>sudden eye pain, halos around lights, a big drop in vision, or severe redness</strong>, those would be reasons to seek urgent care. Otherwise, I&rsquo;d like to see you regularly
+        for pressure checks and repeat testing so we can catch any early change long before it affects your day-to-day vision. Does this explanation make sense, and what questions do you have about ocular hypertension or the follow-up plan?&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS34AiFeedback() {
+      const textArea     = document.getElementById("s34-response");
+      const feedbackBox  = document.getElementById("s34-ai-box");
+      const feedbackText = document.getElementById("s34-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 34,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation / Risk:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
