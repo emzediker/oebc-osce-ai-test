@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 40 (NAION Vascular Risk Counselling)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .ai-panel {
+      margin-top: 1.25rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      font-size: 0.9rem;
+    }
+    .ai-score {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .ai-error {
+      color: #b00020;
+      font-weight: 600;
+    }
+    .ai-loading {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 40 – NAION Vascular Risk Counselling (Interactive) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 40</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Posterior Segment &bull; Optic Nerve / NAION (Interactive)
+    </p>
+
+    <!-- Step 1: Read -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Context:</strong> On the real OEBC OSCE, you would have 8 minutes at this station to read the stem, think, and speak to the patient.</p>
+
+      <p><strong>Scenario:</strong>
+        <br>A 62-year-old patient was referred to you after waking up with sudden, painless vision loss in the right eye 3 days ago.
+        <br>Best-corrected VA: 20/80 OD, 20/20 OS.
+        <br>Fundus exam OD: swollen, pale optic disc with peripapillary hemorrhages; small, crowded disc in the fellow eye.
+        <br>The patient has a history of hypertension and hyperlipidemia and reports &ldquo;snoring a lot&rdquo; according to their partner.
+      </p>
+
+      <p><strong>Your task:</strong>
+        <br>You have just completed your examination and you have diagnosed <strong>non-arteritic anterior ischemic optic neuropathy (NAION)</strong> in the right eye.
+        <br>Explain the diagnosis and management plan to the patient in clear, patient-friendly language. Your explanation should include:
+      </p>
+
+      <ul>
+        <li>What NAION is and why the vision changed so suddenly.</li>
+        <li>How systemic vascular risk factors (e.g., blood pressure, cholesterol, sleep apnea) are involved.</li>
+        <li>Realistic prognosis for the affected eye and risk to the fellow eye.</li>
+        <li>What further testing / referrals are needed (e.g., family doctor, possible sleep study, blood pressure and vascular risk review).</li>
+        <li>Follow-up plan with you and what symptoms should prompt urgent review.</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Respond -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s40-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <button id="s40-ai-btn" type="button">Get AI Feedback &amp; Score</button>
+        <button type="button"
+                onclick="document.getElementById('s40-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+    <div id="s40-key" style="display: none;">
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li><strong>Clear diagnosis:</strong> Use the term &ldquo;non-arteritic ischemic optic neuropathy&rdquo; and immediately follow with a simple explanation (e.g., &ldquo;a circulation problem to the optic nerve, like a small stroke of the eye&rdquo;).</li>
+          <li><strong>Mechanism in plain language:</strong> Explain that blood flow to part of the optic nerve was reduced, causing sudden, painless vision loss.</li>
+          <li><strong>Link to systemic risk factors:</strong> Connect NAION to high blood pressure, cholesterol, possible sleep apnea, and &ldquo;crowded&rdquo; optic nerve anatomy. Emphasize the need for good vascular health control.</li>
+          <li><strong>Prognosis:</strong> Be honest but supportive &ndash; some small improvement may occur, but vision often does not fully return to normal; explain approximate risk to the fellow eye over time.</li>
+          <li><strong>Management / referrals:</strong>
+            <ul>
+              <li>Advise follow-up with family doctor / internist for blood pressure, cholesterol, and vascular risk review.</li>
+              <li>Mention possible evaluation for sleep apnea given snoring history.</li>
+              <li>Clarify your ongoing role in monitoring the optic nerve and visual function.</li>
+            </ul>
+          </li>
+          <li><strong>Safety-netting:</strong> Advise the patient to return urgently if there is new sudden change in vision in either eye, new visual field loss, or other concerning symptoms.</li>
+          <li><strong>Communication style:</strong> Use calm, empathetic, non-blaming language; check understanding and invite questions.</li>
+        </ul>
+      </div>
+
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself from 0&ndash;2 in each area (0 = not addressed, 1 = partially, 2 = well done). Total possible = 10&ndash;12 points.</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">What to Look For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Named NAION and gave a simple, accurate &ldquo;circulation problem to the optic nerve&rdquo; explanation.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Described sudden, painless vision loss and how reduced blood flow caused damage in a way a lay person can understand.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Referrals</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Advised systemic workup (family doctor, vascular risk, possible sleep study) and described your follow-up plan.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Risk</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave realistic expectations for vision in the affected eye and mentioned risk to the fellow eye without being alarmist.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Used clear, empathetic language; organized explanation; encouraged questions and provided safety-net advice.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; font-style: italic; color: #555;">
+          If you consistently address all domains at this level, you&rsquo;re practicing at (or above) typical OEBC expectations
+          for interactive posterior segment / optic nerve counselling stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- AI Feedback Panel -->
+    <div id="s40-ai-panel" class="ai-panel">
+      <div id="s40-ai-status" class="ai-loading" style="display:none;"></div>
+      <div id="s40-ai-score" class="ai-score"></div>
+      <div id="s40-ai-feedback"></div>
+      <div id="s40-ai-error" class="ai-error"></div>
+    </div>
+  </div>
+
+  <!-- Station-specific config + shared JS that talks to the Supabase Edge Function -->
+  <script>
+    // Station-specific config for the shared AI grading script
+    const STATION_ID = 40;
+  </script>
+  <script src="osce_ai_feedback.js"></script>
+  <script>
+    // Wire up button to shared submit function
+    const btn40      = document.getElementById('s40-ai-btn');
+    const statusEl40 = document.getElementById('s40-ai-status');
+    const scoreEl40  = document.getElementById('s40-ai-score');
+    const feedbackEl40 = document.getElementById('s40-ai-feedback');
+    const errorEl40  = document.getElementById('s40-ai-error');
+
+    btn40.addEventListener('click', async () => {
+      const responseText = document.getElementById('s40-response').value.trim();
+      if (!responseText) {
+        errorEl40.textContent = "Please type your response first.";
+        scoreEl40.textContent = "";
+        feedbackEl40.textContent = "";
+        return;
+      }
+
+      errorEl40.textContent = "";
+      scoreEl40.textContent = "";
+      feedbackEl40.textContent = "";
+      statusEl40.style.display = "block";
+      statusEl40.textContent = "Asking AI to review your response...";
+      btn40.disabled = true;
+
+      try {
+        // submitOsceResponse should be defined in your shared osce_ai_feedback.js
+        const result = await submitOsceResponse({
+          stationId: STATION_ID,
+          userResponse: responseText
+        });
+
+        statusEl40.style.display = "none";
+        if (result && typeof result.score === "number") {
+          scoreEl40.textContent = `AI Score: ${result.score}/10`;
+        }
+        if (result && result.feedback) {
+          feedbackEl40.innerHTML = result.feedback;
+        }
+      } catch (err) {
+        statusEl40.style.display = "none";
+        console.error(err);
+        errorEl40.textContent = "There was a problem getting AI feedback. Please try again.";
+      } finally {
+        btn40.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
