@@ -66,7 +66,7 @@
   </style>
 </head>
 <body>
-  <!-- OEBC OSCE Station 38 – PVD vs Retinal Tear Triage (Interactive) -->
+  <!-- OEBC OSCE Station 38 – PVD vs Retinal Tear Triage (AI-enabled) -->
   <div class="oebc-station-step">
 
     <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 38</h2>
@@ -75,7 +75,7 @@
       Posterior Segment &bull; PVD vs Retinal Tear Triage (Interactive)
     </p>
 
-    <!-- Step 1: Read -->
+    <!-- Step 1: Read the Station -->
     <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
       <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
@@ -102,7 +102,7 @@
       </ul>
     </div>
 
-    <!-- Step 2: Respond -->
+    <!-- Step 2: Student Response -->
     <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
       <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
@@ -110,17 +110,25 @@
       <p>Type what you would say to the patient:</p>
       <textarea id="s38-response" rows="8"></textarea>
 
-      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-        <button id="s38-ai-btn" type="button">Get AI Feedback &amp; Score</button>
-        <button type="button"
-                onclick="document.getElementById('s38-key').style.display='block'; this.disabled=true;">
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          onclick="document.getElementById('s38-key').style.display='block'; this.disabled=true;"
+          type="button">
           Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS38AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
         </button>
       </div>
     </div>
 
-    <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+    <!-- Step 3: Key Points + Rubric -->
     <div id="s38-key" style="display: none;">
+      <!-- Key Points -->
       <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
                   background: #f5f7fb; margin-bottom: 1rem;">
 
@@ -144,6 +152,8 @@
           <li><strong>Communication style:</strong> Uses calm, empathetic, non-alarming language while still conveying the seriousness of potential complications.</li>
         </ul>
       </div>
+
+      <!-- Rubric -->
       <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
 
         <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
@@ -172,7 +182,7 @@
             </tr>
             <tr>
               <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Follow-Up Plan</strong></td>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave a specific follow-up timeframe and instructions on what to do if symptoms change.</td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave a specific follow-up timeframe and clear instructions on what to do if symptoms change.</td>
             </tr>
             <tr>
               <td style="padding: 6px;"><strong>Communication</strong></td>
@@ -188,67 +198,159 @@
       </div>
     </div>
 
-    <!-- AI Feedback Panel -->
-    <div id="s38-ai-panel" class="ai-panel">
-      <div id="s38-ai-status" class="ai-loading" style="display:none;"></div>
-      <div id="s38-ai-score" class="ai-score"></div>
-      <div id="s38-ai-feedback"></div>
-      <div id="s38-ai-error" class="ai-error"></div>
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s38-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s38-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Based on what you’ve told me and what I see on your exam, you’re having something we call a
+        <strong>posterior vitreous detachment</strong> in the right eye. Inside the eye there is a clear
+        gel, like firm Jell-O, that is normally attached to the retina. As we get older that gel shrinks
+        and loosens. When it pulls away from the retina it can cause <strong>flashes of light</strong>
+        and new <strong>floaters</strong>, which is exactly what you noticed.<br><br>
+
+        The good news is that today, with a very careful dilated exam, I did <strong>not</strong> see
+        any tears or detachments of the retina. That means right now the retina itself is still attached,
+        and there is no sign of bleeding or a “hole” in the retina on the exam.<br><br>
+
+        A benign PVD like yours means the gel has pulled away without ripping the retina. A
+        <strong>retinal tear or detachment</strong> is more serious &mdash; that’s when the gel tugs hard
+        enough to actually tear the retina, and fluid can get underneath and peel it off like wallpaper.
+        That can cause a dark curtain or shadow and permanent vision loss if it isn’t treated quickly.<br><br>
+
+        For the next few weeks we need to watch you closely, because this is the time when a tear is most
+        likely to develop if it’s going to. I want you to call us <strong>right away or go to emergency</strong>
+        if you notice any of the following:
+        more than just a couple of floaters &mdash; for example a sudden &ldquo;shower&rdquo; of black spots,
+        new or worse flashes of light, a dark curtain or veil in your side vision, or any sudden drop in
+        your vision.<br><br>
+
+        Even if none of those warning signs show up, I still want to <strong>re-examine you in about
+        4–6 weeks</strong> to make sure the retina still looks healthy. After that we’ll continue to
+        check it at your regular visits. Most PVDs settle down over time and the flashes fade; the floaters
+        may become less noticeable as your brain learns to ignore them.<br><br>
+
+        I know this is scary to experience, but you did exactly the right thing by coming in quickly.
+        We’ll keep a close eye on you, and if anything at all changes, I’d rather you call us and have it
+        be nothing than wait on something important.&rdquo;
+      </div>
     </div>
   </div>
 
-  <!-- Your shared JS that talks to the Supabase Edge Function -->
-  <!-- Adjust src path to match your repo (this is just a placeholder) -->
   <script>
-    // Station-specific config for the shared AI grading script
-    const STATION_ID = 38;
-  </script>
-  <script src="osce_ai_feedback.js"></script>
-  <script>
-    // Wire up button to shared submit function
-    const btn38 = document.getElementById('s38-ai-btn');
-    const statusEl = document.getElementById('s38-ai-status');
-    const scoreEl = document.getElementById('s38-ai-score');
-    const feedbackEl = document.getElementById('s38-ai-feedback');
-    const errorEl = document.getElementById('s38-ai-error');
+    async function getS38AiFeedback() {
+      const textArea     = document.getElementById("s38-response");
+      const feedbackBox  = document.getElementById("s38-ai-box");
+      const feedbackText = document.getElementById("s38-ai-text");
 
-    btn38.addEventListener('click', async () => {
-      const responseText = document.getElementById('s38-response').value.trim();
-      if (!responseText) {
-        errorEl.textContent = "Please type your response first.";
-        scoreEl.textContent = "";
-        feedbackEl.textContent = "";
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
         return;
       }
-      errorEl.textContent = "";
-      scoreEl.textContent = "";
-      feedbackEl.textContent = "";
-      statusEl.style.display = "block";
-      statusEl.textContent = "Asking AI to review your response...";
-      btn38.disabled = true;
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
 
       try {
-        // This function should be defined in your shared osce_ai_feedback.js
-        const result = await submitOsceResponse({
-          stationId: STATION_ID,
-          userResponse: responseText
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 38,
+            user_response: userResponse
+          })
         });
 
-        statusEl.style.display = "none";
-        if (result && typeof result.score === "number") {
-          scoreEl.textContent = `AI Score: ${result.score}/10`;
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
         }
-        if (result && result.feedback) {
-          feedbackEl.innerHTML = result.feedback;
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
         }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis &amp; Findings:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Risk / Red Flags &amp; Plan:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Follow-up &amp; Monitoring:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
       } catch (err) {
-        statusEl.style.display = "none";
-        console.error(err);
-        errorEl.textContent = "There was a problem getting AI feedback. Please try again.";
-      } finally {
-        btn38.disabled = false;
+        feedbackText.textContent = "Network or setup error: " + err.message;
       }
-    });
+    }
   </script>
 </body>
 </html>
