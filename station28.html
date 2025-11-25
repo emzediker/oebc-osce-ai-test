@@ -1,0 +1,254 @@
+<!-- OEBC OSCE Station 28 – Red Eye Triage (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 28</h2>
+
+  <p style="margin-top: 0; color: #555;">Anterior Segment &bull; Red Eye Triage &ndash; Conjunctivitis vs Serious Etiology (Interactive)</p>
+
+  <!-- Step 1: Read the Station -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Scenario:</strong>
+      <br>A 32-year-old presents with a red, irritated right eye for 2 days. Symptoms: mild discharge in the morning, irritation, mild photophobia, and tearing. Denies trauma. No contact lens wear. No decrease in vision. Reports recent viral illness in the family. VA: 20/20 OU. No pain with EOMs.
+    </p>
+
+    <p><strong>Your task:</strong>
+      <br>Explain your triage impression and management plan in clear, patient-friendly language. Include: what this likely is, red flags you screened for, why you <em>do not</em> think it is something dangerous, and the treatment &amp; follow-up plan.
+    </p>
+
+    <p style="color:#666; font-style: italic;">Note: On the real OEBC OSCE, stations like this assess your communication, reasoning, and patient reassurance skills within 8 minutes.</p>
+  </div>
+
+  <!-- Step 2: Student Response -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to this patient:</p>
+    <textarea id="s28-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s28-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS28AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Hidden Key & Rubric -->
+  <div id="s28-key" style="display: none;">
+    <!-- Key Points -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>Explain likely diagnosis: viral conjunctivitis or mild nonspecific conjunctivitis.</li>
+        <li>Explain why this <em>does not</em> appear to be serious: normal vision, no contact lenses, no severe pain, no photophobia out of proportion, no trauma.</li>
+        <li>Identify and mention red flags you checked for (vision loss, corneal involvement, uveitis pain, CL use).</li>
+        <li>Discuss appropriate management: lubrication, cold compresses, hygiene, possibly topical antihistamine for comfort.</li>
+        <li>Explain expected time course (7&ndash;10 days). Set expectations about potential worsening before improvement.</li>
+        <li>Explain strict return precautions: vision decrease, severe pain, worsening photophobia, reduced EOM comfort, symptoms lasting &gt;2 weeks.</li>
+        <li>Use clear, empathetic, supportive language.</li>
+      </ul>
+    </div>
+    <!-- Rubric -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score yourself 0&ndash;2 in each domain.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Triage Accuracy</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explains why this is likely conjunctivitis and not a serious condition.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Red Flags Addressed</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentions absence of red flag symptoms (vision loss, severe pain, CL use, etc.).</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management Plan</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Provides clear at-home treatment and hygiene guidance.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Return Precautions</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explains expected recovery and strict reasons to return.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Warm, calm, reassuring, and easy for a layperson to understand.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">Strong performance across all categories mirrors OEBC expectations for red-eye interactive stations.</p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s28-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s28-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      “From what you’ve told me and what I see on exam, this looks most consistent with a
+      <strong>mild conjunctivitis</strong>, likely related to the recent virus going around in your family. The
+      good news is that your vision is 20/20 in both eyes, you’re not a contact lens wearer, and you don’t have
+      the kinds of severe pain or light sensitivity that we see with more dangerous causes of a red eye, like
+      corneal ulcers or inflammation inside the eye.<br><br>
+
+      I’ve checked carefully for the main <strong>red flags</strong> we worry about – things like a cloudy cornea,
+      very high light sensitivity, decreased vision, a history of trauma, or pain when you move your eyes – and
+      those are not present today. That’s why I feel comfortable saying this is an irritation of the surface of
+      the eye rather than something that threatens your sight.<br><br>
+
+      Treatment is mainly about <strong>comfort and hygiene</strong>: using lubricating drops during the day,
+      cool compresses if it feels soothing, and good hand-washing so it doesn’t spread. It usually runs its course
+      over about a week to 10 days. Sometimes the redness can look a bit worse before it looks better, especially
+      in the first few days.<br><br>
+
+      What I do want you to watch for is any <strong>change</strong>: if your vision becomes blurry, the pain
+      suddenly increases, light starts to bother you a lot more, the eye becomes much more red, or it’s not
+      improving at all after about two weeks, I’d like you to come back or be seen urgently. As long as things
+      follow the usual course, we’ll just manage it supportively. Does this explanation fit with what you’ve been
+      feeling, and what questions do you have about the plan?”
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS28AiFeedback() {
+    const textArea     = document.getElementById("s28-response");
+    const feedbackBox  = document.getElementById("s28-ai-box");
+    const feedbackText = document.getElementById("s28-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 28,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis / Triage Impression:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management Plan:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Return Precautions:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
