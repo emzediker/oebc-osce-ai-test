@@ -1,0 +1,272 @@
+<!-- OEBC OSCE Station 35 – Dry AMD Lifestyle & AREDS Counselling (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 35</h2>
+
+  <p style="margin-top: 0; color: #555;">Posterior Segment &bull; Dry AMD Lifestyle &amp; AREDS Counselling (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have about 8 minutes for this type of station.</p>
+
+    <p><strong>Scenario:</strong>
+      <br>A 74-year-old patient reports gradually worsening central blur in both eyes when reading and watching TV. They deny flashes, floaters, or sudden curtain in vision. Refraction gives 20/25 OU with best correction.
+      <br><br>Fundus exam and macular OCT show multiple drusen and mild pigmentary changes in the macula of both eyes, consistent with
+      <em>early&ndash;intermediate non-exudative (dry) age-related macular degeneration</em>. There is no subretinal fluid or hemorrhage.
+      <br><br>The patient smokes half a pack per day, has a history of hypertension, and reports that their mother &ldquo;lost her central vision in old age.&rdquo;
+    </p>
+
+    <p><strong>Your task:</strong> Explain the diagnosis and management plan to the patient using clear, patient-friendly language. Be sure to address:</p>
+
+    <ul>
+      <li>What dry age-related macular degeneration is and how it affects their vision.</li>
+      <li>The role of <strong>AREDS-style supplements</strong> (who should take them and what they do / don&rsquo;t do).</li>
+      <li>Key lifestyle and systemic risk factor modifications (e.g., <strong>smoking cessation</strong>, diet, UV protection, systemic control).</li>
+      <li>How to <strong>monitor at home</strong> (e.g., Amsler grid) and what <strong>urgent symptoms</strong> should prompt immediate care (conversion to wet AMD).</li>
+      <li>An appropriate follow-up plan and realistic prognosis.</li>
+    </ul>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the patient:</p>
+    <textarea id="s35-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s35-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS35AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s35-key" style="display: none;">
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li><strong>Diagnosis:</strong> Clearly state &ldquo;dry age-related macular degeneration&rdquo; and link it to gradual central blur.</li>
+        <li><strong>Pathophysiology (simple terms):</strong> Explain that the &ldquo;central retina / macula&rdquo; has wear-and-tear changes (drusen, pigment) that can affect detailed vision.</li>
+        <li><strong>AREDS Supplements:</strong>
+          <ul>
+            <li>Clarify that AREDS-type vitamins are for <em>moderate / intermediate</em> AMD and help <strong>reduce risk of progression</strong>, not restore lost vision.</li>
+            <li>Note smoking considerations (avoid beta-carotene formulations in smokers; discuss appropriate formulation per local guidelines).</li>
+          </ul>
+        </li>
+        <li><strong>Lifestyle &amp; Risk Factors:</strong> Emphasize smoking cessation, good control of blood pressure, healthy diet (leafy greens, fish), UV protection, and maintaining regular eye exams.</li>
+        <li><strong>Monitoring &amp; Red Flags:</strong> Teach home monitoring (e.g., Amsler grid) and stress urgent review if they notice:
+          <ul>
+            <li>Sudden drop in central vision.</li>
+            <li>New distortion / wavy lines (metamorphopsia).</li>
+            <li>New central dark spot or missing area.</li>
+          </ul>
+        </li>
+        <li><strong>Follow-Up &amp; Prognosis:</strong> Set a realistic expectation (may stay stable for a long time but can progress) and suggest appropriate follow-up interval (e.g., every 6&ndash;12 months, or as per your protocol).</li>
+        <li><strong>Communication Style:</strong> Use calm, reassuring, non-alarming language while still stressing the importance of monitoring and risk-factor control.</li>
+      </ul>
+    </div>
+
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). This mirrors the style of OEBC interactive-station scoring.</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named dry AMD; linked it clearly to the patient&rsquo;s central blur and age.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described macular changes and expected course in plain, non-technical language.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Discussed AREDS-type vitamins (who benefits, what they do), plus lifestyle / systemic risk control.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk &amp; Red Flags</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained conversion risk to wet AMD and clearly outlined urgent symptoms that require immediate assessment.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Organized, empathetic, and patient-centered; invited questions and ensured understanding.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">If you are consistently scoring 8&ndash;10 out of 10 across stations using this rubric, you are communicating at a level very similar to what OEBC expects on AMD counselling and other posterior segment interactive stations.</p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s35-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s35-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;You&rsquo;re noticing that the center of your vision is a bit blurrier for things like reading and watching TV. Today we found changes in the very center part of your retina, called the
+      <strong>macula</strong>, that match a condition called <strong>dry age-related macular degeneration</strong>. That means there is some &lsquo;wear and tear&rsquo; in the cells that handle your sharp, detailed vision,
+      and we can see tiny deposits called drusen and some pigment changes there.<br><br>
+
+      Right now, these changes are in the <strong>early to intermediate</strong> stage, and your vision is still quite good. Our goal is to do everything we can to <strong>slow down</strong> any further progression and
+      catch any signs of the &lsquo;wet&rsquo; form as early as possible, because that form can threaten vision more quickly.<br><br>
+
+      One of the tools we use is an <strong>AREDS-type vitamin supplement</strong>. For people in your stage, these vitamins have been shown to <strong>reduce the risk of the disease getting worse</strong>, but they do
+      not reverse damage that has already occurred. Because you&rsquo;re a smoker, we would choose a formulation that <strong>does not contain beta-carotene</strong>, since that ingredient isn&rsquo;t recommended for smokers.
+      We&rsquo;ll go over a specific brand and dosing for you.<br><br>
+
+      Lifestyle is also really important. The biggest steps you can take are to <strong>stop smoking</strong>, keep your <strong>blood pressure</strong> well controlled, and eat a diet rich in leafy green vegetables and
+      fish. Wearing good <strong>UV-protective sunglasses</strong> outside and keeping regular eye exams also help us protect your eyes over time.<br><br>
+
+      I&rsquo;ll give you an <strong>Amsler grid</strong> to keep at home. Once or twice a week, you&rsquo;ll cover one eye at a time and look at the center dot. If you ever notice that the lines suddenly look wavy or bent,
+      a new dark or missing spot in the center, or a sudden drop in your central vision, that could mean the condition has turned into the &lsquo;wet&rsquo; form, and you should call us <strong>right away</strong> so we can
+      bring you in urgently.<br><br>
+
+      For now, we&rsquo;ll plan to <strong>see you every 6&ndash;12 months</strong> to monitor your macula with exams and scans, or sooner if you notice any of those warning changes. With good monitoring and lifestyle changes,
+      many patients maintain useful vision for a long time. Does this explanation make sense, and what questions do you have about your macular degeneration or the vitamins?&rdquo;
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS35AiFeedback() {
+    const textArea     = document.getElementById("s35-response");
+    const feedbackBox  = document.getElementById("s35-ai-box");
+    const feedbackText = document.getElementById("s35-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 35,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const riskScore          = rubric.risk_redflags?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + riskScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(riskScore)}
+            &nbsp;<strong>Risk &amp; Red Flags:</strong>
+            ${rubric.risk_redflags?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
