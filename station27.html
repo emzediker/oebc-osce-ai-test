@@ -1,0 +1,269 @@
+<!-- OEBC OSCE Station 27 – Pediatric Epiphora / NLDO (Interactive, with AI feedback) -->
+<div class="oebc-station-step" style="max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 27</h2>
+
+  <p style="margin-top: 0; color: #555;">Anterior Segment &amp; Adnexa &bull; Pediatric Epiphora / NLDO (Interactive)</p>
+
+  <!-- Step 1: Read -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+    <p><strong>Context:</strong> On the real OEBC OSCE, you would have 8 minutes to communicate this clearly and confidently.</p>
+
+    <p><strong>Scenario:</strong><br>
+      A parent brings in their <strong>7-month-old baby</strong> with constant tearing and intermittent discharge from the right eye since birth. The parent notes: &ldquo;Her eye always looks watery but it doesn&rsquo;t seem painful.&rdquo;
+      Examination shows:
+      &bull; Clear cornea
+      &bull; No conjunctival injection
+      &bull; Mild reflux of mucous from the punctum when pressure is applied
+      &bull; Normal eyelids and lashes
+      &bull; No signs of infection or trauma
+    </p>
+
+    <p><strong>Your task:</strong> Explain to the parent:
+      &bull; What the condition is (likely nasolacrimal duct obstruction)
+      &bull; Why it happens
+      &bull; What they can do at home (Crigler massage)
+      &bull; Expected prognosis and timeline
+      &bull; When to return or seek further care
+    </p>
+  </div>
+
+  <!-- Step 2: Respond -->
+  <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+    <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+    <p>Type what you would say to the parent:</p>
+    <textarea id="s27-response" rows="8"
+      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; font-size: 0.95rem;"></textarea>
+
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+      <button type="button"
+        onclick="document.getElementById('s27-key').style.display='block'; this.disabled=true;"
+        style="padding: 9px 16px; border-radius: 999px; border: none;
+               background: #0b6bcb; color: #fff; font-weight: 600; cursor: pointer;">
+        Show Key Points &amp; Rubric
+      </button>
+
+      <button type="button"
+        onclick="getS27AiFeedback()"
+        style="padding: 9px 16px; border-radius: 999px; border: 1px solid #b91c1c;
+               background: #fff5f5; color: #7f1d1d; font-weight: 600; cursor: pointer;">
+        Get AI-style Feedback (beta)
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+  <div id="s27-key" style="display: none;">
+    <!-- Key Points -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                background: #f5f7fb; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+      <ul>
+        <li>Clearly explain that this is a <strong>nasolacrimal duct obstruction</strong>, a common infant condition.</li>
+        <li>Describe that the tear drainage system is immature or partially blocked.</li>
+        <li>Reassure that vision is normal and the eye is healthy.</li>
+        <li>Explain <strong>Crigler massage</strong>: applying firm downward pressure over the lacrimal sac several times/day.</li>
+        <li>Discuss normal timeline: most cases resolve by 9&ndash;12 months.</li>
+        <li>Describe what worsening infection looks like (redness, swelling, fever).</li>
+        <li>Give follow-up plan: continue massage, monitor for infection, return if not resolving or if symptoms worsen.</li>
+        <li>Use simple, supportive language appropriate for a concerned parent.</li>
+      </ul>
+    </div>
+
+    <!-- Rubric -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+      <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+      <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+            <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Named NLDO and reassured the eye is healthy.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Described immature/blocked duct in parent-friendly terms.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Taught Crigler massage clearly; offered realistic expectations.</td>
+          </tr>
+          <tr>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+            <td style="border-bottom: 1px solid #eee; padding: 6px;">Noted high self-resolution rate &amp; red flags for infection.</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px;"><strong>Communication</strong></td>
+            <td style="padding: 6px;">Supportive, empathetic, clear language for a parent.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+        Consistently covering all domains mirrors OEBC expectations for pediatric epiphora / NLDO interactive stations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 5: AI-style Feedback (box present but empty until clicked) -->
+  <div id="s27-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+    <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+    <div id="s27-ai-text" style="font-size:0.9rem;"></div>
+
+    <!-- Example 10/10 response (static) -->
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <strong>Example 10/10 response:</strong><br>
+      &ldquo;Thanks for bringing your little one in today; I know it&rsquo;s worrying when one eye always looks watery.
+      What I&rsquo;m seeing fits with a very common condition in babies called a <strong>nasolacrimal duct obstruction</strong>,
+      or a &lsquo;blocked tear duct.&rsquo; The eye itself is healthy &mdash; the clear window and the white part of the eye look great &mdash;
+      but the tiny drainage tube that normally carries tears from the eye into the nose is not fully open yet on this side.<br><br>
+
+      Because the tears can&rsquo;t drain properly, they tend to sit on the eye and eyelid, so it constantly looks watery and
+      you can sometimes see a bit of mucous. The good news is that in most babies this improves on its own as the
+      drainage system finishes opening up over the first year of life.<br><br>
+
+      There is something helpful you can do at home called <strong>Crigler massage</strong>. A few times a day, you&rsquo;ll place a clean
+      finger in the corner of the eye, right over the little tear sac by the nose, and press firmly downward along the side
+      of the nose. I&rsquo;ll show you exactly where and how hard to press before you leave. This can help open the duct and
+      move some of that mucous through.<br><br>
+
+      Most cases like this clear up by about 9&ndash;12 months of age. I would want you to let me know quickly if you ever
+      notice the skin becoming very red and swollen, the area looks hot and tender, she seems unwell or develops a fever,
+      or the discharge becomes thick and green &mdash; those can be signs of an infection that needs treatment right away.<br><br>
+
+      For now, we&rsquo;ll keep an eye on it, continue the massage, and gently clean away any discharge with a warm, damp cloth.
+      If things haven&rsquo;t improved in the next few months, or if you&rsquo;re ever worried, we can reassess and decide whether
+      we need to involve a specialist. Does this explanation make sense, and would you like me to go over the massage
+      technique again?&rdquo;
+    </div>
+  </div>
+</div>
+
+<script>
+  async function getS27AiFeedback() {
+    const textArea     = document.getElementById("s27-response");
+    const feedbackBox  = document.getElementById("s27-ai-box");
+    const feedbackText = document.getElementById("s27-ai-text");
+
+    const userResponse = textArea.value.trim();
+    if (!userResponse) {
+      alert("Type something first so the AI has something to grade!");
+      return;
+    }
+
+    // Reveal the box immediately
+    feedbackBox.style.display = "block";
+    feedbackText.textContent = "Working on your feedback…";
+
+    try {
+      const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+        },
+        body: JSON.stringify({
+          station_number: 27,
+          user_response: userResponse
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+        return;
+      }
+
+      const data   = await res.json();
+      const rubric = data.rubric || {};
+
+      const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+      const explanationScore   = rubric.explanation?.score ?? 0;
+      const managementScore    = rubric.management?.score ?? 0;
+      const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+      const communicationScore = rubric.communication?.score ?? 0;
+
+      let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+      if (typeof data.total_score === "number") {
+        totalScore = data.total_score;
+      }
+
+      const overallComment = data.overall_comment || "";
+
+      function badge(score) {
+        let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+        if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+        if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+        return `<span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">${score}/2</span>`;
+      }
+
+      feedbackText.innerHTML = `
+        <div>
+          <p style="margin:0 0 6px;">
+            ${badge(diagnosisScore)}
+            &nbsp;<strong>Diagnosis:</strong>
+            ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(explanationScore)}
+            &nbsp;<strong>Explanation:</strong>
+            ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(managementScore)}
+            &nbsp;<strong>Management:</strong>
+            ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 6px;">
+            ${badge(prognosisScore)}
+            &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+            ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:0 0 10px;">
+            ${badge(communicationScore)}
+            &nbsp;<strong>Communication:</strong>
+            ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+          </p>
+
+          <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+          <p style="margin:0;">${overallComment}</p>
+        </div>
+      `;
+    } catch (err) {
+      feedbackText.textContent = "Network or setup error: " + err.message;
+    }
+  }
+</script>
