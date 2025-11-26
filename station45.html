@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 45 (Diabetes & Diabetic Retinopathy)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 45 – Diabetes & Diabetic Retinopathy Counselling (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 45</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic Disorders &bull; Diabetes &amp; Diabetic Retinopathy (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE, you would have 8 minutes to complete this station.</p>
+
+      <p><strong>Scenario:</strong>
+        <br>A 58-year-old patient with a 12-year history of type 2 diabetes is referred by their family doctor for an eye exam. They report slightly blurry vision at both distance and near that comes and goes throughout the day. Blood sugar control is &ldquo;on and off,&rdquo; and their last A1c was 8.5% (reported verbally). Best-corrected acuity is 20/25 OU. Fundus exam shows <em>moderate non-proliferative diabetic retinopathy</em> (multiple dot/blot hemorrhages, microaneurysms, and a few cotton wool spots) without clinically significant macular edema.
+      </p>
+
+      <p><strong>Your task:</strong> You are speaking directly to the patient. In clear, patient-friendly language, you must:</p>
+
+      <ul>
+        <li>State the diagnosis, including that they have changes in the retina related to diabetes (diabetic retinopathy, moderate non-proliferative).</li>
+        <li>Explain how diabetes affects the blood vessels in the eye and why this can threaten vision over time.</li>
+        <li>Emphasize the link between eye findings and overall systemic control (blood sugar, blood pressure, cholesterol, smoking).</li>
+        <li>Outline the management plan: eye follow-up interval, when referral to a retinal specialist may be needed, and what symptoms should trigger urgent care.</li>
+        <li>Encourage coordination with their family doctor/endocrinologist and give concrete lifestyle/medical targets in simple terms.</li>
+      </ul>
+
+      <p style="margin-top: 0.5rem; color:#555; font-style: italic;">
+        For OEBC-style scoring, your response should clearly cover: diagnosis, explanation,
+        systemic linkage, management/follow-up, and communication style.
+      </p>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient as if you were in the exam room:</p>
+      <textarea id="s45-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s45-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS45AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s45-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li><strong>Diagnosis clearly stated:</strong> &ldquo;You have diabetic changes in the back of the eye called moderate non-proliferative diabetic retinopathy.&rdquo;</li>
+          <li><strong>Basic mechanism explained:</strong> High blood sugar damages small blood vessels in the retina, causing leaking/bleeding and oxygen problems that can threaten vision.</li>
+          <li><strong>Systemic connection:</strong> Emphasize the importance of better control of blood sugar (A1c), blood pressure, cholesterol, and smoking status to protect vision and overall health.</li>
+          <li><strong>Management plan:</strong>
+            <ul>
+              <li>State follow-up interval (e.g., every 6&ndash;12 months or more often if progression).</li>
+              <li>Explain that if the condition worsens (proliferative DR or macular edema), they may need treatment such as injections or laser from a retinal specialist.</li>
+            </ul>
+          </li>
+          <li><strong>Red-flag symptoms:</strong> Sudden vision loss, large new floaters, curtain/shadow, or sudden distortion should prompt urgent/quick care.</li>
+          <li><strong>Team-based care:</strong> Encourage them to follow up with their family doctor/endocrinologist to adjust medications and lifestyle.</li>
+          <li><strong>Communication style:</strong> Reassuring but honest; avoid blame, use simple language, invite questions, and check for understanding.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself from 0&ndash;2 for each domain (0 = not addressed, 1 = partial, 2 = clear/complete). This mirrors typical OSCE-style scoring.</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">What to Look For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly named diabetic retinopathy and its severity; linked it to the patient&rsquo;s diabetes.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained how diabetes affects the retinal blood vessels and how this can affect vision over time in lay terms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Systemic Link</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Connected eye findings to blood sugar, blood pressure, cholesterol, and lifestyle; encouraged medical follow-up.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Follow-Up</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Gave a reasonable follow-up interval and explained potential need for retinal referral and treatments if things progress.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Organised, empathetic, non-judgmental; checked understanding or invited questions.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you consistently cover all domains on stations like this, you are practicing at a level
+          similar to OEBC interactive systemic&ndash;ocular stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s45-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                                border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s45-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;From what you’ve told me and what I see when I look at the back of your eyes today,
+        you have <strong>moderate non-proliferative diabetic retinopathy</strong>. That means the
+        small blood vessels in the retina – the thin film of tissue that lines the inside of the eye –
+        are showing changes from your diabetes. I can see tiny areas of bleeding and swelling in the
+        vessels, but at this stage there is no serious fluid in the centre of your vision.&rdquo;
+        <br><br>
+        &ldquo;Diabetes affects blood vessels all over the body. When blood sugar runs high over time,
+        those vessels become fragile and can leak or close off. In the eye that can lead to bleeding,
+        swelling, and a lack of oxygen to the retina, which is why untreated or poorly controlled
+        diabetes can eventually threaten sight.&rdquo;
+        <br><br>
+        &ldquo;The eye findings are also a window into how your blood vessels are doing elsewhere in the
+        body – in the heart, kidneys, and brain. Your last A1c of 8.5% tells us your sugars have been
+        higher than ideal. For most people with diabetes we aim for an A1c closer to the 7% range, along
+        with good blood pressure and cholesterol control and avoiding smoking. Improving those numbers
+        doesn’t just protect your eyes; it also lowers your risk of heart attack, stroke, and kidney
+        problems.&rdquo;
+        <br><br>
+        &ldquo;Right now, you <strong>do not</strong> need injections or laser treatment, but we do need to
+        watch you closely. With this level of retinopathy I’d like to see you about every
+        <strong>6–12 months</strong>, and sooner if there is any sign things are progressing. If the
+        bleeding worsens, new abnormal blood vessels grow, or fluid builds up in the macula, I would
+        refer you to a retinal specialist for treatments such as injections or laser to protect your
+        vision.&rdquo;
+        <br><br>
+        &ldquo;I also want you to know which symptoms mean you should call urgently rather than waiting
+        for your next appointment: a sudden big change in vision, a dark curtain or shadow in the vision,
+        a burst of new floaters or flashes, or sudden distortion or waviness. If any of those happen,
+        contact us or seek urgent eye care right away.&rdquo;
+        <br><br>
+        &ldquo;The most important thing you can do long term is work with your family doctor or
+        endocrinologist on your diabetes plan. That includes taking medications as prescribed, aiming
+        for steadier blood sugars, keeping blood pressure and cholesterol in target ranges, not smoking,
+        and looking at diet and activity that fit your life. If you like, we can send a detailed letter
+        to your doctor today so we’re all on the same page.&rdquo;
+        <br><br>
+        &ldquo;I know it can feel discouraging to hear that diabetes is affecting your eyes, but the good
+        news is that we’ve caught these changes at a stage where we can still work together to protect
+        your sight. I’ll follow you regularly, and if you have any questions or notice changes in your
+        vision between visits, please reach out – I’d much rather hear from you early than late.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS45AiFeedback() {
+      const textArea     = document.getElementById("s45-response");
+      const feedbackBox  = document.getElementById("s45-ai-box");
+      const feedbackText = document.getElementById("s45-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 45,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;           // we'll treat this as "Systemic Link"
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;   // we'll treat this as "Management & Follow-Up"
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Systemic Link:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Management &amp; Follow-Up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
