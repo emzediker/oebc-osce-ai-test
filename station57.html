@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>OEBC Mock OSCE – Station 57 (Ethics / Record-Keeping)</title>
+  <title>OEBC Mock OSCE – Station 56 (Progressive Lens Adaptation)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -43,64 +43,50 @@
       opacity: 0.6;
       cursor: default;
     }
-    .ai-panel {
-      margin-top: 1.25rem;
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #cfd8e3;
-      background: #f5f7fb;
-      font-size: 0.9rem;
-    }
-    .ai-score {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .ai-error {
-      color: #b00020;
-      font-weight: 600;
-    }
-    .ai-loading {
-      font-style: italic;
-      color: #555;
-    }
   </style>
 </head>
 <body>
-  <!-- OEBC OSCE Station 57 – Ethics / Record-Keeping (AI-enabled) -->
+  <!-- OEBC OSCE Station 56 – Progressive Lens Adaptation (AI-enabled) -->
   <div class="oebc-station-step">
 
-    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 57</h2>
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 56</h2>
 
-    <p style="margin-top: 0; color: #555;">Other &bull; Ethics &amp; Record-Keeping (Interactive)</p>
+    <p style="margin-top: 0; color: #555;">
+      Other &bull; Progressive Lens Adaptation Counselling (Interactive)
+    </p>
 
     <!-- Step 1: Read the Station -->
     <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
       <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-      <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have limited time (about 8 minutes) to respond.</p>
+      <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have about 8 minutes total at this station.</p>
 
       <p><strong>Scenario:</strong></p>
 
       <p>
-        A 52-year-old patient comes in for a routine eye exam and vision test for a driver&rsquo;s licence renewal.
-        After refraction, they see only 20/50 in the better eye with best correction, which does not meet
-        the legal driving standard in your jurisdiction.
+        A 48-year-old patient is picking up their new progressive lenses for the first time. They report feeling nervous
+        after hearing stories from friends who &ldquo;couldn&rsquo;t get used to them.&rdquo; Their prescription is:
       </p>
-
+      <ul>
+        <li>OD: +1.25 &ndash;0.50 &times; 090</li>
+        <li>OS: +1.50 &ndash;0.25 &times; 100</li>
+        <li>Add: +1.75 OU</li>
+      </ul>
       <p>
-        When you explain this, the patient becomes frustrated and says:
-        &ldquo;I&rsquo;ve been driving for 30 years with no accidents. If I lose my licence, I&rsquo;ll lose my job.
-        Can you <em>please</em> just write that I met the standard? No one will ever know.&rdquo;
+        Ocular health is normal. The patient works at a computer most of the day and needs clear vision for driving,
+        screens, and near work.
       </p>
 
-      <p><strong>Your task:</strong> Speak to the patient in a professional, empathetic way and explain:</p>
-
-      <ul style="margin-top: 0.4rem; padding-left: 1.2rem;">
-        <li>Why you cannot falsify clinical records or licensing forms.</li>
-        <li>Your legal and professional obligations for road safety and documentation.</li>
-        <li>What options or next steps you <em>can</em> offer (e.g., treatment, referral, restrictions, re-testing).</li>
-        <li>How you will document this conversation in the record.</li>
+      <p><strong>Your task:</strong><br />
+        Explain, in clear, patient-friendly language:
+      </p>
+      <ul>
+        <li>What progressive lenses are and how the distance / intermediate / near zones are arranged.</li>
+        <li>What normal adaptation effects they may notice (&ldquo;swim,&rdquo; peripheral blur, narrower reading zone).</li>
+        <li>Practical strategies to help them adapt (head and eye movements, consistent wear, posture for computer use).</li>
+        <li>Realistic expectations for how long adaptation usually takes.</li>
+        <li>Warning signs or persistent problems that mean they should return sooner, and your follow-up plan.</li>
       </ul>
     </div>
 
@@ -110,47 +96,58 @@
       <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
 
       <p>Type what you would say to the patient:</p>
-      <textarea id="s57-response" rows="8"></textarea>
+      <textarea id="s56-response" rows="8"></textarea>
 
       <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
         <button
           type="button"
-          onclick="document.getElementById('s57-key').style.display='block'; this.disabled=true;">
+          onclick="document.getElementById('s56-key').style.display='block'; this.disabled=true;">
           Show Key Points &amp; Rubric
         </button>
 
         <button type="button"
-          id="s57-ai-btn"
+          onclick="getS56AiFeedback()"
           style="border: 1px solid #b91c1c;
                  background: #fff5f5; color: #7f1d1d;">
-          Get AI Feedback &amp; Score
+          Get AI-style Feedback (beta)
         </button>
       </div>
     </div>
 
-    <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
-    <div id="s57-key" style="display: none;">
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s56-key" style="display: none;">
+
+      <!-- Key Points -->
       <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
                   background: #f5f7fb; margin-bottom: 1rem;">
 
-        <h3 style="margin-top: 0;">Key Communication &amp; Ethics Points (What OEBC Expects)</h3>
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
 
         <ul>
-          <li><strong>Empathy first:</strong> Acknowledge the patient&rsquo;s fear about job and independence.</li>
-          <li><strong>State the boundary clearly:</strong> You cannot falsify clinical records or licence forms.</li>
-          <li><strong>Link to obligations:</strong> Explain your legal/professional duty to public safety and College standards.</li>
-          <li><strong>Clarify why accuracy matters:</strong> Records must reflect true findings; falsification is unethical and could harm others.</li>
-          <li><strong>Offer options:</strong> Discuss treatment or referrals (e.g., cataract eval, low vision, possible restricted licence depending on jurisdiction, re-evaluation after management).</li>
-          <li><strong>Summarize next steps:</strong> Explain what will go in the record and how you&rsquo;ll support them going forward.</li>
-          <li><strong>Tone:</strong> Remain calm, non-judgmental, and respectful while holding firm boundaries.</li>
+          <li><strong>Explain the lens design:</strong> Smooth change from distance at the top, through an intermediate
+            zone, to near at the bottom; peripheral areas have more blur.</li>
+          <li><strong>Normalize adaptation:</strong> Mild &ldquo;swim&rdquo; or distortion, peripheral blur, and a
+            narrower reading channel are common at first.</li>
+          <li><strong>Give concrete strategies:</strong> Point your nose where you want to look, move your head more
+            than your eyes, lower your eyes (not your chin) for reading, and wear the lenses consistently.</li>
+          <li><strong>Address computer use:</strong> Use the middle of the lens for screen distance; consider adjusting
+            monitor height and working distance for comfort.</li>
+          <li><strong>Set expectations:</strong> Most people adapt over several days to 1&ndash;2 weeks with regular wear.</li>
+          <li><strong>Red flags:</strong> Persistent nausea, dizziness, true double vision, or inability to find a
+            comfortable near zone after a fair trial.</li>
+          <li><strong>Follow-up:</strong> Invite them back for frame adjustments or troubleshooting if they are still
+            struggling after 1&ndash;2 weeks.</li>
+          <li><strong>Communication style:</strong> Reassuring, non-judgmental, and normalizes their worries about
+            &ldquo;not getting used to it.&rdquo;</li>
         </ul>
       </div>
 
+      <!-- Rubric -->
       <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
 
         <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
 
-        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible = 10.</p>
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
 
         <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
           <thead>
@@ -161,122 +158,102 @@
           </thead>
           <tbody>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Empathy &amp; Rapport</strong></td>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;">Acknowledged impact on patient&rsquo;s life and responded with understanding.</td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Clearly explained progressive lens design (distance / intermediate / near) and where to look for each task.
+              </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Ethical Boundary</strong></td>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly stated that falsifying records/forms is not acceptable.</td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Adaptation Expectations</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Described normal early symptoms (distortion, peripheral blur) and that adaptation usually takes days to weeks.
+              </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Legal / Professional Duty</strong></td>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;">Linked your decision to public safety, laws, and College/board standards.</td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Strategies</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Gave actionable tips (move head, point nose, consistent wear, posture for computer work).
+              </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Options</strong></td>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;">Offered appropriate next steps (treatment, referral, re-eval, possible restrictions).</td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Follow-Up &amp; Red Flags</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Clarified when to return for adjustment and what persistent problems (e.g., diplopia, severe symptoms)
+                need earlier review.
+              </td>
             </tr>
             <tr>
-              <td style="padding: 6px;"><strong>Professionalism &amp; Clarity</strong></td>
-              <td style="padding: 6px;">Maintained calm, respectful tone; explanation was organized and easy to follow.</td>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">
+                Empathetic, supportive tone that validates their concerns and builds confidence about trying the lenses.
+              </td>
             </tr>
           </tbody>
         </table>
 
         <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
-          On OEBC interactive ethics/professionalism stations, assessors look for clear boundaries,
-          patient-centred communication, and explicit recognition of your legal and professional responsibilities.
+          If you consistently score yourself 8&ndash;10 on similar stations, your communication is aligning well with OEBC-style expectations.
         </p>
       </div>
     </div>
 
-    <!-- AI Feedback Panel -->
-    <div id="s57-ai-panel" class="ai-panel">
-      <div id="s57-ai-status" class="ai-loading" style="display:none;"></div>
-      <div id="s57-ai-score" class="ai-score"></div>
-      <div id="s57-ai-feedback"></div>
-      <div id="s57-ai-error" class="ai-error"></div>
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s56-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s56-ai-text" style="font-size:0.9rem;"></div>
 
-      <!-- Example 10/10 response (hidden until after AI feedback) -->
-      <div id="s57-ai-example" style="display:none; margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+      <!-- Example 10/10 response (static, hidden until AI box is shown) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
         <strong>Example 10/10 response:</strong><br>
-        &ldquo;I can see this result is really stressful for you, especially if driving is important for your work
-        and independence. I want you to know that I do understand how big a deal this feels.<br><br>
+        &ldquo;These new glasses are called <strong>progressive lenses</strong>. Instead of having a separate pair for
+        distance and another for reading, or a visible line like a bifocal, the power changes smoothly from top to
+        bottom. The top part is set for clear distance, the middle zone is for arm&rsquo;s-length tasks like the
+        computer, and the bottom is for close work like reading. Because we&rsquo;re fitting all of that into one
+        lens, there are small areas off to the sides that are a bit more distorted or blurry, and that is normal for
+        this type of lens.<br><br>
 
-        At the same time, I have to be completely honest with you: I am not allowed to change the results or
-        say that you meet the legal standard when you do not. As an optometrist, I&rsquo;m legally and
-        professionally required to record exactly what I find and to be truthful on any driver&rsquo;s licence
-        forms. If I were to write that your vision meets the requirement when it doesn&rsquo;t, that would be
-        falsifying a medical document, and it could put you and others on the road at risk.&rdquo;<br><br>
+        Over the next few days, you may notice some mild &ldquo;swim&rdquo; or a feeling that the edges move a bit
+        when you turn your head, and the reading area may feel narrower than you&rsquo;re used to. That doesn&rsquo;t
+        mean the glasses are wrong &mdash; it&rsquo;s usually just your brain and eyes learning a new pattern. The key
+        is how you <strong>use</strong> them. For distance, look straight ahead through the top portion. For the
+        computer, you&rsquo;ll naturally look through the middle; sometimes lowering the monitor slightly or pushing it
+        back a bit helps. For reading, keep your chin up slightly and look down with your eyes so you&rsquo;re using
+        the lower part of the lens.<br><br>
 
-        &ldquo;My responsibility is not only to you as my patient but also to public safety. If there was an
-        accident and it turned out that I had signed a form that wasn&rsquo;t accurate, that could have serious
-        consequences for both of us. So even though I sympathize with your situation, I can&rsquo;t change the
-        numbers or say you passed when you didn&rsquo;t.&rdquo;<br><br>
+        A useful rule is: <strong>move your head, not just your eyes</strong>. If you want to look off to the side,
+        turn your nose toward what you want to see instead of just glancing sideways with your eyes. That keeps you in
+        the clearer central corridor. Also, try to wear the glasses <strong>full-time</strong> for the next week or
+        two rather than switching back and forth with your old pair; that steady use helps your brain adapt faster.<br><br>
 
-        &ldquo;What I <strong>can</strong> do is focus on options to help you. We should look carefully for any
-        treatable causes of the reduced vision &mdash; for example, cataracts or other eye conditions that might
-        be improved with treatment, surgery, or different glasses. I can refer you to a specialist if we find
-        something that could be improved. Depending on the laws here, there may also be the possibility of a
-        restricted licence, but that decision is made by the licensing authority, not by me alone.&rdquo;<br><br>
+        Most people feel much more comfortable within a few days, and many adapt fully within about one to two weeks.
+        If you feel a little off-balance or notice some distortion at first, that&rsquo;s expected. However, if you
+        develop <strong>persistent nausea, true double vision, or you feel you simply cannot find a comfortable spot
+        for reading or computer use</strong> after giving it a solid try, I definitely want you to come back so we can
+        check the fit, lens design, and prescription.<br><br>
 
-        &ldquo;In your record today I&rsquo;m going to document the vision results, the fact that we discussed the
-        driving standard, and your concerns about work. I&rsquo;ll also record any referrals or treatment plans we
-        put in place so we have a clear trail of how we&rsquo;re trying to help. I know this isn&rsquo;t the news
-        you were hoping for, but my goal is to support you honestly and safely. Let&rsquo;s go through the next
-        steps together and make a plan.&rdquo;
+        I&rsquo;d like you to try these for the next week or so, and we can plan a follow-up or frame adjustment visit
+        if anything is bothering you. My goal is for you to feel confident that the glasses are working for you. Please
+        let me know right away if something doesn&rsquo;t feel right, and we&rsquo;ll troubleshoot it together.&rdquo;
       </div>
     </div>
   </div>
 
   <script>
-    const s57Btn = document.getElementById("s57-ai-btn");
-    const s57Status = document.getElementById("s57-ai-status");
-    const s57Score = document.getElementById("s57-ai-score");
-    const s57Feedback = document.getElementById("s57-ai-feedback");
-    const s57Error = document.getElementById("s57-ai-error");
-    const s57Example = document.getElementById("s57-ai-example");
+    async function getS56AiFeedback() {
+      const textArea     = document.getElementById("s56-response");
+      const feedbackBox  = document.getElementById("s56-ai-box");
+      const feedbackText = document.getElementById("s56-ai-text");
 
-    function badge(score, max) {
-      const val = typeof score === "number" ? score : 0;
-      const maxScore = max || 2;
-      let bg = "#fee2e2", color = "#b91c1c"; // default red (0)
-      if (val === 1) { bg = "#fef3c7"; color = "#92400e"; }   // yellow
-      if (val >= 2) { bg = "#dcfce7"; color = "#166534"; }    // green
-
-      return `
-        <span style="
-          display:inline-block;
-          min-width:2.5rem;
-          padding:2px 8px;
-          border-radius:999px;
-          font-size:0.75rem;
-          font-weight:600;
-          text-align:center;
-          background:${bg};
-          color:${color};
-        ">
-          ${val}/${maxScore}
-        </span>
-      `;
-    }
-
-    async function getS57AiFeedback() {
-      const textArea = document.getElementById("s57-response");
       const userResponse = textArea.value.trim();
-
       if (!userResponse) {
-        alert("Type your response first so the AI has something to review.");
+        alert("Type something first so the AI has something to grade!");
         return;
       }
 
-      s57Error.textContent = "";
-      s57Score.textContent = "";
-      s57Feedback.innerHTML = "";
-      s57Status.style.display = "block";
-      s57Status.textContent = "Asking AI to review your response…";
-      s57Example.style.display = "none";
-      s57Btn.disabled = true;
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
 
       try {
         const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
@@ -287,71 +264,91 @@
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
           },
           body: JSON.stringify({
-            station_number: 57,
+            station_number: 56,
             user_response: userResponse
           })
         });
 
         if (!res.ok) {
           const txt = await res.text();
-          s57Status.style.display = "none";
-          s57Error.textContent = "Supabase error " + res.status + ": " + txt;
-          s57Btn.disabled = false;
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
           return;
         }
 
-        const data = await res.json();
+        const data   = await res.json();
         const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
         const overallComment = data.overall_comment || "";
-        let totalScore = typeof data.total_score === "number" ? data.total_score : 0;
-        let maxTotal = 0;
 
-        let rubricHtml = "";
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
 
-        Object.entries(rubric).forEach(([key, domain]) => {
-          const label = domain.label || key;
-          const score = domain.score ?? 0;
-          const max = domain.max_score ?? 2;
-          const comment = domain.comment || "No specific feedback from AI for this domain.";
-          maxTotal += max;
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
 
-          rubricHtml += `
+        feedbackText.innerHTML = `
+          <div>
             <p style="margin:0 0 6px;">
-              ${badge(score, max)}
-              &nbsp;<strong>${label}:</strong>
-              ${comment}
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis / Framing:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
             </p>
-          `;
-        });
 
-        if (!totalScore && maxTotal) {
-          // fallback: sum of domain scores if total_score wasn't provided
-          totalScore = Object.values(rubric).reduce(
-            (sum, d) => sum + (d.score ?? 0),
-            0
-          );
-        }
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
 
-        s57Status.style.display = "none";
-        if (maxTotal) {
-          s57Score.textContent = `AI Score: ${totalScore}/${maxTotal}`;
-        }
-        s57Feedback.innerHTML = rubricHtml + (overallComment
-          ? `<p style="margin-top:8px;">${overallComment}</p>`
-          : ""
-        );
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Strategies &amp; Advice:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
 
-        // Now reveal the model answer after AI feedback is shown
-        s57Example.style.display = "block";
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
       } catch (err) {
-        s57Status.style.display = "none";
-        s57Error.textContent = "Network or setup error: " + err.message;
-      } finally {
-        s57Btn.disabled = false;
+        feedbackText.textContent = "Network or setup error: " + err.message;
       }
     }
-
-    s57Btn.addEventListener("click", getS57AiFeedback);
   </script>
 </body>
 </html>
