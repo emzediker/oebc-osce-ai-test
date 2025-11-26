@@ -65,29 +65,31 @@
     }
   </style>
 </head>
-
 <body>
-
   <div class="oebc-station-step">
-
     <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 56</h2>
     <p style="margin-top: 0; color: #555;">Other • Progressive Lens Adaptation (Interactive)</p>
 
-    <!-- Step 1 -->
+    <!-- Step 1 – Read the Station -->
     <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
       <h3>Step 1 – Read the Station</h3>
 
       <p><strong>Scenario:</strong><br>
-      A 48-year-old patient is picking up their new progressive lenses for the first time. They are nervous after hearing stories from friends who “couldn’t get used to them.”</p>
+        A 48-year-old patient is picking up their new progressive lenses for the first time. They are nervous after hearing stories from friends who “couldn’t get used to them.” Prescription includes:
+        <br>• OD: +1.25 –0.50 × 090
+        <br>• OS: +1.50 –0.25 × 100
+        <br>• Add: +1.75 OU
+        <br>Ocular health is normal. The patient works at a computer most of the day.</p>
 
-      <p><strong>Your task:</strong>  
-        Explain what progressive lenses are, how they work, what adaptation expectations are normal, helpful behaviors, and what symptoms require follow-up.</p>
+      <p><strong>Your task:</strong><br>
+        Explain what progressive lenses are, how they work, what adaptation expectations are normal, what visual behaviors will help them adapt faster, and when they should follow up if problems occur.</p>
     </div>
 
-    <!-- Step 2 -->
+    <!-- Step 2 – Student Response -->
     <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
       <h3>Step 2 – Speak (Type) Your Response</h3>
 
+      <p>Type what you would say to the patient:</p>
       <textarea id="s56-response" rows="8"></textarea>
 
       <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
@@ -103,72 +105,121 @@
       </div>
     </div>
 
-    <!-- Step 3 + 4 -->
+    <!-- Step 3 + 4 – Key Points + Rubric (Hidden by Default) -->
     <div id="s56-key" style="display:none;">
+      <!-- Key Points -->
       <div style="padding:16px;border-radius:8px;border:1px solid #cfd8e3;background:#f5f7fb;margin-bottom:1rem;">
-
         <h3>Key Communication Points (What OEBC Expects)</h3>
         <ul>
-          <li>Explain what progressives are (distance → intermediate → near corridor).</li>
-          <li>Describe normal adaptation symptoms (“swim,” distortion, narrow near zone).</li>
-          <li>Give strategies: point nose where you want to look, move head not eyes, consistent wear.</li>
-          <li>Discuss computer ergonomics and intermediate zone expectations.</li>
-          <li>Set realistic expectations: most adapt within 1–2 weeks.</li>
-          <li>Red flags: persistent nausea, diplopia, inability to use near zone after 2 weeks.</li>
-          <li>Offer follow-up for troubleshooting or adjustment.</li>
+          <li>Explain what progressives are (smooth corridor for distance → intermediate → near).</li>
+          <li>Describe normal adaptation symptoms (“swim,” peripheral distortion, narrower near zone).</li>
+          <li>Give practical strategies: point nose where you want to look, move head not eyes, keep glasses on consistently for 1–2 weeks.</li>
+          <li>Address computer use: discuss intermediate zone and ergonomics.</li>
+          <li>Set realistic expectations: adaptation is normal; most people adjust with practice.</li>
+          <li>Explain red flags: persistent nausea, diplopia, or inability to use near zone after ~2 weeks.</li>
+          <li>Offer follow-up: return in 1–2 weeks for frame adjustment or troubleshooting if needed.</li>
         </ul>
       </div>
 
+      <!-- Rubric -->
       <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;background:#fff;">
         <h3>Self-Assessment Rubric</h3>
 
-        <p>Score 0–2 for each:</p>
+        <p>Score each domain 0–2 (0 = not addressed, 1 = partial, 2 = complete).</p>
 
         <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-          <tr><th>Domain</th><th>Criteria</th></tr>
-
-          <tr><td><strong>Explanation</strong></td>
-              <td>Explained design & visual zones clearly.</td></tr>
-
-          <tr><td><strong>Adaptation Expectations</strong></td>
-              <td>Mentioned normal distortion + adaptation time.</td></tr>
-
-          <tr><td><strong>Strategies</strong></td>
-              <td>Provided actionable tips (head movement, wear schedule).</td></tr>
-
-          <tr><td><strong>Follow-Up</strong></td>
-              <td>Clear timeframe for adjustments if needed.</td></tr>
-
-          <tr><td><strong>Communication</strong></td>
-              <td>Empathetic, supportive, easy to understand.</td></tr>
+          <thead>
+            <tr>
+              <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Domain</th>
+              <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom:1px solid #eee;padding:6px;">Explained progressive design and visual zones clearly.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Adaptation Expectations</strong></td>
+              <td style="border-bottom:1px solid #eee;padding:6px;">Mentioned normal distortion, “swim,” and typical adaptation time.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Strategies</strong></td>
+              <td style="border-bottom:1px solid #eee;padding:6px;">Provided actionable tips (head movement, consistent wear, posture).</td>
+            </tr>
+            <tr>
+              <td style="border-bottom:1px solid:#eee;padding:6px;"><strong>Follow-Up</strong></td>
+              <td style="border-bottom:1px solid:#eee;padding:6px;">Gave clear timeframe and plan for adjustments / troubleshooting.</td>
+            </tr>
+            <tr>
+              <td style="padding:6px;"><strong>Communication</strong></td>
+              <td style="padding:6px;">Empathetic, reassuring, and easy to understand.</td>
+            </tr>
+          </tbody>
         </table>
 
-        <p style="margin-top:0.75rem;font-style:italic;color:#555;">High performance in all domains meets OEBC expectations.</p>
+        <p style="margin-top:0.75rem;font-style:italic;color:#555;">
+          High performance in all domains meets OEBC expectations for communication-focused stations.
+        </p>
       </div>
     </div>
 
-    <!-- AI Panel -->
+    <!-- AI Panel (OSCE AI-Feedback Classic Template) -->
     <div id="s56-ai-panel" class="ai-panel">
+      <h3 style="margin-top:0;">AI-style Feedback (beta)</h3>
       <div id="s56-ai-status" class="ai-loading" style="display:none;"></div>
       <div id="s56-ai-score" class="ai-score"></div>
       <div id="s56-ai-feedback"></div>
       <div id="s56-ai-error" class="ai-error"></div>
-    </div>
 
+      <!-- Example 10/10 Response (hidden until AI feedback is requested) -->
+      <div id="s56-example" style="display:none;margin-top:0.75rem;font-size:0.85rem;color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        “These lenses are called <strong>progressive lenses</strong>. Instead of having a visible line like a bifocal,
+        they have a smooth change in power from the top to the bottom of the lens. The top part is designed for
+        <strong>distance</strong>, the middle is for <strong>computer and arm’s-length tasks</strong>, and the bottom
+        is for <strong>reading up close</strong>.<br><br>
+
+        Because all of those powers are blended together, there are some normal ‘getting used to’ effects. At first
+        you may notice a bit of <strong>distortion or “swim”</strong> at the sides, and the reading area is a narrower
+        channel rather than the whole bottom of the lens. That’s expected and usually improves as your brain adapts.<br><br>
+
+        A few tips to help you adapt more quickly: when you look at something, especially off to the side, try to
+        <strong>point your nose and turn your head</strong> toward it instead of just moving your eyes. For reading
+        and computer work, lower your eyes into the reading or intermediate part rather than tilting the glasses up
+        and down. It also helps to <strong>wear them consistently</strong> for most of the day for the first
+        1–2 weeks, rather than switching back and forth with your old glasses.<br><br>
+
+        For the computer, you’ll be using mostly the <strong>middle ‘intermediate’ zone</strong>. We may need to tweak
+        your screen height or how far you sit from the monitor so that you can look straight ahead or very slightly
+        down through that zone, rather than having to crane your neck.<br><br>
+
+        It’s very normal for things to feel a bit strange or off-balance for the first few days. Most people adapt
+        within about <strong>1–2 weeks</strong>. However, if you notice <strong>persistent nausea, dizziness, double
+        vision, or if you really cannot find a comfortable area for reading</strong> after a couple of weeks, I want
+        you to come back. We can check the prescription, the frame fit, and make adjustments if needed.<br><br>
+
+        I know you’ve heard some negative stories, but the majority of people do very well with progressives once
+        they get through that learning curve. If you run into any problems or have concerns, please call us or come
+        back in the next week or two—we’d much rather adjust things early than have you struggle at home.”
+      </div>
+    </div>
   </div>
 
-  <!-- OSCE Shared JS (your repository's JS file) -->
+  <!-- Shared JS hook for Supabase Edge Function -->
   <script>
-      const STATION_ID = 56;
+    // This ID is what your shared osce_ai_feedback.js will use
+    // to pick the correct rubric/config on the Supabase side.
+    const STATION_ID = 56;
   </script>
   <script src="osce_ai_feedback.js"></script>
-
   <script>
     const btn = document.getElementById("s56-ai-btn");
     const statusEl = document.getElementById("s56-ai-status");
     const scoreEl = document.getElementById("s56-ai-score");
     const feedbackEl = document.getElementById("s56-ai-feedback");
     const errorEl = document.getElementById("s56-ai-error");
+    const exampleEl = document.getElementById("s56-example");
 
     btn.addEventListener("click", async () => {
       const text = document.getElementById("s56-response").value.trim();
@@ -185,9 +236,10 @@
       btn.disabled = true;
 
       try {
+        // submitOsceResponse is defined in osce_ai_feedback.js
         const result = await submitOsceResponse({
           stationId: STATION_ID,
-          userResponse: text
+          userResponse: text,
         });
 
         statusEl.style.display = "none";
@@ -195,14 +247,17 @@
           scoreEl.textContent = `AI Score: ${result.score}/10`;
         }
         feedbackEl.innerHTML = result.feedback || "";
+
+        // Reveal the 10/10 example after AI has graded the response
+        exampleEl.style.display = "block";
       } catch (err) {
         statusEl.style.display = "none";
         errorEl.textContent = "There was a problem getting AI feedback.";
+        console.error(err);
       } finally {
         btn.disabled = false;
       }
     });
   </script>
-
 </body>
 </html>
