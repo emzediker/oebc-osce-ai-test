@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 50 (Sjögren Syndrome)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 50 – Interactive – Sjögren Syndrome -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 50</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic Disorders &bull; Sj&ouml;gren Syndrome &ndash; Dry Eye &amp; Systemic Coordination (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE, you would have 8 minutes.</p>
+
+      <p><strong>Scenario:</strong>
+        <br>A 42-year-old female reports chronic burning, gritty eyes for the past 2 years, worsening over the last 3 months. She also mentions &ldquo;dry mouth,&rdquo; difficulty swallowing dry foods, and joint stiffness in the morning. Schirmer testing is OD 3 mm / OS 2 mm in 5 minutes. Staining shows scattered SPK OU. Her medications include: hydrochlorothiazide, ibuprofen, and occasional antihistamines.
+      </p>
+
+      <p><strong>Your task:</strong> Explain your suspected diagnosis and management plan to the patient in clear, patient-friendly language. Include all elements OEBC expects for this type of case:</p>
+
+      <ul>
+        <li>Explain what Sj&ouml;gren syndrome is and why it causes their symptoms.</li>
+        <li>Discuss ocular surface management (tears, gels, anti-inflammatory drops).</li>
+        <li>Discuss systemic implications and rheumatology involvement.</li>
+        <li>Identify medication culprits that worsen dryness.</li>
+        <li>Explain follow-up and warning signs.</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s50-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s50-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button
+          type="button"
+          onclick="getS50AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s50-key" style="display: none;">
+      <!-- Key points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li>Clearly explain suspected Sj&ouml;gren syndrome and how it affects tear and saliva glands.</li>
+          <li>Connect symptoms: dry eyes, dry mouth, joint pain.</li>
+          <li>Discuss ocular management: artificial tears, gels, warm compresses, punctal plugs if indicated.</li>
+          <li>Discuss anti-inflammatory therapy: cyclosporine or lifitegrast.</li>
+          <li>Identify medications that worsen dryness (HCTZ, antihistamines).</li>
+          <li>Explain importance of rheumatology referral for systemic evaluation.</li>
+          <li>Provide follow-up guidance and red flags (vision drop, severe pain, photophobia).</li>
+          <li>Use clear, empathetic communication throughout.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained suspected Sj&ouml;gren and linked dry eye, dry mouth, joint symptoms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Described lacrimal/salivary gland dysfunction and autoimmune nature in simple terms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Discussed ocular therapy (tears, gels, anti-inflammatory drops, plugs) and systemic coordination.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Medications</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Identified meds worsening dryness (e.g., diuretics, antihistamines) and suggested discussing alternatives.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Empathetic, clear, organized; invited questions and provided safety-net advice.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          Mastering these domains prepares you well for OEBC systemic-integrated interactive cases.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s50-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                                border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s50-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Based on your symptoms and the testing we did today, I am very concerned that you may have a
+        condition called <strong>Sj&ouml;gren syndrome</strong>. That is an autoimmune condition where the
+        body&rsquo;s immune system mistakenly attacks the glands that make tears and saliva. When those
+        glands don&rsquo;t work properly, you can develop <strong>dry, burning, gritty eyes</strong> and
+        a <strong>dry mouth</strong>, and some people also notice joint stiffness like you&rsquo;ve described.<br><br>
+
+        On your eye exam, your tear production measured quite low on the Schirmer test, and we can see dry
+        spots on the surface of the eye with our special dye. That fits with what you&rsquo;re feeling.
+        The good news is that we have several ways to make your eyes more comfortable. We&rsquo;ll start
+        with <strong>lubricating drops</strong> that you can use multiple times a day, and a thicker
+        <strong>gel or ointment at night</strong>. Warm compresses can also help the glands along your lid
+        margins work better. If you&rsquo;re still very symptomatic, we can talk about treatments that
+        calm down inflammation on the surface of the eye, such as prescription drops like cyclosporine or
+        lifitegrast, and in some cases <strong>punctal plugs</strong> to help the tears stay on the eye
+        longer.<br><br>
+
+        We also want to look at your <strong>medications</strong>. Some of the medicines you take, such as
+        your water pill and occasional antihistamines, can make dryness worse. I&rsquo;ll send a note to
+        your family doctor so they can review whether there are any safer alternatives or ways to adjust
+        your regimen without compromising your blood pressure or allergies.<br><br>
+
+        Because Sj&ouml;gren is a <strong>whole-body condition</strong>, not just an eye disease, I&rsquo;d
+        like to coordinate with a <strong>rheumatologist</strong>. They can order blood tests and decide if
+        you need any systemic treatment to protect your joints, salivary glands, and overall health.
+        I&rsquo;ll write a detailed letter and help arrange that referral.<br><br>
+
+        From here, I&rsquo;d like to see you again in about <strong>3&ndash;4 months</strong>, or sooner if
+        your symptoms worsen, to check how your eyes are responding to treatment and to adjust the plan if
+        needed. If at any point you notice a <strong>sharp drop in vision</strong>, severe pain, marked
+        light sensitivity, or redness that suddenly worsens, I want you to contact us right away or seek
+        urgent care &mdash; those can be signs that the surface of the eye is more severely inflamed or
+        infected.<br><br>
+
+        I know this has been frustrating for you, but it&rsquo;s important to know that you&rsquo;re not
+        imagining it and that there is a medical reason for how you feel. We&rsquo;ll work together, along
+        with your family doctor and a rheumatologist, to get you more comfortable and to protect both your
+        eyes and your overall health.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS50AiFeedback() {
+      const textArea     = document.getElementById("s50-response");
+      const feedbackBox  = document.getElementById("s50-ai-box");
+      const feedbackText = document.getElementById("s50-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 50,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        // Expecting rubric keys: diagnosis, explanation, management, medications, communication
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const medicationsScore   = rubric.medications?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + medicationsScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(medicationsScore)}
+              &nbsp;<strong>Medications:</strong>
+              ${rubric.medications?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
