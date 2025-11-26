@@ -66,14 +66,12 @@
   </style>
 </head>
 <body>
-  <!-- OEBC OSCE Station 57 – Ethics / Record-Keeping (Interactive, AI-graded) -->
+  <!-- OEBC OSCE Station 57 – Ethics / Record-Keeping (AI-enabled) -->
   <div class="oebc-station-step">
 
     <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 57</h2>
 
-    <p style="margin-top: 0; color: #555;">
-      Other &bull; Ethics &amp; Record-Keeping (Interactive)
-    </p>
+    <p style="margin-top: 0; color: #555;">Other &bull; Ethics &amp; Record-Keeping (Interactive)</p>
 
     <!-- Step 1: Read the Station -->
     <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
@@ -86,8 +84,8 @@
 
       <p>
         A 52-year-old patient comes in for a routine eye exam and vision test for a driver&rsquo;s licence renewal.
-        After refraction, they see only 20/50 in the better eye with best correction, which does not meet the legal
-        driving standard in your jurisdiction.
+        After refraction, they see only 20/50 in the better eye with best correction, which does not meet
+        the legal driving standard in your jurisdiction.
       </p>
 
       <p>
@@ -121,7 +119,8 @@
           Show Key Points &amp; Rubric
         </button>
 
-        <button id="s57-ai-btn" type="button"
+        <button type="button"
+          id="s57-ai-btn"
           style="border: 1px solid #b91c1c;
                  background: #fff5f5; color: #7f1d1d;">
           Get AI Feedback &amp; Score
@@ -197,94 +196,162 @@
       <div id="s57-ai-score" class="ai-score"></div>
       <div id="s57-ai-feedback"></div>
       <div id="s57-ai-error" class="ai-error"></div>
-    </div>
 
-    <!-- Example 10/10 Response -->
-    <div style="margin-top: 1rem; padding: 14px; border-radius: 8px;
-                border: 1px dashed #f97316; background: #fff7ed; font-size: 0.88rem;">
-      <h3 style="margin-top: 0; font-size: 1rem;">Example 10/10 Response</h3>
-      <p>
-        &ldquo;I can hear how stressful this is for you. Losing your licence could really affect your job and your independence,
-        and it makes sense that you&rsquo;re worried. I want you to know that I&rsquo;m on your side and my goal is to help you
-        as much as I can within the rules I have to follow.&rdquo;
-      </p>
-      <p>
-        &ldquo;At the same time, I have a legal and professional responsibility to record your vision accurately and to be honest
-        on any driver&rsquo;s licence forms I sign. If I say that you meet the standard when you don&rsquo;t, that would be falsifying
-        a medical document. Not only is that against my College and legal obligations, but if there were ever an accident, it
-        could put both you and me in a very difficult situation, and more importantly, it could put other people at risk on the road.
-        So even though I understand why you&rsquo;re asking, I can&rsquo;t change the numbers or say that you meet the driving standard today.&rdquo;
-      </p>
-      <p>
-        &ldquo;What I <strong>can</strong> do is talk through options with you. Sometimes reduced vision is related to things we can improve,
-        like cataracts or other treatable conditions, so I&rsquo;d like to arrange a medical evaluation to see if there is anything that
-        can be treated to improve your sight. Depending on our local regulations, there may also be a possibility of a restricted
-        licence or re-testing after treatment, and I&rsquo;m happy to provide any reports that might help that process.&rdquo;
-      </p>
-      <p>
-        &ldquo;I will document today&rsquo;s vision findings, the fact that they don&rsquo;t currently meet the driving standard, and that we discussed
-        your concerns and next steps. That record protects both of us and shows that we took this seriously and made a plan. I know this
-        isn&rsquo;t the answer you were hoping for, but I don&rsquo;t want to simply say &lsquo;no&rsquo; and send you away &mdash; I want to work with you on
-        the medical side and support you through whatever steps come next. How are you feeling about what I&rsquo;ve explained, and what questions
-        do you have for me?&rdquo;
-      </p>
-    </div>
+      <!-- Example 10/10 response (hidden until after AI feedback) -->
+      <div id="s57-ai-example" style="display:none; margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;I can see this result is really stressful for you, especially if driving is important for your work
+        and independence. I want you to know that I do understand how big a deal this feels.<br><br>
 
+        At the same time, I have to be completely honest with you: I am not allowed to change the results or
+        say that you meet the legal standard when you do not. As an optometrist, I&rsquo;m legally and
+        professionally required to record exactly what I find and to be truthful on any driver&rsquo;s licence
+        forms. If I were to write that your vision meets the requirement when it doesn&rsquo;t, that would be
+        falsifying a medical document, and it could put you and others on the road at risk.&rdquo;<br><br>
+
+        &ldquo;My responsibility is not only to you as my patient but also to public safety. If there was an
+        accident and it turned out that I had signed a form that wasn&rsquo;t accurate, that could have serious
+        consequences for both of us. So even though I sympathize with your situation, I can&rsquo;t change the
+        numbers or say you passed when you didn&rsquo;t.&rdquo;<br><br>
+
+        &ldquo;What I <strong>can</strong> do is focus on options to help you. We should look carefully for any
+        treatable causes of the reduced vision &mdash; for example, cataracts or other eye conditions that might
+        be improved with treatment, surgery, or different glasses. I can refer you to a specialist if we find
+        something that could be improved. Depending on the laws here, there may also be the possibility of a
+        restricted licence, but that decision is made by the licensing authority, not by me alone.&rdquo;<br><br>
+
+        &ldquo;In your record today I&rsquo;m going to document the vision results, the fact that we discussed the
+        driving standard, and your concerns about work. I&rsquo;ll also record any referrals or treatment plans we
+        put in place so we have a clear trail of how we&rsquo;re trying to help. I know this isn&rsquo;t the news
+        you were hoping for, but my goal is to support you honestly and safely. Let&rsquo;s go through the next
+        steps together and make a plan.&rdquo;
+      </div>
+    </div>
   </div>
 
-  <!-- Station-specific config for shared AI grading script -->
   <script>
-    const STATION_ID = 57;
-  </script>
-  <script src="osce_ai_feedback.js"></script>
-  <script>
-    const btn57      = document.getElementById('s57-ai-btn');
-    const status57   = document.getElementById('s57-ai-status');
-    const score57    = document.getElementById('s57-ai-score');
-    const fb57       = document.getElementById('s57-ai-feedback');
-    const err57      = document.getElementById('s57-ai-error');
+    const s57Btn = document.getElementById("s57-ai-btn");
+    const s57Status = document.getElementById("s57-ai-status");
+    const s57Score = document.getElementById("s57-ai-score");
+    const s57Feedback = document.getElementById("s57-ai-feedback");
+    const s57Error = document.getElementById("s57-ai-error");
+    const s57Example = document.getElementById("s57-ai-example");
 
-    btn57.addEventListener('click', async () => {
-      const responseText = document.getElementById('s57-response').value.trim();
-      if (!responseText) {
-        err57.textContent = "Please type your response first.";
-        score57.textContent = "";
-        fb57.textContent = "";
+    function badge(score, max) {
+      const val = typeof score === "number" ? score : 0;
+      const maxScore = max || 2;
+      let bg = "#fee2e2", color = "#b91c1c"; // default red (0)
+      if (val === 1) { bg = "#fef3c7"; color = "#92400e"; }   // yellow
+      if (val >= 2) { bg = "#dcfce7"; color = "#166534"; }    // green
+
+      return `
+        <span style="
+          display:inline-block;
+          min-width:2.5rem;
+          padding:2px 8px;
+          border-radius:999px;
+          font-size:0.75rem;
+          font-weight:600;
+          text-align:center;
+          background:${bg};
+          color:${color};
+        ">
+          ${val}/${maxScore}
+        </span>
+      `;
+    }
+
+    async function getS57AiFeedback() {
+      const textArea = document.getElementById("s57-response");
+      const userResponse = textArea.value.trim();
+
+      if (!userResponse) {
+        alert("Type your response first so the AI has something to review.");
         return;
       }
-      err57.textContent = "";
-      score57.textContent = "";
-      fb57.textContent = "";
-      status57.style.display = "block";
-      status57.textContent = "Asking AI to review your response...";
-      btn57.disabled = true;
+
+      s57Error.textContent = "";
+      s57Score.textContent = "";
+      s57Feedback.innerHTML = "";
+      s57Status.style.display = "block";
+      s57Status.textContent = "Asking AI to review your response…";
+      s57Example.style.display = "none";
+      s57Btn.disabled = true;
 
       try {
-        // submitOsceResponse is defined in osce_ai_feedback.js
-        const result = await submitOsceResponse({
-          stationId: STATION_ID,
-          userResponse: responseText
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 57,
+            user_response: userResponse
+          })
         });
 
-        status57.style.display = "none";
-
-        if (result && typeof result.score === "number") {
-          score57.textContent = `AI Score: ${result.score}/10`;
+        if (!res.ok) {
+          const txt = await res.text();
+          s57Status.style.display = "none";
+          s57Error.textContent = "Supabase error " + res.status + ": " + txt;
+          s57Btn.disabled = false;
+          return;
         }
 
-        if (result && result.feedback) {
-          fb57.innerHTML = result.feedback;
-        } else {
-          fb57.textContent = "No detailed feedback returned from AI.";
+        const data = await res.json();
+        const rubric = data.rubric || {};
+        const overallComment = data.overall_comment || "";
+        let totalScore = typeof data.total_score === "number" ? data.total_score : 0;
+        let maxTotal = 0;
+
+        let rubricHtml = "";
+
+        Object.entries(rubric).forEach(([key, domain]) => {
+          const label = domain.label || key;
+          const score = domain.score ?? 0;
+          const max = domain.max_score ?? 2;
+          const comment = domain.comment || "No specific feedback from AI for this domain.";
+          maxTotal += max;
+
+          rubricHtml += `
+            <p style="margin:0 0 6px;">
+              ${badge(score, max)}
+              &nbsp;<strong>${label}:</strong>
+              ${comment}
+            </p>
+          `;
+        });
+
+        if (!totalScore && maxTotal) {
+          // fallback: sum of domain scores if total_score wasn't provided
+          totalScore = Object.values(rubric).reduce(
+            (sum, d) => sum + (d.score ?? 0),
+            0
+          );
         }
+
+        s57Status.style.display = "none";
+        if (maxTotal) {
+          s57Score.textContent = `AI Score: ${totalScore}/${maxTotal}`;
+        }
+        s57Feedback.innerHTML = rubricHtml + (overallComment
+          ? `<p style="margin-top:8px;">${overallComment}</p>`
+          : ""
+        );
+
+        // Now reveal the model answer after AI feedback is shown
+        s57Example.style.display = "block";
       } catch (err) {
-        status57.style.display = "none";
-        console.error(err);
-        err57.textContent = "There was a problem getting AI feedback. Please try again.";
+        s57Status.style.display = "none";
+        s57Error.textContent = "Network or setup error: " + err.message;
       } finally {
-        btn57.disabled = false;
+        s57Btn.disabled = false;
       }
-    });
+    }
+
+    s57Btn.addEventListener("click", getS57AiFeedback);
   </script>
 </body>
 </html>
