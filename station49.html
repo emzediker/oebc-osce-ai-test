@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 49 (Myasthenia Gravis Ptosis/Diplopia)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .ai-panel {
+      margin-top: 1.25rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      font-size: 0.9rem;
+    }
+    .ai-score {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .ai-error {
+      color: #b00020;
+      font-weight: 600;
+    }
+    .ai-loading {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 49 – Myasthenia Gravis Ptosis/Diplopia (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 49</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic Disorders &bull; Myasthenia Gravis &ndash; Ptosis &amp; Diplopia (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have 8 minutes to complete the station.</p>
+
+      <p><strong>Scenario:</strong>
+        <br>A 32-year-old woman presents with a 6-month history of intermittent double vision and a &ldquo;droopy&rdquo; right eyelid that is worse in the evening. She reports that in the morning her eyes &ldquo;look almost normal,&rdquo; but by the end of her workday she struggles to keep her right eye open and sometimes closes one eye to read or watch TV.
+        <br><br>She denies pain, redness, or flashes/floaters. She occasionally notices trouble chewing tougher foods by the end of meals. Past medical history is otherwise unremarkable. She does not smoke. Medications: oral contraceptive. No known drug allergies.
+        <br><br>Examination reveals variable right ptosis that increases with sustained upgaze. Extraocular motility shows a variable, fatigable right hypertropia and exotropia on repeated testing. Pupils are equal and reactive; visual acuity and fundus exam are normal. You strongly suspect ocular myasthenia gravis and are planning to coordinate further workup with neurology.
+      </p>
+
+      <p><strong>Your task:</strong>
+        <br>Explain to the patient, in clear and reassuring language:</p>
+
+      <ul>
+        <li>What you think is causing the fluctuating ptosis and diplopia.</li>
+        <li>Why the symptoms are worse at the end of the day or with fatigue.</li>
+        <li>What further tests and referrals are needed (e.g., neurologist, blood work, imaging / specialized testing).</li>
+        <li>Short-term visual management options (e.g., occlusion, temporary prism, driving and work considerations).</li>
+        <li>Important red-flag symptoms that require urgent care (e.g., difficulty breathing or swallowing, rapidly worsening weakness).</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s49-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s49-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS49AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s49-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Would Expect)</h3>
+
+        <ul>
+          <li><strong>Diagnosis / Working Diagnosis:</strong> Clearly state that the pattern of fluctuating eyelid droop and double vision is very suspicious for <em>myasthenia gravis</em>, a condition where the connection between nerves and muscles does not work properly.</li>
+          <li><strong>Mechanism &amp; Fluctuation:</strong> Explain that in myasthenia gravis, the eye and eyelid muscles tire easily, so symptoms are better after rest and worse later in the day or with prolonged use.</li>
+          <li><strong>Extent of Disease:</strong> Clarify that right now findings are limited to the eyes and eyelids (ocular myasthenia), but the condition can sometimes involve other muscles of breathing, swallowing, and speech, so monitoring is important.</li>
+          <li><strong>Next Steps / Workup:</strong> Mention the need for:
+            <ul>
+              <li>Referral to a neurologist or appropriate specialist.</li>
+              <li>Further testing such as blood work (antibodies), possible imaging, and specialized tests (depending on local practice).</li>
+            </ul>
+          </li>
+          <li><strong>Short-Term Visual Management:</strong> Discuss options like:
+            <ul>
+              <li>Temporary occlusion (patching/opaque tape) for bothersome diplopia.</li>
+              <li>Temporary prism in glasses in some cases, understanding variability may limit this.</li>
+              <li>Activity and driving guidance if diplopia is frequent or unpredictable.</li>
+            </ul>
+          </li>
+          <li><strong>Red-Flag Symptoms:</strong> Clearly instruct the patient to seek urgent/emergency care if they notice:
+            <ul>
+              <li>Difficulty breathing or catching their breath.</li>
+              <li>Trouble swallowing, chewing, or speaking that suddenly worsens.</li>
+              <li>Rapidly progressive weakness beyond the eyes.</li>
+            </ul>
+          </li>
+          <li><strong>Reassurance &amp; Support:</strong> Provide balanced reassurance that myasthenia gravis is treatable, many patients do well with proper care, and you will coordinate with their medical team.</li>
+          <li><strong>Communication Style:</strong> Use simple, non-alarming language while still emphasizing the importance of follow-up and red flags.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each area from 0&ndash;2 (0 = not addressed, 1 = partially, 2 = clearly and completely addressed).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis &amp; Mechanism</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">You clearly named myasthenia gravis (or ocular myasthenia) and explained the basic nerve&ndash;muscle problem and fluctuating nature.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Workup &amp; Referral</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">You described the need for neurologist involvement and additional tests (blood work, possible imaging / specialized testing).</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Visual Management</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">You offered practical options (occlusion, possible temporary prism, safety around driving/activities).</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Red-Flag Education</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">You clearly identified breathing, swallowing, or rapidly worsening weakness as reasons to seek urgent care.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Your explanation was organized, empathetic, and understandable to a non-medical patient.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you consistently cover all domains at a &ldquo;2&rdquo; level across systemic/neurologic stations like this,
+          you are practicing very close to OEBC expectations for interactive communication stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s49-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s49-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Based on your history and what I see on today&rsquo;s exam, I&rsquo;m very suspicious of a condition
+        called <strong>myasthenia gravis</strong>, and in your case it appears to be affecting the muscles that move
+        your eyes and lift your eyelids. In simple terms, myasthenia gravis is a problem at the
+        <strong>connection between the nerves and the muscles</strong>. The nerves are sending the right signals,
+        but the signal doesn&rsquo;t get through as well as it should, so the muscles tire out more quickly than normal.<br><br>
+
+        That explains why your right eyelid looks more normal in the morning but droops as the day goes on, and why
+        the double vision comes and goes. When the eye muscles get tired, they don&rsquo;t line up perfectly, which
+        causes the double vision. After rest they can work a bit better again, so things look more normal for a while.<br><br>
+
+        The good news is that your pupils, vision, and the inside of the eye all look healthy today, so we don&rsquo;t
+        see signs of a stroke or a structural problem in the eye itself. However, myasthenia gravis can sometimes affect
+        other muscles in the body, for example the muscles used for chewing, swallowing, speaking, or even breathing.
+        You mentioned some fatigue with chewing tougher foods, so we want to take this seriously and investigate it
+        properly.<br><br>
+
+        The next step is to involve a <strong>neurologist</strong>, a doctor who specializes in nerve and muscle
+        conditions. They can order specific <strong>blood tests</strong> to look for antibodies associated with
+        myasthenia gravis, and may arrange <strong>imaging</strong> or other specialized tests of the nerve&ndash;muscle
+        junction. I&rsquo;ll write a detailed referral letter and share my findings so they have a clear starting point.<br><br>
+
+        In the short term, while we&rsquo;re waiting for that assessment, we can talk about ways to make your vision
+        more comfortable. For example, using a <strong>patch or a piece of opaque tape</strong> over one lens can
+        reduce the double vision when it&rsquo;s bad. In some cases we can try a <strong>temporary prism</strong> in
+        your glasses, although because your eye position changes through the day, that may not always be perfect.
+        We&rsquo;ll also talk about <strong>driving and work</strong> – if you&rsquo;re having double vision, it&rsquo;s
+        safer not to drive until we get things more stable, and you may need to pace visually demanding tasks at work.<br><br>
+
+        One very important thing I want you to be aware of is a short list of <strong>red-flag symptoms</strong>.
+        If you notice any sudden trouble breathing, feeling like you can&rsquo;t catch your breath, new or worsening
+        difficulty swallowing or speaking, or if weakness spreads quickly to other parts of your body, you should go
+        to the <strong>emergency department right away</strong> or call emergency services. Those can be signs that the
+        myasthenia is affecting the muscles you need to breathe and swallow and they must be checked urgently.<br><br>
+
+        The encouraging news is that myasthenia gravis is a <strong>treatable</strong> condition. Many patients do very
+        well once it&rsquo;s diagnosed and properly managed with the right medications and follow-up. My role is to
+        recognize the pattern, help keep your eyes as comfortable as possible, and coordinate closely with the neurology
+        team. You&rsquo;re not alone in this – we&rsquo;ll walk through it step by step, and I want you to feel free to
+        ask questions at any point.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS49AiFeedback() {
+      const textArea     = document.getElementById("s49-response");
+      const feedbackBox  = document.getElementById("s49-ai-box");
+      const feedbackText = document.getElementById("s49-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 49,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis_mechanism?.score ?? rubric.diagnosis?.score ?? 0;
+        const workupScore        = rubric.workup_referral?.score ?? 0;
+        const visualMgmtScore    = rubric.visual_management?.score ?? rubric.management?.score ?? 0;
+        const redFlagScore       = rubric.redflag_education?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + workupScore + visualMgmtScore + redFlagScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis &amp; Mechanism:</strong>
+              ${rubric.diagnosis_mechanism?.comment || rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(workupScore)}
+              &nbsp;<strong>Workup &amp; Referral:</strong>
+              ${rubric.workup_referral?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(visualMgmtScore)}
+              &nbsp;<strong>Visual Management:</strong>
+              ${rubric.visual_management?.comment || rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(redFlagScore)}
+              &nbsp;<strong>Red-Flag Education:</strong>
+              ${rubric.redflag_education?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
