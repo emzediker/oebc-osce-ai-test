@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 48 (MS / Optic Neuritis)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 48 – MS / Optic Neuritis (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 48</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic Disorders &bull; MS / Optic Neuritis (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE, you have 8 minutes total.</p>
+
+      <p><strong>Scenario:</strong><br>
+        A 29-year-old female reports sudden blurred vision in the right eye over the past 3 days, pain with eye movement, and washed-out colors. VA OD is 20/60, OS 20/20. A relative afferent pupillary defect is present OD.
+        <br>Fundus exam shows no optic disc edema. She mentions having had numbness in her legs several years ago but never followed up.
+      </p>
+
+      <p><strong>Your task:</strong><br>
+        Explain to the patient:
+      </p>
+
+      <ul>
+        <li>The likely diagnosis (optic neuritis)</li>
+        <li>How this relates to inflammation of the optic nerve</li>
+        <li>Why pain, decreased color vision, and reduced acuity occur</li>
+        <li>The connection to possible multiple sclerosis (MS)</li>
+        <li>The need for MRI + neurology referral</li>
+        <li>Expected visual prognosis</li>
+      </ul>
+
+      <p>Use clear, compassionate, layperson-friendly language.</p>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s48-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s48-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS48AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s48-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li>Clearly state &ldquo;This looks like optic neuritis.&rdquo;</li>
+          <li>Explain that it is inflammation of the optic nerve.</li>
+          <li>Connect symptoms: pain with eye movement, color washout, blur.</li>
+          <li>Explain that most cases recover significantly over weeks.</li>
+          <li>Discuss the possible association with multiple sclerosis (MS).</li>
+          <li>Stress the importance of MRI of brain and orbits with contrast.</li>
+          <li>Recommend urgent neurology consultation.</li>
+          <li>Use supportive, reassuring tone; avoid alarming language.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself 0&ndash;2 in each category (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; text-align: left; padding: 6px;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; text-align: left; padding: 6px;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Identified optic neuritis and connected symptoms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained inflammation and why pain / color loss occur.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Discussed MRI, neurology referral, and possible steroids.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Reassured regarding typical recovery pattern.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Clear, supportive, avoids jargon, empathetic.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          Strong performance across these domains reflects OEBC-level communication skills.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s48-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                                 border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s48-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;From everything you’ve told me and what I see on your exam today, this picture fits with a
+        condition called <strong>optic neuritis</strong>. That means there is inflammation affecting the
+        cable that carries visual information from your eye back to your brain &mdash; the optic nerve.<br><br>
+
+        When that nerve is inflamed, the signal doesn’t travel as well. That explains all of your
+        symptoms: <strong>pain when you move the eye</strong> because the inflamed nerve is being tugged,
+        <strong>washed-out colours</strong> because colour signals are very sensitive to damage,
+        and <strong>blurred vision</strong> because the overall signal is weaker. On the surface of the
+        eye and retina things can look fairly normal, so it’s something we pick up mainly from your
+        symptoms and our functional tests, like the pupil reaction we saw today.<br><br>
+
+        Many cases of optic neuritis are linked to conditions where the immune system becomes a bit
+        overactive and attacks the coating around nerves. One of the conditions we think about is
+        <strong>multiple sclerosis</strong>, or MS. This doesn’t mean you definitely have MS, but because
+        you’ve also had that episode of leg numbness in the past, we need to take the possibility
+        seriously and investigate it properly.<br><br>
+
+        The next step is to arrange an <strong>MRI scan of your brain and the orbits</strong> with contrast.
+        That allows the specialists to look for any other areas of inflammation or old scars in the
+        nervous system that might suggest MS or a related condition. I’m also going to refer you
+        urgently to a <strong>neurologist</strong>, who will coordinate that testing and talk with you
+        about treatment options and long-term follow-up.<br><br>
+
+        In terms of treatment, many patients with optic neuritis receive a short course of
+        <strong>steroids</strong>, usually given by vein or sometimes by mouth, to calm down the
+        inflammation more quickly. Steroids don’t guarantee a better final vision in every case, but
+        they can speed up the recovery and are often recommended, especially in a first episode like this.<br><br>
+
+        The good news is that in most people, vision <strong>improves significantly over the next several
+        weeks to months</strong>. It may not feel that way right now, but it’s very common for the
+        vision and colour to come back to near-normal levels over time. We’ll watch you closely, repeat
+        your vision and field testing, and adjust the plan with neurology as we get more information.<br><br>
+
+        I know this is a lot to take in and can sound scary, but you’re doing the right thing by getting
+        checked promptly. Our goal is to figure out exactly what’s going on, get you the right treatment,
+        and support you through the next steps. Please ask me any questions you have &mdash; I want you to
+        leave today understanding what we think is happening and what our plan is from here.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS48AiFeedback() {
+      const textArea     = document.getElementById("s48-response");
+      const feedbackBox  = document.getElementById("s48-ai-box");
+      const feedbackText = document.getElementById("s48-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 48,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Prognosis:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
