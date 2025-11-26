@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 58 (Radiation / Occupational Exposure Eye Safety)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 58 – Radiation / Occupational Exposure Eye Safety (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 58</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Other &bull; Integrated Technical Skills &bull; Radiation / Occupational Exposure Eye Safety (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Context:</strong> On the real OEBC OSCE you will have approximately 8 minutes at an interactive station. Here you will practice the same communication and counselling skills in written form.</p>
+
+      <p><strong>Scenario:</strong><br>
+        A 38-year-old interventional radiology technologist is referred by occupational health for an eye exam. They report working long hours in fluoroscopy suites several days per week. They occasionally notice dry, irritated eyes and mild blur at the end of shifts but no acute vision loss. Their best-corrected acuity is 20/20 OU, slit lamp and fundus are unremarkable, and IOP is normal. They occasionally wear a lead apron but admit they &ldquo;forget the lead glasses a lot of the time&rdquo; because they are uncomfortable and fog up.
+      </p>
+
+      <p><strong>Your task:</strong><br />
+        Counsel this patient about <em>ocular risks from chronic radiation and related occupational exposure</em> and how to protect their eyes at work. Speak as if you are at an OEBC interactive station. Use clear, patient-friendly language and an empathetic tone.
+      </p>
+
+      <p><strong>Your explanation must include:</strong></p>
+      <ul>
+        <li>A brief, understandable description of how chronic radiation exposure can affect the eyes (e.g., cataract risk, surface irritation, long-term changes).</li>
+        <li>Specific protective strategies: appropriate eye shielding / lead glasses, proper fit and anti-fog strategies, and adherence to workplace safety protocols.</li>
+        <li>Reassurance about their current exam <em>plus</em> a clear plan for ongoing monitoring (exam interval, what symptoms to report urgently).</li>
+        <li>Assessment of their concerns and encouragement to ask questions (patient-centred approach).</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient if this were your OEBC interactive station:</p>
+      <textarea id="s58-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s58-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS58AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s58-key" style="display: none;">
+
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC-Style Stations Expect)</h3>
+
+        <ul>
+          <li><strong>Risk explanation:</strong> Clearly connects chronic radiation exposure with increased risk of posterior subcapsular cataracts and possible long-term ocular surface issues, without exaggeration.</li>
+          <li><strong>Current findings:</strong> Reassures that today&rsquo;s exam is normal while explaining that radiation effects are usually cumulative and may appear later.</li>
+          <li><strong>Protection strategies:</strong> Emphasizes consistent use of properly fitted protective eyewear (lead glasses / shields), time&ndash;distance&ndash;shielding principles, and collaboration with occupational health.</li>
+          <li><strong>Practical tips:</strong> Addresses comfort and fogging (fit adjustment, anti-fog options, discussing alternatives with employer or safety officer).</li>
+          <li><strong>Monitoring plan:</strong> Gives a clear recall interval (e.g., yearly exams, sooner if symptoms) and red-flag symptoms that require earlier review.</li>
+          <li><strong>Patient-centred communication:</strong> Checks understanding, invites questions, and responds empathetically to concerns about long-term vision.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself from 0&ndash;2 in each domain (0 = not addressed, 1 = partial, 2 = clear and complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">What to Look For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Risk Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Described in plain language how chronic radiation exposure can affect the eyes (e.g., cataract risk, surface irritation) without causing unnecessary alarm.
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Protection &amp; Safety</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Gave specific, realistic advice about protective eyewear and workplace safety practices, including strategies to improve comfort/usage.
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Findings &amp; Prognosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Reassured regarding the normal exam today while explaining that effects are cumulative and why periodic monitoring is important.
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Follow-Up Plan</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Recommended a clear exam interval and outlined which new symptoms (persistent blur, glare, vision loss, pain) should trigger earlier assessment.
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication Style</strong></td>
+              <td style="padding: 6px;">
+                Used clear, organized, empathetic language; invited questions and responded to the patient&rsquo;s concerns.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you are consistently scoring 1&ndash;2 in all domains across multiple stations, you are practising at a level similar to what OEBC examiners expect on interactive counselling stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s58-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s58-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static, shown once AI box is visible) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Thanks for explaining your work environment &mdash; it sounds like you spend a lot of time in fluoroscopy rooms, which is important for your patients but can expose you to low levels of radiation over many years. Today, the good news is that your eye exam is completely normal: your vision is 20/20 in both eyes, your eye pressure is normal, and I don&rsquo;t see any early cataracts or other damage.<br><br>
+
+        That said, we know from research on people who work with X-rays and fluoroscopy that <strong>chronic radiation exposure can increase the risk of a certain type of cataract</strong> that forms at the back of the lens, called a posterior subcapsular cataract. Over a long time, that can cause glare, difficulty with headlights at night, and blurred vision. Radiation and dry environments can also contribute to <strong>surface irritation</strong>, which may explain some of the dryness and blur you notice at the end of long shifts.<br><br>
+
+        The most important thing we can do is <strong>protect your eyes going forward</strong>. That means making consistent use of your <strong>lead glasses or eye shields every time you are in the fluoroscopy suite</strong>, not just sometimes. I know you mentioned that they&rsquo;re uncomfortable and tend to fog up. We can often improve that by adjusting the fit, using lighter frames, or adding <strong>anti-fog coatings or wipes</strong>. It might also be worth speaking with your occupational health or safety officer about different styles that fit better or vent more, so you are more likely to wear them all the time.<br><br>
+
+        In radiation safety we talk about &lsquo;<strong>time, distance, and shielding</strong>&rsquo;: limiting the time close to the source when possible, standing as far back as is practical, and always using shields and lead barriers provided in the room. Combining those measures with consistent lead eyewear significantly reduces the dose your eyes receive over your career.<br><br>
+
+        Because your eyes look healthy now, I&rsquo;m reassured, but radiation effects tend to be <strong>cumulative</strong>, so we don&rsquo;t want to wait until problems appear. I recommend a <strong>full eye exam about once a year</strong> to watch for any early lens changes or other issues. If you notice new symptoms such as <strong>persistent blur that doesn&rsquo;t clear with rest, increased glare from lights, a sudden drop in vision, eye pain, or flashes of light</strong>, I&rsquo;d like you to come in sooner so we can check things right away.<br><br>
+
+        I really appreciate that you&rsquo;re thinking ahead about protecting your vision. Your work is demanding and important, and part of my job is to help you keep your eyes healthy throughout your career. Does this explanation make sense so far? What worries you most about your eye health so we can address that together?&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS58AiFeedback() {
+      const textArea     = document.getElementById("s58-response");
+      const feedbackBox  = document.getElementById("s58-ai-box");
+      const feedbackText = document.getElementById("s58-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 58,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis / Risk Explanation:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Protection &amp; Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Monitoring &amp; Follow-up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
