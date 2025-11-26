@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 56 (Progressive Lens Adaptation)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .ai-panel {
+      margin-top: 1.25rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      font-size: 0.9rem;
+    }
+    .ai-score {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .ai-error {
+      color: #b00020;
+      font-weight: 600;
+    }
+    .ai-loading {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 56</h2>
+    <p style="margin-top: 0; color: #555;">Other • Progressive Lens Adaptation (Interactive)</p>
+
+    <!-- Step 1 -->
+    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
+      <h3>Step 1 – Read the Station</h3>
+
+      <p><strong>Scenario:</strong><br>
+      A 48-year-old patient is picking up their new progressive lenses for the first time. They are nervous after hearing stories from friends who “couldn’t get used to them.”</p>
+
+      <p><strong>Your task:</strong>  
+        Explain what progressive lenses are, how they work, what adaptation expectations are normal, helpful behaviors, and what symptoms require follow-up.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
+      <h3>Step 2 – Speak (Type) Your Response</h3>
+
+      <textarea id="s56-response" rows="8"></textarea>
+
+      <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+        <button type="button"
+                onclick="document.getElementById('s56-key').style.display='block';this.disabled=true;">
+          Show Key Points & Rubric
+        </button>
+
+        <button id="s56-ai-btn" type="button"
+                style="background:#fff5f5;color:#7f1d1d;border:1px solid #b91c1c;">
+          Get AI Feedback & Score
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 + 4 -->
+    <div id="s56-key" style="display:none;">
+      <div style="padding:16px;border-radius:8px;border:1px solid #cfd8e3;background:#f5f7fb;margin-bottom:1rem;">
+
+        <h3>Key Communication Points (What OEBC Expects)</h3>
+        <ul>
+          <li>Explain what progressives are (distance → intermediate → near corridor).</li>
+          <li>Describe normal adaptation symptoms (“swim,” distortion, narrow near zone).</li>
+          <li>Give strategies: point nose where you want to look, move head not eyes, consistent wear.</li>
+          <li>Discuss computer ergonomics and intermediate zone expectations.</li>
+          <li>Set realistic expectations: most adapt within 1–2 weeks.</li>
+          <li>Red flags: persistent nausea, diplopia, inability to use near zone after 2 weeks.</li>
+          <li>Offer follow-up for troubleshooting or adjustment.</li>
+        </ul>
+      </div>
+
+      <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;background:#fff;">
+        <h3>Self-Assessment Rubric</h3>
+
+        <p>Score 0–2 for each:</p>
+
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <tr><th>Domain</th><th>Criteria</th></tr>
+
+          <tr><td><strong>Explanation</strong></td>
+              <td>Explained design & visual zones clearly.</td></tr>
+
+          <tr><td><strong>Adaptation Expectations</strong></td>
+              <td>Mentioned normal distortion + adaptation time.</td></tr>
+
+          <tr><td><strong>Strategies</strong></td>
+              <td>Provided actionable tips (head movement, wear schedule).</td></tr>
+
+          <tr><td><strong>Follow-Up</strong></td>
+              <td>Clear timeframe for adjustments if needed.</td></tr>
+
+          <tr><td><strong>Communication</strong></td>
+              <td>Empathetic, supportive, easy to understand.</td></tr>
+        </table>
+
+        <p style="margin-top:0.75rem;font-style:italic;color:#555;">High performance in all domains meets OEBC expectations.</p>
+      </div>
+    </div>
+
+    <!-- AI Panel -->
+    <div id="s56-ai-panel" class="ai-panel">
+      <div id="s56-ai-status" class="ai-loading" style="display:none;"></div>
+      <div id="s56-ai-score" class="ai-score"></div>
+      <div id="s56-ai-feedback"></div>
+      <div id="s56-ai-error" class="ai-error"></div>
+    </div>
+
+  </div>
+
+  <!-- OSCE Shared JS (your repository's JS file) -->
+  <script>
+      const STATION_ID = 56;
+  </script>
+  <script src="osce_ai_feedback.js"></script>
+
+  <script>
+    const btn = document.getElementById("s56-ai-btn");
+    const statusEl = document.getElementById("s56-ai-status");
+    const scoreEl = document.getElementById("s56-ai-score");
+    const feedbackEl = document.getElementById("s56-ai-feedback");
+    const errorEl = document.getElementById("s56-ai-error");
+
+    btn.addEventListener("click", async () => {
+      const text = document.getElementById("s56-response").value.trim();
+      if (!text) {
+        errorEl.textContent = "Please type your response first.";
+        return;
+      }
+
+      errorEl.textContent = "";
+      scoreEl.textContent = "";
+      feedbackEl.textContent = "";
+      statusEl.style.display = "block";
+      statusEl.textContent = "Asking AI to review your response…";
+      btn.disabled = true;
+
+      try {
+        const result = await submitOsceResponse({
+          stationId: STATION_ID,
+          userResponse: text
+        });
+
+        statusEl.style.display = "none";
+        if (typeof result.score === "number") {
+          scoreEl.textContent = `AI Score: ${result.score}/10`;
+        }
+        feedbackEl.innerHTML = result.feedback || "";
+      } catch (err) {
+        statusEl.style.display = "none";
+        errorEl.textContent = "There was a problem getting AI feedback.";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
