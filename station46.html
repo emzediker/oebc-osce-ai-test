@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 46 (Hypertensive Retinopathy)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 46 – Hypertension / Hypertensive Retinopathy (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 46</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic Disorders &bull; Hypertension &amp; Hypertensive Retinopathy (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Scenario:</strong>
+        <br>A 58-year-old patient presents for a routine eye exam. They report occasional headaches but no vision complaints. Fundus exam reveals: arteriolar narrowing, AV nicking, and scattered flame hemorrhages consistent with <strong>moderate hypertensive retinopathy</strong>. The patient admits they &ldquo;haven&rsquo;t checked their blood pressure in a while&rdquo; and are inconsistent with their medication.
+      </p>
+
+      <p><strong>Your task:</strong>
+        <br>Explain the findings, the relationship between high blood pressure and the eye, the potential risks if untreated, and the immediate next steps. Use lay language and emphasize urgency appropriately.
+      </p>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s46-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          onclick="document.getElementById('s46-key').style.display='block'; this.disabled=true;"
+          type="button">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS46AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s46-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li>Clearly state the diagnosis: <strong>hypertensive retinopathy</strong>.</li>
+          <li>Explain that high blood pressure causes damage to blood vessels in the eye.</li>
+          <li>Connect ocular findings to systemic risk (stroke, heart disease).</li>
+          <li>Describe your findings in simple terms (narrow arteries, small bleeds).</li>
+          <li>Stress the importance of medication compliance and follow-up with their doctor.</li>
+          <li>Explain urgency: &ldquo;same week&rdquo; medical follow-up; &ldquo;today&rdquo; if BP is severely elevated.</li>
+          <li>Recommend lifestyle modifications if appropriate.</li>
+          <li>Use supportive language without fear-mongering.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each domain 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Named hypertensive retinopathy; linked to high blood pressure.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained vascular damage in simple, patient-friendly terms.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Systemic Risk</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Connected eye findings to stroke/heart attack and other systemic risks.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Plan</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Advised urgent PCP follow-up, BP monitoring, and medication adherence.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Clear, empathetic, non-judgmental phrasing; encourages questions.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          Strong performance across all domains equals OEBC-level communication competence.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s46-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s46-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;From what I see on your eye exam today, you have changes in the back
+        of the eye that we call <strong>hypertensive retinopathy</strong>. That
+        means the blood vessels in your retina &mdash; the light-sensitive
+        tissue at the back of the eye &mdash; are being affected by high blood
+        pressure.<br><br>
+
+        Normally those blood vessels are smooth and healthy. With high blood
+        pressure over time, they become narrowed and stiffer, and sometimes
+        they can leak or bleed a little. That&rsquo;s why I can see areas where
+        the arteries are narrowed and crossing over the veins, and a few small
+        flame-shaped hemorrhages. The good news is that your vision is still
+        working well right now, but these changes are a warning sign that your
+        blood pressure hasn&rsquo;t been under ideal control.<br><br>
+
+        What I see in your eyes doesn&rsquo;t just matter for your vision &mdash;
+        it also tells us about risk to the rest of your body. The same kind of
+        vessel damage can happen in the brain or heart, increasing the risk of
+        stroke or heart attack if blood pressure stays high for a long time.<br><br>
+
+        The most important next step is to get your blood pressure checked and
+        brought under good control. I strongly recommend that you see your
+        family doctor <strong>within the next few days</strong> to review your
+        blood pressure, medications, and lifestyle. If a reading today were
+        extremely high, that could even mean same-day assessment.<br><br>
+
+        At home, things like taking your medications exactly as prescribed,
+        cutting back on salt, staying active, not smoking, and moderating
+        alcohol all help protect both your eyes and your overall health. We&rsquo;ll
+        also schedule regular eye follow-ups to monitor these changes &mdash;
+        typically at least once a year, or more often if anything worsens.<br><br>
+
+        I know this can sound worrying, but I&rsquo;m glad we caught these signs
+        now, while your vision is still good. With good blood pressure control
+        and regular monitoring from both me and your family doctor, we can
+        greatly reduce the risk of more serious problems. Does this make sense,
+        and what questions do you have for me?&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS46AiFeedback() {
+      const textArea     = document.getElementById("s46-response");
+      const feedbackBox  = document.getElementById("s46-ai-box");
+      const feedbackText = document.getElementById("s46-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 46,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const systemicScore      = rubric.systemic_risk?.score ?? 0;
+        const planScore          = rubric.plan?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + systemicScore + planScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(systemicScore)}
+              &nbsp;<strong>Systemic Risk:</strong>
+              ${rubric.systemic_risk?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(planScore)}
+              &nbsp;<strong>Plan:</strong>
+              ${rubric.plan?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
