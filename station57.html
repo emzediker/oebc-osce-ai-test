@@ -1,124 +1,290 @@
-<!-- OEBC OSCE Station 57 – Ethics / Record-Keeping Scenario (Interactive) -->
-<div class="oebc-station-step" style="max-width:900px;margin:0 auto;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 57 (Ethics / Record-Keeping)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .ai-panel {
+      margin-top: 1.25rem;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8e3;
+      background: #f5f7fb;
+      font-size: 0.9rem;
+    }
+    .ai-score {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .ai-error {
+      color: #b00020;
+      font-weight: 600;
+    }
+    .ai-loading {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 57 – Ethics / Record-Keeping (Interactive, AI-graded) -->
+  <div class="oebc-station-step">
 
-    <h2 style="margin-bottom:0.25rem;">OEBC Mock OSCE – Station 57</h2>
-    <p style="margin-top:0;color:#555;">Other • Ethics & Record-Keeping (Interactive)</p>
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 57</h2>
 
-    <!-- Step 1 -->
-    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
-        <h3 style="margin-top:0;">Step 1 – Read the Station</h3>
+    <p style="margin-top: 0; color: #555;">
+      Other &bull; Ethics &amp; Record-Keeping (Interactive)
+    </p>
 
-        <p><strong>Scenario:</strong></p>
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-        <p>
-        A 52-year-old patient presents for a routine eye exam and vision check for driver’s licence renewal. 
-        With best correction, they see only 20/50 in the better-seeing eye, which does <em>not</em> meet the legal standard in your jurisdiction.
-        </p>
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-        <p>
-        When informed, the patient becomes upset and says: 
-        <em>“I’ve been driving for 30 years and never had an accident. If I lose my licence, I’ll lose my job. Can’t you just write that I passed? No one will know.”</em>
-        </p>
+      <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have limited time (about 8 minutes) to respond.</p>
 
-        <p><strong>Your task:</strong> Explain to the patient:</p>
+      <p><strong>Scenario:</strong></p>
+
+      <p>
+        A 52-year-old patient comes in for a routine eye exam and vision test for a driver&rsquo;s licence renewal.
+        After refraction, they see only 20/50 in the better eye with best correction, which does not meet the legal
+        driving standard in your jurisdiction.
+      </p>
+
+      <p>
+        When you explain this, the patient becomes frustrated and says:
+        &ldquo;I&rsquo;ve been driving for 30 years with no accidents. If I lose my licence, I&rsquo;ll lose my job.
+        Can you <em>please</em> just write that I met the standard? No one will ever know.&rdquo;
+      </p>
+
+      <p><strong>Your task:</strong> Speak to the patient in a professional, empathetic way and explain:</p>
+
+      <ul style="margin-top: 0.4rem; padding-left: 1.2rem;">
+        <li>Why you cannot falsify clinical records or licensing forms.</li>
+        <li>Your legal and professional obligations for road safety and documentation.</li>
+        <li>What options or next steps you <em>can</em> offer (e.g., treatment, referral, restrictions, re-testing).</li>
+        <li>How you will document this conversation in the record.</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s57-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s57-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button id="s57-ai-btn" type="button"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI Feedback &amp; Score
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 + 4: Key Points & Rubric (Hidden by Default) -->
+    <div id="s57-key" style="display: none;">
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication &amp; Ethics Points (What OEBC Expects)</h3>
 
         <ul>
-            <li>Why you cannot falsify records or licensing forms</li>
-            <li>Your legal and professional obligations</li>
-            <li>What options or next steps you <em>can</em> provide</li>
-            <li>How you will document the conversation</li>
+          <li><strong>Empathy first:</strong> Acknowledge the patient&rsquo;s fear about job and independence.</li>
+          <li><strong>State the boundary clearly:</strong> You cannot falsify clinical records or licence forms.</li>
+          <li><strong>Link to obligations:</strong> Explain your legal/professional duty to public safety and College standards.</li>
+          <li><strong>Clarify why accuracy matters:</strong> Records must reflect true findings; falsification is unethical and could harm others.</li>
+          <li><strong>Offer options:</strong> Discuss treatment or referrals (e.g., cataract eval, low vision, possible restricted licence depending on jurisdiction, re-evaluation after management).</li>
+          <li><strong>Summarize next steps:</strong> Explain what will go in the record and how you&rsquo;ll support them going forward.</li>
+          <li><strong>Tone:</strong> Remain calm, non-judgmental, and respectful while holding firm boundaries.</li>
         </ul>
+      </div>
+
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible = 10.</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Empathy &amp; Rapport</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Acknowledged impact on patient&rsquo;s life and responded with understanding.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Ethical Boundary</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly stated that falsifying records/forms is not acceptable.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Legal / Professional Duty</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Linked your decision to public safety, laws, and College/board standards.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Options</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Offered appropriate next steps (treatment, referral, re-eval, possible restrictions).</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Professionalism &amp; Clarity</strong></td>
+              <td style="padding: 6px;">Maintained calm, respectful tone; explanation was organized and easy to follow.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          On OEBC interactive ethics/professionalism stations, assessors look for clear boundaries,
+          patient-centred communication, and explicit recognition of your legal and professional responsibilities.
+        </p>
+      </div>
     </div>
 
-    <!-- Step 2 -->
-    <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;margin-bottom:1rem;">
-        <h3 style="margin-top:0;">Step 2 – Speak (Type) Your Response</h3>
-
-        <textarea id="s57-response" rows="8" 
-        style="width:100%;padding:10px;border-radius:6px;border:1px solid #ccc;
-        font-family:inherit;font-size:0.95rem;"></textarea>
-
-        <button onclick="document.getElementById('s57-key').style.display='block'; this.disabled=true;"
-        style="margin-top:1rem;padding:9px 16px;border-radius:999px;border:none;
-        background:#0b6bcb;color:#fff;font-weight:600;cursor:pointer;" type="button">
-        Show Key Points, Rubric & Model 10/10 Answer
-        </button>
+    <!-- AI Feedback Panel -->
+    <div id="s57-ai-panel" class="ai-panel">
+      <div id="s57-ai-status" class="ai-loading" style="display:none;"></div>
+      <div id="s57-ai-score" class="ai-score"></div>
+      <div id="s57-ai-feedback"></div>
+      <div id="s57-ai-error" class="ai-error"></div>
     </div>
 
-    <!-- Step 3 + 4: Key Points + Rubric + Model Answer -->
-    <div id="s57-key" style="display:none;">
-
-        <!-- Key Points -->
-        <div style="padding:16px;border-radius:8px;border:1px solid #cfd8e3;
-        background:#f5f7fb;margin-bottom:1rem;">
-            <h3 style="margin-top:0;">Key Communication & Ethics Points (What OEBC Expects)</h3>
-            <ul>
-                <li><strong>Start with empathy</strong> for the patient's fear of losing independence/employment.</li>
-                <li><strong>Clear boundary:</strong> Records and licensing forms must be accurate.</li>
-                <li><strong>Legal/professional obligations:</strong> Safety, regulatory standards, and documentation rules.</li>
-                <li><strong>Offer options:</strong> Possible treatment, referral, restricted licence options, re-testing.</li>
-                <li><strong>Professional tone:</strong> Calm, respectful, supportive.</li>
-                <li><strong>Documentation:</strong> State what will be entered into the record.</li>
-            </ul>
-        </div>
-
-        <!-- Rubric -->
-        <div style="padding:16px;border-radius:8px;border:1px solid #e0e0e0;background:#fff;margin-bottom:1rem;">
-            <h3 style="margin-top:0;">Self-Assessment Rubric</h3>
-
-            <p>Score each domain 0–2 (Total possible = 10).</p>
-
-            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-                <thead>
-                    <tr>
-                        <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Domain</th>
-                        <th style="border-bottom:1px solid #ddd;padding:6px;text-align:left;">Criteria</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Empathy & Rapport</strong></td>
-                        <td style="border-bottom:1px solid #eee;padding:6px;">Acknowledged the patient’s concerns and frustration.</td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Ethical Boundary</strong></td>
-                        <td style="border-bottom:1px solid #eee;padding:6px;">Stated clearly that falsifying documents is unacceptable.</td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Legal / Professional Duty</strong></td>
-                        <td style="border-bottom:1px solid #eee;padding:6px;">Explained safety obligations and regulatory requirements.</td>
-                    </tr>
-                    <tr>
-                        <td style="border-bottom:1px solid #eee;padding:6px;"><strong>Management & Options</strong></td>
-                        <td style="border-bottom:1px solid #eee;padding:6px;">Provided appropriate alternatives and supports.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:6px;"><strong>Professionalism & Clarity</strong></td>
-                        <td style="padding:6px;">Clear, respectful, organized communication.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- MODEL ANSWER (10/10) -->
-        <div style="padding:16px;border-radius:8px;border:1px solid #0b6bcb;background:#eef5ff;">
-            <h3 style="margin-top:0;color:#0b6bcb;">Model 10/10 Response (What a High-Scoring Answer Sounds Like)</h3>
-
-            <p style="line-height:1.55;">
-            “I completely understand how stressful this feels. Losing a licence can affect your independence and your job, so I really hear your concern. 
-            My job, though, is to document exactly what I find today. I’m not allowed to change the numbers or say you met the standard when you didn’t — 
-            not only is it unethical, but it’s also part of the legal requirements for keeping people safe on the road, including you.
-            </p>
-
-            <p style="line-height:1.55;">
-            What I <em>can</em> do is talk through options. Sometimes vision can improve with new glasses, or there may be treatable eye conditions like cataracts that a surgeon can address. 
-            We can refer you today if needed. Depending on our provincial rules, there may also be the possibility of a restricted licence, or re-testing after treatment.
-            </p>
-
-            <p style="line-height:1.55;">
-            I also want you to know that I’ll document our conversation clearly in your chart so there’s a record of what we discussed, and I’ll support you through the next steps. 
-            You’re not alone in this — we just have to follow the correct legal process to make sure the plan is safe and appropriate.”
-            </p>
-        </div>
+    <!-- Example 10/10 Response -->
+    <div style="margin-top: 1rem; padding: 14px; border-radius: 8px;
+                border: 1px dashed #f97316; background: #fff7ed; font-size: 0.88rem;">
+      <h3 style="margin-top: 0; font-size: 1rem;">Example 10/10 Response</h3>
+      <p>
+        &ldquo;I can hear how stressful this is for you. Losing your licence could really affect your job and your independence,
+        and it makes sense that you&rsquo;re worried. I want you to know that I&rsquo;m on your side and my goal is to help you
+        as much as I can within the rules I have to follow.&rdquo;
+      </p>
+      <p>
+        &ldquo;At the same time, I have a legal and professional responsibility to record your vision accurately and to be honest
+        on any driver&rsquo;s licence forms I sign. If I say that you meet the standard when you don&rsquo;t, that would be falsifying
+        a medical document. Not only is that against my College and legal obligations, but if there were ever an accident, it
+        could put both you and me in a very difficult situation, and more importantly, it could put other people at risk on the road.
+        So even though I understand why you&rsquo;re asking, I can&rsquo;t change the numbers or say that you meet the driving standard today.&rdquo;
+      </p>
+      <p>
+        &ldquo;What I <strong>can</strong> do is talk through options with you. Sometimes reduced vision is related to things we can improve,
+        like cataracts or other treatable conditions, so I&rsquo;d like to arrange a medical evaluation to see if there is anything that
+        can be treated to improve your sight. Depending on our local regulations, there may also be a possibility of a restricted
+        licence or re-testing after treatment, and I&rsquo;m happy to provide any reports that might help that process.&rdquo;
+      </p>
+      <p>
+        &ldquo;I will document today&rsquo;s vision findings, the fact that they don&rsquo;t currently meet the driving standard, and that we discussed
+        your concerns and next steps. That record protects both of us and shows that we took this seriously and made a plan. I know this
+        isn&rsquo;t the answer you were hoping for, but I don&rsquo;t want to simply say &lsquo;no&rsquo; and send you away &mdash; I want to work with you on
+        the medical side and support you through whatever steps come next. How are you feeling about what I&rsquo;ve explained, and what questions
+        do you have for me?&rdquo;
+      </p>
     </div>
-</div>
+
+  </div>
+
+  <!-- Station-specific config for shared AI grading script -->
+  <script>
+    const STATION_ID = 57;
+  </script>
+  <script src="osce_ai_feedback.js"></script>
+  <script>
+    const btn57      = document.getElementById('s57-ai-btn');
+    const status57   = document.getElementById('s57-ai-status');
+    const score57    = document.getElementById('s57-ai-score');
+    const fb57       = document.getElementById('s57-ai-feedback');
+    const err57      = document.getElementById('s57-ai-error');
+
+    btn57.addEventListener('click', async () => {
+      const responseText = document.getElementById('s57-response').value.trim();
+      if (!responseText) {
+        err57.textContent = "Please type your response first.";
+        score57.textContent = "";
+        fb57.textContent = "";
+        return;
+      }
+      err57.textContent = "";
+      score57.textContent = "";
+      fb57.textContent = "";
+      status57.style.display = "block";
+      status57.textContent = "Asking AI to review your response...";
+      btn57.disabled = true;
+
+      try {
+        // submitOsceResponse is defined in osce_ai_feedback.js
+        const result = await submitOsceResponse({
+          stationId: STATION_ID,
+          userResponse: responseText
+        });
+
+        status57.style.display = "none";
+
+        if (result && typeof result.score === "number") {
+          score57.textContent = `AI Score: ${result.score}/10`;
+        }
+
+        if (result && result.feedback) {
+          fb57.innerHTML = result.feedback;
+        } else {
+          fb57.textContent = "No detailed feedback returned from AI.";
+        }
+      } catch (err) {
+        status57.style.display = "none";
+        console.error(err);
+        err57.textContent = "There was a problem getting AI feedback. Please try again.";
+      } finally {
+        btn57.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
