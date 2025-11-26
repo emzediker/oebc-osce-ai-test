@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>OEBC Mock OSCE – Station 56 (Progressive Lens Adaptation)</title>
+  <title>OEBC Mock OSCE – Station 57 (Ethics & Record-Keeping)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -46,13 +46,13 @@
   </style>
 </head>
 <body>
-  <!-- OEBC OSCE Station 56 – Progressive Lens Adaptation (AI-enabled) -->
+  <!-- OEBC OSCE Station 57 – Ethics & Record-Keeping (AI-enabled) -->
   <div class="oebc-station-step">
 
-    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 56</h2>
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 57</h2>
 
     <p style="margin-top: 0; color: #555;">
-      Other &bull; Progressive Lens Adaptation Counselling (Interactive)
+      Other &bull; Ethics &amp; Record-Keeping (Interactive)
     </p>
 
     <!-- Step 1: Read the Station -->
@@ -60,33 +60,31 @@
 
       <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-      <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have about 8 minutes total at this station.</p>
+      <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE you will have limited time (about 8 minutes) to respond.</p>
 
       <p><strong>Scenario:</strong></p>
 
       <p>
-        A 48-year-old patient is picking up their new progressive lenses for the first time. They report feeling nervous
-        after hearing stories from friends who &ldquo;couldn&rsquo;t get used to them.&rdquo; Their prescription is:
+        A 52-year-old patient comes in for a routine eye exam and vision test for a driver&rsquo;s licence renewal.
+        After refraction, they see only 20/50 in the better eye with best correction, which does not meet the legal driving
+        standard in your jurisdiction.
       </p>
-      <ul>
-        <li>OD: +1.25 &ndash;0.50 &times; 090</li>
-        <li>OS: +1.50 &ndash;0.25 &times; 100</li>
-        <li>Add: +1.75 OU</li>
-      </ul>
+
       <p>
-        Ocular health is normal. The patient works at a computer most of the day and needs clear vision for driving,
-        screens, and near work.
+        When you explain this, the patient becomes frustrated and says:
+        &ldquo;I&rsquo;ve been driving for 30 years with no accidents. If I lose my licence, I&rsquo;ll lose my job.
+        Can you <em>please</em> just write that I met the standard? No one will ever know.&rdquo;
       </p>
 
       <p><strong>Your task:</strong><br />
-        Explain, in clear, patient-friendly language:
+        Speak to the patient in a professional, empathetic way and explain:
       </p>
-      <ul>
-        <li>What progressive lenses are and how the distance / intermediate / near zones are arranged.</li>
-        <li>What normal adaptation effects they may notice (&ldquo;swim,&rdquo; peripheral blur, narrower reading zone).</li>
-        <li>Practical strategies to help them adapt (head and eye movements, consistent wear, posture for computer use).</li>
-        <li>Realistic expectations for how long adaptation usually takes.</li>
-        <li>Warning signs or persistent problems that mean they should return sooner, and your follow-up plan.</li>
+
+      <ul style="margin-top: 0.4rem; padding-left: 1.2rem;">
+        <li>Why you cannot falsify clinical records or licensing forms.</li>
+        <li>Your legal and professional obligations for road safety and documentation.</li>
+        <li>What options or next steps you <em>can</em> offer (e.g., treatment, referral, restrictions, re-testing).</li>
+        <li>How you will document this conversation in the record.</li>
       </ul>
     </div>
 
@@ -96,17 +94,17 @@
       <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
 
       <p>Type what you would say to the patient:</p>
-      <textarea id="s56-response" rows="8"></textarea>
+      <textarea id="s57-response" rows="8"></textarea>
 
       <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
         <button
           type="button"
-          onclick="document.getElementById('s56-key').style.display='block'; this.disabled=true;">
+          onclick="document.getElementById('s57-key').style.display='block'; this.disabled=true;">
           Show Key Points &amp; Rubric
         </button>
 
         <button type="button"
-          onclick="getS56AiFeedback()"
+          onclick="getS57AiFeedback()"
           style="border: 1px solid #b91c1c;
                  background: #fff5f5; color: #7f1d1d;">
           Get AI-style Feedback (beta)
@@ -115,30 +113,22 @@
     </div>
 
     <!-- Step 3: Key Points + Rubric -->
-    <div id="s56-key" style="display: none;">
+    <div id="s57-key" style="display: none;">
 
       <!-- Key Points -->
       <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
                   background: #f5f7fb; margin-bottom: 1rem;">
 
-        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+        <h3 style="margin-top: 0;">Key Communication &amp; Ethics Points (What OEBC Expects)</h3>
 
         <ul>
-          <li><strong>Explain the lens design:</strong> Smooth change from distance at the top, through an intermediate
-            zone, to near at the bottom; peripheral areas have more blur.</li>
-          <li><strong>Normalize adaptation:</strong> Mild &ldquo;swim&rdquo; or distortion, peripheral blur, and a
-            narrower reading channel are common at first.</li>
-          <li><strong>Give concrete strategies:</strong> Point your nose where you want to look, move your head more
-            than your eyes, lower your eyes (not your chin) for reading, and wear the lenses consistently.</li>
-          <li><strong>Address computer use:</strong> Use the middle of the lens for screen distance; consider adjusting
-            monitor height and working distance for comfort.</li>
-          <li><strong>Set expectations:</strong> Most people adapt over several days to 1&ndash;2 weeks with regular wear.</li>
-          <li><strong>Red flags:</strong> Persistent nausea, dizziness, true double vision, or inability to find a
-            comfortable near zone after a fair trial.</li>
-          <li><strong>Follow-up:</strong> Invite them back for frame adjustments or troubleshooting if they are still
-            struggling after 1&ndash;2 weeks.</li>
-          <li><strong>Communication style:</strong> Reassuring, non-judgmental, and normalizes their worries about
-            &ldquo;not getting used to it.&rdquo;</li>
+          <li><strong>Empathy first:</strong> Acknowledge the patient&rsquo;s fear about losing their licence, job, and independence.</li>
+          <li><strong>State the boundary clearly:</strong> Explain that you cannot falsify clinical records or driver&rsquo;s licence forms under any circumstances.</li>
+          <li><strong>Link to obligations:</strong> Describe your legal and professional duty to public safety and to follow College/board and licensing regulations.</li>
+          <li><strong>Clarify why accuracy matters:</strong> Records and forms must reflect true findings; falsifying them is unethical, can endanger others, and could cost you your licence.</li>
+          <li><strong>Offer options:</strong> Discuss what you <em>can</em> do &mdash; e.g., investigate causes of reduced vision (cataract, macular disease, refractive options), refer for treatment, explore possible restricted licence options if applicable in your jurisdiction, and arrange re-testing after management.</li>
+          <li><strong>Summarize next steps:</strong> Outline your plan going forward and how you will document this conversation in the record.</li>
+          <li><strong>Tone:</strong> Remain calm, respectful, and non-judgmental while holding firm boundaries.</li>
         </ul>
       </div>
 
@@ -147,7 +137,7 @@
 
         <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
 
-        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible = 10.</p>
 
         <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
           <thead>
@@ -158,92 +148,97 @@
           </thead>
           <tbody>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Empathy &amp; Rapport</strong></td>
               <td style="border-bottom: 1px solid #eee; padding: 6px;">
-                Clearly explained progressive lens design (distance / intermediate / near) and where to look for each task.
+                Acknowledged the patient&rsquo;s concerns about work, independence, and frustration.
               </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Adaptation Expectations</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Ethical Boundary</strong></td>
               <td style="border-bottom: 1px solid #eee; padding: 6px;">
-                Described normal early symptoms (distortion, peripheral blur) and that adaptation usually takes days to weeks.
+                Clearly stated that falsifying records or forms is not acceptable.
               </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Strategies</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Legal / Professional Duty</strong></td>
               <td style="border-bottom: 1px solid #eee; padding: 6px;">
-                Gave actionable tips (move head, point nose, consistent wear, posture for computer work).
+                Linked your decision to road safety, laws, and College/board standards.
               </td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Follow-Up &amp; Red Flags</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Options</strong></td>
               <td style="border-bottom: 1px solid #eee; padding: 6px;">
-                Clarified when to return for adjustment and what persistent problems (e.g., diplopia, severe symptoms)
-                need earlier review.
+                Offered realistic next steps (investigation, treatment, referral, re-evaluation, possible restrictions if allowed).
               </td>
             </tr>
             <tr>
-              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;"><strong>Professionalism &amp; Clarity</strong></td>
               <td style="padding: 6px;">
-                Empathetic, supportive tone that validates their concerns and builds confidence about trying the lenses.
+                Maintained a calm, respectful tone and organized explanation that a layperson could follow.
               </td>
             </tr>
           </tbody>
         </table>
 
         <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
-          If you consistently score yourself 8&ndash;10 on similar stations, your communication is aligning well with OEBC-style expectations.
+          On OEBC interactive ethics/professionalism stations, assessors look for clear boundaries, patient-centred communication,
+          and explicit recognition of your legal and professional responsibilities.
         </p>
       </div>
     </div>
 
     <!-- Step 4: AI-style Feedback (box appears after click) -->
-    <div id="s56-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+    <div id="s57-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
                              border: 1px dashed #f97316; background: #fff7ed;">
       <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
-      <div id="s56-ai-text" style="font-size:0.9rem;"></div>
+      <div id="s57-ai-text" style="font-size:0.9rem;"></div>
 
       <!-- Example 10/10 response (static, hidden until AI box is shown) -->
       <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
         <strong>Example 10/10 response:</strong><br>
-        &ldquo;These new glasses are called <strong>progressive lenses</strong>. Instead of having a separate pair for
-        distance and another for reading, or a visible line like a bifocal, the power changes smoothly from top to
-        bottom. The top part is set for clear distance, the middle zone is for arm&rsquo;s-length tasks like the
-        computer, and the bottom is for close work like reading. Because we&rsquo;re fitting all of that into one
-        lens, there are small areas off to the sides that are a bit more distorted or blurry, and that is normal for
-        this type of lens.<br><br>
+        &ldquo;Thank you for being honest with me about how worried you are. I can hear that your driver&rsquo;s licence is
+        closely tied to your job and your independence, and this is a really stressful situation. I&rsquo;m sorry that the
+        test results today aren&rsquo;t what you were hoping for.<br><br>
 
-        Over the next few days, you may notice some mild &ldquo;swim&rdquo; or a feeling that the edges move a bit
-        when you turn your head, and the reading area may feel narrower than you&rsquo;re used to. That doesn&rsquo;t
-        mean the glasses are wrong &mdash; it&rsquo;s usually just your brain and eyes learning a new pattern. The key
-        is how you <strong>use</strong> them. For distance, look straight ahead through the top portion. For the
-        computer, you&rsquo;ll naturally look through the middle; sometimes lowering the monitor slightly or pushing it
-        back a bit helps. For reading, keep your chin up slightly and look down with your eyes so you&rsquo;re using
-        the lower part of the lens.<br><br>
+        I do need to be very clear about one thing: I am <strong>not allowed to change the results or say that you met the
+        standard when you did not</strong>. As an optometrist, I have a legal and professional responsibility to record your
+        actual vision and to be truthful on any forms I sign. If I were to falsify your record or your driver&rsquo;s form,
+        that would be unethical, it could put other people at risk on the road, and it could cost me my licence to practice.<br><br>
 
-        A useful rule is: <strong>move your head, not just your eyes</strong>. If you want to look off to the side,
-        turn your nose toward what you want to see instead of just glancing sideways with your eyes. That keeps you in
-        the clearer central corridor. Also, try to wear the glasses <strong>full-time</strong> for the next week or
-        two rather than switching back and forth with your old pair; that steady use helps your brain adapt faster.<br><br>
+        The reason the standard exists is to protect you and others. If someone is driving with vision below the legal
+        requirement, their reaction time and ability to see hazards, pedestrians, or signs can be reduced, especially at
+        higher speeds or in poor conditions. My role is to advocate for your health and safety <em>and</em> for public
+        safety, so I have to be honest about what we found today.<br><br>
 
-        Most people feel much more comfortable within a few days, and many adapt fully within about one to two weeks.
-        If you feel a little off-balance or notice some distortion at first, that&rsquo;s expected. However, if you
-        develop <strong>persistent nausea, true double vision, or you feel you simply cannot find a comfortable spot
-        for reading or computer use</strong> after giving it a solid try, I definitely want you to come back so we can
-        check the fit, lens design, and prescription.<br><br>
+        What I <strong>can</strong> do is work with you on next steps. Today we&rsquo;ve confirmed that your best-corrected
+        vision in the better eye is 20/50. The next question is <em>why</em> it is reduced. We should look carefully at the
+        health of the eye to see if there is anything treatable, such as cataracts or retinal changes. If there is a treatable
+        cause, I can refer you to the appropriate specialist and, once treatment is done, we can recheck your vision and
+        re-complete the licence form if you meet the standard at that time.<br><br>
 
-        I&rsquo;d like you to try these for the next week or so, and we can plan a follow-up or frame adjustment visit
-        if anything is bothering you. My goal is for you to feel confident that the glasses are working for you. Please
-        let me know right away if something doesn&rsquo;t feel right, and we&rsquo;ll troubleshoot it together.&rdquo;
+        Depending on the rules in our province, there may also be options like a
+        <strong>restricted or conditional licence</strong> that allows certain types of driving if you meet specific criteria.
+        I can help by providing accurate information to the licensing authority, but I cannot guarantee what they will decide.
+        My documentation today will reflect exactly what we measured and that we discussed the implications.<br><br>
+
+        In your chart, I&rsquo;m going to record today&rsquo;s visual acuity, the results of the eye health examination, and
+        the details of this conversation &mdash; including your concern about your job, my explanation of the legal standards,
+        and the plan we&rsquo;ve agreed on for further investigation and possible treatment. That way, there is a clear record
+        of what we discussed and how we are trying to help you move forward in a safe, ethical way.<br><br>
+
+        I know this isn&rsquo;t the answer you were hoping for, but I want you to know that I&rsquo;m on your side. I&rsquo;ll
+        do everything I can within the rules to support you &mdash; whether that&rsquo;s arranging further testing, referring
+        you for treatment, or re-evaluating your vision if it improves. What questions do you have, or what worries you most
+        right now that I can clarify?&rdquo;
       </div>
     </div>
   </div>
 
   <script>
-    async function getS56AiFeedback() {
-      const textArea     = document.getElementById("s56-response");
-      const feedbackBox  = document.getElementById("s56-ai-box");
-      const feedbackText = document.getElementById("s56-ai-text");
+    async function getS57AiFeedback() {
+      const textArea     = document.getElementById("s57-response");
+      const feedbackBox  = document.getElementById("s57-ai-box");
+      const feedbackText = document.getElementById("s57-ai-text");
 
       const userResponse = textArea.value.trim();
       if (!userResponse) {
@@ -251,7 +246,7 @@
         return;
       }
 
-      // Reveal the box immediately
+      // Reveal the box immediately (this also reveals the 10/10 example, same as Station 55)
       feedbackBox.style.display = "block";
       feedbackText.textContent = "Working on your feedback…";
 
@@ -264,7 +259,7 @@
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
           },
           body: JSON.stringify({
-            station_number: 56,
+            station_number: 57,
             user_response: userResponse
           })
         });
@@ -313,31 +308,31 @@
           <div>
             <p style="margin:0 0 6px;">
               ${badge(diagnosisScore)}
-              &nbsp;<strong>Diagnosis / Framing:</strong>
+              &nbsp;<strong>Empathy &amp; Rapport / Diagnosis of the Issue:</strong>
               ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
             </p>
 
             <p style="margin:0 0 6px;">
               ${badge(explanationScore)}
-              &nbsp;<strong>Explanation:</strong>
+              &nbsp;<strong>Explanation of Boundary &amp; Duty:</strong>
               ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
             </p>
 
             <p style="margin:0 0 6px;">
               ${badge(managementScore)}
-              &nbsp;<strong>Strategies &amp; Advice:</strong>
+              &nbsp;<strong>Management &amp; Options:</strong>
               ${rubric.management?.comment || "No specific feedback from AI for this domain."}
             </p>
 
             <p style="margin:0 0 6px;">
               ${badge(prognosisScore)}
-              &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+              &nbsp;<strong>Prognosis / Next Steps &amp; Documentation:</strong>
               ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
             </p>
 
             <p style="margin:0 0 10px;">
               ${badge(communicationScore)}
-              &nbsp;<strong>Communication:</strong>
+              &nbsp;<strong>Professionalism &amp; Clarity:</strong>
               ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
             </p>
 
