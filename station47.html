@@ -1,0 +1,333 @@
+Here’s Station 47 in the OSCE AI-Feedback Classic Template format (full station47.html file):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 47 (GCA / Temporal Arteritis Suspicion)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 47 – GCA / Temporal Arteritis Suspicion (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 47</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Systemic &bull; GCA / Temporal Arteritis Suspicion (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario carefully. On the real OEBC OSCE, you would have 8 minutes to complete this station.</p>
+
+      <p><strong>Scenario:</strong></p>
+
+      <p>
+        A 74-year-old woman presents as an emergency add-on. She reports a new, severe headache over her right temple for the past week, scalp tenderness when brushing her hair, and pain in her jaw when chewing tough foods. This morning she noticed a brief episode of &ldquo;grey-out&rdquo; vision in her right eye that lasted a few minutes and then improved. She has a history of hypertension and hyperlipidemia, but no known diabetes. BCVA today is 20/25 OD and 20/20 OS. Fundus exam shows mild optic disc pallor OD, otherwise unremarkable.
+      </p>
+
+      <p><strong>Your task:</strong> Explain to the patient, in clear, patient-friendly language:</p>
+
+      <ul>
+        <li>What condition you are <em>concerned about</em> and why it is an emergency for her vision.</li>
+        <li>What urgent tests are needed (e.g., blood work such as ESR/CRP, possible temporal artery biopsy).</li>
+        <li>Why immediate treatment with systemic steroids is likely needed, even before all results return.</li>
+        <li>What could happen without prompt treatment and what follow-up/monitoring will look like.</li>
+      </ul>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient as if you were in the OSCE room:</p>
+      <textarea id="s47-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s47-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS47AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s47-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li><strong>Name and frame the concern:</strong> Suspected temporal (giant cell) arteritis &ndash; an inflammation of blood vessels near the temples that can threaten vision.</li>
+          <li><strong>Link red-flag symptoms:</strong> New temporal headache, scalp tenderness, jaw pain when chewing, and transient vision loss are serious warning signs.</li>
+          <li><strong>Stress urgency:</strong> Explain that this can cause permanent, often bilateral vision loss if not treated quickly, so this is a same-day emergency.</li>
+          <li><strong>Outline investigations:</strong> Need urgent blood tests (ESR and CRP &plusmn; CBC) and likely a temporal artery biopsy arranged through the hospital/specialist.</li>
+          <li><strong>Explain treatment:</strong> High-dose systemic steroids (e.g., oral or IV) started <em>right away</em>, often before biopsy results, to protect vision.</li>
+          <li><strong>Discuss risks/monitoring:</strong> Briefly mention that steroids have side effects, but protecting her sight and reducing stroke risk is the immediate priority.</li>
+          <li><strong>Next steps &amp; logistics:</strong> Clearly state that you will arrange immediate referral to the emergency department / appropriate specialist today.</li>
+          <li><strong>Reassurance and support:</strong> Use calm, empathetic language; invite questions and check understanding.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself 0&ndash;2 for each domain (0 = not addressed, 1 = partial, 2 = clear and complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Recognition &amp; Urgency</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Clearly linked her symptoms to suspected temporal arteritis and stated this is an urgent/emergency situation.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation of Condition</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Described, in plain language, that blood vessel inflammation can cut off blood flow to the optic nerve and cause sudden, permanent vision loss.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Investigations</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Mentioned appropriate tests (ESR, CRP &plusmn; other blood work, and temporal artery biopsy) and that these are arranged urgently through hospital/specialist.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management &amp; Risk Discussion</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained the need for immediate high-dose steroids, potential side effects in brief, and the goal of protecting her current and fellow eye vision.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication &amp; Empathy</strong></td>
+              <td style="padding: 6px;">Spoke in a calm, organized, supportive way; checked understanding and allowed for questions.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you consistently hit all domains on stations like this, you are practicing at the level expected for OEBC systemic emergency communication stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s47-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s47-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Based on what you&rsquo;ve told me and what I found on your eye exam today, I&rsquo;m very
+        concerned about a condition called <strong>temporal arteritis</strong>, also called
+        <strong>giant cell arteritis</strong>. That means some of the blood vessels around your
+        temples and going to the eye may be inflamed and not letting enough blood through. When that
+        happens, it can suddenly cut off the blood supply to the nerve that carries vision from the
+        eye to the brain.<br><br>
+
+        The symptoms you described &mdash; the new headache over your temple, tenderness when you
+        touch or brush your scalp, pain in your jaw when you chew, and that brief &ldquo;grey-out&rdquo;
+        of vision this morning &mdash; are classic warning signs that this might be happening. Even
+        though your vision looks pretty good right now, this condition can cause <strong>permanent,
+        often severe vision loss in one or both eyes very quickly</strong> if we don&rsquo;t act
+        fast, which is why I&rsquo;m treating this as an emergency.<br><br>
+
+        The next step is to get you to the hospital today for <strong>urgent blood tests</strong>.
+        We&rsquo;ll ask them to check markers of inflammation called ESR and CRP, and usually a
+        complete blood count as well. The hospital team will also arrange a
+        <strong>temporal artery biopsy</strong> or an imaging test of the artery in the coming days.
+        That test looks directly at the blood vessel to confirm the diagnosis.<br><br>
+
+        Importantly, we almost never wait for all the test results to come back before starting
+        treatment. If the doctors there agree that temporal arteritis is likely, they will start
+        you on <strong>high-dose steroid medication</strong> right away, either by pill or through a
+        drip in the vein. The goal is to calm down the inflammation quickly to protect the vision in
+        both eyes and to reduce the risk of other complications like stroke. Steroids do have
+        side effects, especially when used for a long time, but in this situation the risk of
+        losing vision is much more urgent, and the team will monitor you closely and taper the dose
+        over time.<br><br>
+
+        I know this sounds frightening, but you&rsquo;re doing exactly the right thing by coming in
+        quickly and telling me about your symptoms. I&rsquo;m going to write a detailed note and
+        call ahead so the emergency department knows why you&rsquo;re coming and what we&rsquo;re
+        worried about. When you arrive, let them know you were sent by your eye doctor with concern
+        for temporal arteritis. If anything changes on the way &mdash; for example, if your vision
+        suddenly drops again in either eye &mdash; let the staff know immediately. We&rsquo;ll do
+        everything we can, together with the hospital team, to protect your sight and your overall
+        health.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS47AiFeedback() {
+      const textArea     = document.getElementById("s47-response");
+      const feedbackBox  = document.getElementById("s47-ai-box");
+      const feedbackText = document.getElementById("s47-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 47,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Recognition &amp; Urgency:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation of Condition:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Investigations / Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Risk &amp; Follow-up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication &amp; Empathy:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
