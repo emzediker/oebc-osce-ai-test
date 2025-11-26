@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OEBC Mock OSCE – Station 51 (Down Syndrome Hyperopia / Near Esotropia)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f9;
+      color: #222;
+    }
+    .oebc-station-step {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #0b6bcb;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- OEBC OSCE Station 51 – Down Syndrome Hyperopia / Near Esotropia (AI-enabled) -->
+  <div class="oebc-station-step">
+
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 51</h2>
+
+    <p style="margin-top: 0; color: #555;">
+      Pediatrics &bull; Down Syndrome &ndash; Hyperopia, Accommodative Lag &amp; Near Esotropia (Interactive)
+    </p>
+
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
+
+      <p><strong>Instructions:</strong> Read the scenario. On the real OEBC OSCE, you would have 8 minutes to complete this station.</p>
+
+      <p><strong>Scenario:</strong></p>
+
+      <p>
+        A 5-year-old child with known Down syndrome is brought in by their parent for concerns about
+        the eyes “turning in” at near. The parent reports that when the child is looking at books or
+        toys up close, one or both eyes seem to cross, but the eyes look more straight when looking
+        across the room. The child sometimes holds things very close to the face.
+      </p>
+
+      <p>
+        On examination, you find:
+      </p>
+      <ul>
+        <li>Significant bilateral hyperopia on cycloplegic refraction.</li>
+        <li>Reduced accommodative response (accommodative lag) on near testing.</li>
+        <li>Intermittent near esotropia greater at near than at distance.</li>
+        <li>Binocular single vision is possible with appropriate plus correction.</li>
+      </ul>
+
+      <p><strong>Your task:</strong> You have decided that the child has a
+        <strong>refractive / accommodative near esotropia in the setting of Down syndrome–related hyperopia and accommodative lag</strong>.
+        Explain your diagnosis and plan to the parent in clear, parent-friendly language. Be sure to cover:
+      </p>
+
+      <ul>
+        <li>How the child’s farsightedness (hyperopia) and focusing difficulties contribute to the eye turn at near.</li>
+        <li>Why this is more noticeable when looking at things up close.</li>
+        <li>The role of glasses (and possible bifocals) in helping the eyes stay straight and support development of vision.</li>
+        <li>Your follow-up plan and how you will monitor eye alignment and visual development over time.</li>
+        <li>Realistic expectations for improvement and what might still require future care (e.g., strabismus surgery in some cases).</li>
+      </ul>
+
+      <p style="margin-top: 0.5rem; color:#555; font-style: italic;">
+        For OEBC-style scoring, examiners will look for: diagnosis, explanation of mechanism,
+        management (glasses/bifocals and follow-up), prognosis, and communication appropriate for a parent.
+      </p>
+    </div>
+
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
+
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the parent:</p>
+      <textarea id="s51-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          onclick="document.getElementById('s51-key').style.display='block'; this.disabled=true;"
+          type="button">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS51AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s51-key" style="display: none;">
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC Expects)</h3>
+
+        <ul>
+          <li>Clearly state that the eye turn is related to the child’s <strong>farsighted prescription</strong> and <strong>reduced focusing ability</strong>, in the context of Down syndrome.</li>
+          <li>Explain in simple language that the eyes must focus extra hard for near work, and that this extra effort can cause the eyes to cross inward at near.</li>
+          <li>Highlight that the eyes are more straight at distance because the focusing demand is lower.</li>
+          <li>Describe how <strong>glasses</strong> (and sometimes <strong>bifocals</strong>) reduce the focusing effort so the eyes can stay straighter and vision can develop properly.</li>
+          <li>Emphasize the importance of consistent wear of the glasses and regular follow-up to monitor alignment, acuity, and binocular vision.</li>
+          <li>Give realistic expectations: many children improve significantly with glasses, but some may still need strabismus surgery later even with good optical correction.</li>
+          <li>Use supportive, non-blaming language and invite questions; acknowledge the parent’s concerns about long-term vision and development.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score yourself 0&ndash;2 in each category (0 = not addressed, 1 = partial, 2 = complete).</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Linked hyperopia, accommodative lag, and strabismus to Down syndrome.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Explained the mechanism of near esotropia in simple language.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Included glasses, possible bifocals, and follow-up plan.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">Provided realistic expectations and recommended follow-up frequency.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">Clear, supportive, empathetic phrasing appropriate for a parent.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s51-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s51-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;Thanks for bringing your child in today. Based on the testing we did, your child is quite
+        <strong>farsighted</strong>, and also has a bit of trouble focusing the eyes up close. In children with
+        Down syndrome this is actually very common &mdash; the focusing system doesn&rsquo;t always keep up
+        as well as we would like.<br><br>
+
+        When your child looks at things far away, like across the room, the eyes don&rsquo;t have to work
+        as hard to focus, so they tend to stay straighter. But when they look at books or toys up close,
+        the eyes have to focus much more. In your child&rsquo;s case, that extra focusing effort is linked
+        to the eyes turning inwards, which is why you notice the &lsquo;crossing&rsquo; mostly at near.<br><br>
+
+        The good news is that we can help by giving the eyes some of that focusing power in the form of
+        <strong>glasses</strong>. The lenses will reduce how hard your child has to focus, so the eyes don&rsquo;t
+        have to pull in as much at near. In some children, especially with Down syndrome, we also use a
+        <strong>bifocal</strong> &mdash; a little extra power in the bottom part of the lens for close work &mdash;
+        to make near focusing even easier and help keep the eyes straighter when reading or playing up close.<br><br>
+
+        I&rsquo;m going to prescribe glasses for full-time wear. It can take a bit of time and practice to get a
+        young child used to them, but the more consistently they&rsquo;re worn, the better chance we have of
+        improving eye alignment and helping the visual system develop properly. We&rsquo;ll see you back in about
+        <strong>3&ndash;4 months</strong> to check how the eyes are lining up with the glasses on, and to make sure
+        each eye is seeing well on its own.<br><br>
+
+        Many children do very well just with glasses and, if needed, bifocals. In some cases there can still be a
+        small eye turn even with the best glasses prescription, and if that is the case as your child grows, we
+        might talk about involving a pediatric eye surgeon in the future. That decision is made down the road, and
+        it&rsquo;s based on how things look after we&rsquo;ve given the glasses a good chance to work.<br><br>
+
+        I know it can be worrying to see your child&rsquo;s eyes turning in, but you&rsquo;re doing exactly the right
+        thing by getting this checked early. We&rsquo;ll work together over time, keep a close eye on how things
+        are progressing, and adjust the plan as your child grows. Please feel free to ask any questions or let me
+        know if anything is unclear &mdash; I want you to feel comfortable with the plan.&rdquo;
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function getS51AiFeedback() {
+      const textArea     = document.getElementById("s51-response");
+      const feedbackBox  = document.getElementById("s51-ai-box");
+      const feedbackText = document.getElementById("s51-ai-text");
+
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
+
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
+
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 51,
+            user_response: userResponse
+          })
+        });
+
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
+
+        const data   = await res.json();
+        const rubric = data.rubric || {};
+
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
+
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
+
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Prognosis &amp; Follow-Up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
