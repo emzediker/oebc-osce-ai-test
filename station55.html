@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>OEBC Mock OSCE – Station 55 (Contact Lens Overwear)</title>
+  <title>OEBC Mock OSCE – Station 55 (Contact Lens Overwear Complication)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
     body {
       margin: 0;
@@ -40,211 +39,326 @@
       font-weight: 600;
       cursor: pointer;
     }
-    button.red-btn {
-      background: #fff5f5;
-      border: 1px solid #b91c1c;
-      color: #7f1d1d;
-    }
     button:disabled {
       opacity: 0.6;
       cursor: default;
     }
-    .ai-panel {
-      margin-top: 1.25rem;
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #cfd8e3;
-      background: #f5f7fb;
-      font-size: 0.9rem;
-    }
-    .ai-score {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .ai-error {
-      color: #b00020;
-      font-weight: 600;
-    }
-    .ai-loading {
-      font-style: italic;
-      color: #555;
-    }
   </style>
 </head>
-
 <body>
+  <!-- OEBC OSCE Station 55 – Contact Lens Overwear Complication (AI-enabled) -->
+  <div class="oebc-station-step">
 
-<div class="oebc-station-step">
+    <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE &ndash; Station 55</h2>
 
-  <h2 style="margin-bottom: 0.25rem;">OEBC Mock OSCE – Station 55</h2>
-  <p style="margin-top: 0; color: #555;">
-    Module 6 • Other / Integrated Skills • Contact Lens Overwear Complication (Interactive)
-  </p>
-
-  <!-- Step 1 -->
-  <div style="padding:16px; border-radius:8px; border:1px solid #e0e0e0; margin-bottom:1rem;">
-    <h3 style="margin-top:0;">Step 1 – Read the Station</h3>
-
-    <p><strong>Scenario:</strong></p>
-
-    <p>
-      A 24-year-old soft contact lens wearer presents with a red, painful right eye that began this
-      morning. She reports sleeping in her monthly disposable lenses “most nights” and sometimes
-      topping off solution in her case. She wears her lenses 14–16 hours a day. Vision is slightly
-      blurred OD compared to OS. She denies trauma.
+    <p style="margin-top: 0; color: #555;">
+      Module 6 &ndash; Other &amp; Integrated Skills &bull; Contact Lens Overwear Complication (Interactive)
     </p>
 
-    <p>You find:</p>
-    <ul>
-      <li>Conjunctival injection OD > OS</li>
-      <li>Mild photophobia OD</li>
-      <li>Small paracentral corneal infiltrate with overlying punctate staining OD</li>
-      <li>No anterior chamber reaction</li>
-      <li>VA: 20/30 OD, 20/20 OS</li>
-    </ul>
+    <!-- Step 1: Read the Station -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-    <p><strong>Your task:</strong></p>
-    <p>
-      Explain your working diagnosis and management plan using clear, patient-friendly language.
-      You must include:
-    </p>
+      <h3 style="margin-top: 0;">Step 1 &ndash; Read the Station</h3>
 
-    <ul>
-      <li>What you think is happening to the eye</li>
-      <li>Immediate treatment steps</li>
-      <li>Required changes in contact lens habits</li>
-      <li>Warning symptoms requiring urgent care</li>
-      <li>Follow-up schedule and reason for monitoring</li>
-    </ul>
-  </div>
+      <p><strong>Instructions:</strong> Read the scenario once. On the real OEBC OSCE you will have about 8 minutes total at this station.</p>
 
-  <!-- Step 2 -->
-  <div style="padding:16px; border-radius:8px; border:1px solid #e0e0e0; margin-bottom:1rem;">
-    <h3 style="margin-top:0;">Step 2 – Speak (Type) Your Response</h3>
+      <p><strong>Scenario:</strong></p>
 
-    <textarea id="s55-response" rows="8"></textarea>
+      <p>
+        A 24-year-old soft contact lens wearer presents with a red, painful right eye that began this morning.
+        She reports sleeping in her monthly disposable lenses &ldquo;most nights&rdquo; and sometimes topping off
+        solution in her case. She wears her lenses roughly 14&ndash;16 hours a day and denies trauma.
+      </p>
 
-    <div style="margin-top:1rem; display:flex; gap:8px; flex-wrap:wrap;">
-      <button type="button" onclick="document.getElementById('s55-key').style.display='block'; this.disabled=true;">
-        Show Key Points & Rubric
-      </button>
+      <p>On examination, you find:</p>
+      <ul>
+        <li>Conjunctival injection OD &gt; OS</li>
+        <li>Mild photophobia OD</li>
+        <li>Small paracentral corneal infiltrate with overlying punctate staining OD, no obvious ulcer</li>
+        <li>No anterior chamber reaction</li>
+        <li>VA: 20/30 OD, 20/20 OS with current correction</li>
+      </ul>
 
-      <button type="button" class="red-btn" onclick="getS55Feedback()">
-        Get AI-style Feedback (beta)
-      </button>
-    </div>
-  </div>
-
-  <!-- Step 3 + 4: Key Points -->
-  <div id="s55-key" style="display:none;">
-
-    <div style="padding:16px; background:#f5f7fb; border-radius:8px; border:1px solid #cfd8e3; margin-bottom:1rem;">
-      <h3>Key Communication Points (OEBC-Style)</h3>
+      <p><strong>Your task:</strong><br />
+        Explain your working diagnosis and management plan to the patient using clear, patient-friendly language.
+        Your explanation <em>must</em> include:
+      </p>
 
       <ul>
-        <li><strong>Diagnosis:</strong> Contact-lens related corneal inflammatory event; possible early infection.</li>
-        <li><strong>Explanation:</strong> Poor hygiene & overnight wear reduce oxygen, increase bacteria.</li>
-        <li><strong>Immediate treatment:</strong> Stop CL wear; start prescribed drops; no lenses until healed.</li>
-        <li><strong>Behavior change:</strong> No overnight wear; no topping-off; fresh solution; proper case hygiene; consider daily disposables.</li>
-        <li><strong>Red flags:</strong> Worsening pain, decreased vision, discharge, increasing photophobia.</li>
-        <li><strong>Follow-up:</strong> Recheck within 24 hours; explain importance of monitoring to prevent scarring.</li>
+        <li>What you think is happening to the eye (contact lens-related inflammatory / early infectious risk).</li>
+        <li>Immediate steps: stopping lens wear, medications, and why this is important.</li>
+        <li>Specific changes to her contact lens habits going forward (wear schedule, hygiene, replacements).</li>
+        <li>Warning symptoms that require urgent reassessment (e.g., worsening pain, vision loss, discharge).</li>
+        <li>Follow-up timing and why close monitoring is needed.</li>
       </ul>
     </div>
 
-    <div style="padding:16px; background:#fff; border-radius:8px; border:1px solid #e0e0e0;">
-      <h3>Self-Assessment Rubric</h3>
-      <p>Score each section 0–2. Total = 10.</p>
+    <!-- Step 2: Student Response -->
+    <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 1rem;">
 
-      <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-        <thead>
-          <tr>
-            <th style="padding:6px; border-bottom:1px solid #ddd; text-align:left;">Domain</th>
-            <th style="padding:6px; border-bottom:1px solid #ddd; text-align:left;">Criteria</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding:6px; border-bottom:1px solid #eee;"><strong>Diagnosis</strong></td>
-            <td style="padding:6px; border-bottom:1px solid #eee;">Clearly stated CL-related corneal event.</td>
-          </tr>
-          <tr>
-            <td style="padding:6px; border-bottom:1px solid #eee;"><strong>Explanation</strong></td>
-            <td style="padding:6px; border-bottom:1px solid #eee;">Explained mechanism (oxygen, bacteria, irritation).</td>
-          </tr>
-          <tr>
-            <td style="padding:6px; border-bottom:1px solid #eee;"><strong>Management</strong></td>
-            <td style="padding:6px; border-bottom:1px solid #eee;">Stop CL wear; drops; behavioral change.</td>
-          </tr>
-          <tr>
-            <td style="padding:6px; border-bottom:1px solid #eee;"><strong>Follow-Up</strong></td>
-            <td style="padding:6px; border-bottom:1px solid #eee;">Specific interval; why monitoring matters.</td>
-          </tr>
-          <tr>
-            <td style="padding:6px;"><strong>Communication</strong></td>
-            <td style="padding:6px;">Clear, empathetic, organized.</td>
-          </tr>
-        </tbody>
-      </table>
+      <h3 style="margin-top: 0;">Step 2 &ndash; Speak (Type) Your Response</h3>
+
+      <p>Type what you would say to the patient:</p>
+      <textarea id="s55-response" rows="8"></textarea>
+
+      <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap:8px;">
+        <button
+          type="button"
+          onclick="document.getElementById('s55-key').style.display='block'; this.disabled=true;">
+          Show Key Points &amp; Rubric
+        </button>
+
+        <button type="button"
+          onclick="getS55AiFeedback()"
+          style="border: 1px solid #b91c1c;
+                 background: #fff5f5; color: #7f1d1d;">
+          Get AI-style Feedback (beta)
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Key Points + Rubric -->
+    <div id="s55-key" style="display: none;">
+
+      <!-- Key Points -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #cfd8e3;
+                  background: #f5f7fb; margin-bottom: 1rem;">
+
+        <h3 style="margin-top: 0;">Key Communication Points (What OEBC-Style Stations Expect)</h3>
+
+        <ul>
+          <li><strong>Diagnosis / working impression:</strong> Clearly state that this is a
+            <em>contact lens&ndash;related corneal inflammatory event</em> with concern for early infection,
+            related to sleeping in lenses and poor hygiene.</li>
+
+          <li><strong>Mechanism in simple language:</strong> Explain that reduced oxygen and bacteria on the lens surface
+            can irritate or infect the cornea, causing redness, pain, and blurred vision.</li>
+
+          <li><strong>Immediate management:</strong>
+            <ul>
+              <li>Stop all contact lens wear immediately.</li>
+              <li>Begin prescribed drops (e.g., antibiotic &plusmn; anti-inflammatory) and explain how often to use them.</li>
+              <li>No lenses until the eye is fully healed and re-cleared by the optometrist.</li>
+            </ul>
+          </li>
+
+          <li><strong>Behaviour change / prevention:</strong>
+            <ul>
+              <li>No sleeping in lenses unless specifically approved (and even then, risk remains higher).</li>
+              <li>No topping off solution; always rub, rinse, and use fresh solution.</li>
+              <li>Appropriate replacement schedule and case hygiene; consider daily disposables as a safer option.</li>
+            </ul>
+          </li>
+
+          <li><strong>Red-flag symptoms:</strong> Explain to return or seek urgent care if pain increases, vision worsens,
+            light sensitivity increases, or discharge appears.</li>
+
+          <li><strong>Follow-up:</strong> Give a clear follow-up plan (e.g., recheck within 24 hours, then as needed) and
+            why monitoring is important to prevent corneal scarring or vision loss.</li>
+
+          <li><strong>Communication style:</strong> Empathetic, non-judgmental tone; avoids blame while clearly addressing
+            risky behaviour.</li>
+        </ul>
+      </div>
+
+      <!-- Rubric -->
+      <div style="padding: 16px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff;">
+
+        <h3 style="margin-top: 0;">Self-Assessment Rubric</h3>
+
+        <p>Score each area 0&ndash;2 (0 = not addressed, 1 = partial, 2 = complete). Total possible: 10 points.</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Domain</th>
+              <th style="border-bottom: 1px solid #ddd; padding: 6px; text-align: left;">Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Diagnosis</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Named a contact lens&ndash;related corneal problem and linked it to overnight wear / poor hygiene.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Explanation</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Clearly explained in lay terms what is happening to the eye and why it is uncomfortable / risky.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Management</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Gave a clear plan: stop CL wear, start drops, no lenses until cleared, and discussed safer future options.</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;"><strong>Prognosis &amp; Follow-Up</strong></td>
+              <td style="border-bottom: 1px solid #eee; padding: 6px;">
+                Addressed healing expectations, potential complications, and set a specific follow-up interval.</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;"><strong>Communication</strong></td>
+              <td style="padding: 6px;">
+                Organized, empathetic, non-judgmental; patient would understand what to do and why.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; color: #555; font-style: italic;">
+          If you consistently score yourself 8&ndash;10 on similar stations, your communication and management are
+          aligning well with OEBC-style interactive expectations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4: AI-style Feedback (box appears after click) -->
+    <div id="s55-ai-box" style="display:none; margin-top: 1rem; padding: 14px; border-radius: 8px;
+                             border: 1px dashed #f97316; background: #fff7ed;">
+      <h3 style="margin-top: 0; font-size: 1rem;">AI-style Feedback (beta)</h3>
+      <div id="s55-ai-text" style="font-size:0.9rem;"></div>
+
+      <!-- Example 10/10 response (static, hidden until AI box is shown) -->
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color:#555;">
+        <strong>Example 10/10 response:</strong><br>
+        &ldquo;The changes I see on the surface of your right eye are very typical of a
+        <strong>contact lens–related corneal irritation</strong> with early risk of infection. Because the eye
+        isn’t getting enough oxygen overnight and bacteria can build up on the lenses and in the case, the front
+        layer of the eye has become inflamed and a small spot of infection is starting to form. That explains why
+        the eye is red, sore, and a little blurry today.<br><br>
+
+        The most important step right now is to <strong>stop all contact lens wear immediately</strong>. I don’t want
+        you to put any lenses in this eye or the other eye until we are confident the cornea has healed. I’m prescribing
+        antibiotic drops today to treat and prevent infection, and we may add an anti-inflammatory drop once we know the
+        infection risk is controlled. I’ll show you exactly how often to use the drops and how long to continue them.<br><br>
+
+        Going forward, we’ll also focus on preventing this from happening again. That means <strong>no sleeping in
+        contact lenses</strong>, even though it’s convenient, because overnight wear greatly increases the risk of
+        serious infections. You should never &ldquo;top off&rdquo; old solution in the case &mdash; always rub and rinse
+        the lenses, use fresh solution each time, and replace the case regularly. Depending on how your eye heals, we
+        may talk about switching to a <strong>daily disposable lens</strong>, which is safer for many people.<br><br>
+
+        If you notice <strong>worsening pain, increasing redness, more light sensitivity, a drop in vision, or new
+        discharge</strong> from the eye, I want you to contact us or seek urgent eye care right away, because those can
+        be signs that the spot is turning into a true corneal ulcer.<br><br>
+
+        I’d like to <strong>see you again within 24 hours</strong> to make sure this is improving and that the cornea is
+        not breaking down further. After that, we’ll keep checking the eye until it is fully healed and only then will
+        we talk about returning to contact lenses with safer habits. The good news is that with prompt treatment and
+        better lens care, most people recover well without permanent vision loss.&rdquo;
+      </div>
     </div>
   </div>
 
-  <!-- AI feedback box -->
-  <div id="s55-ai-box" style="display:none; margin-top:1rem; padding:14px; border-radius:8px; border:1px dashed #f97316; background:#fff7ed;">
-    <h3 style="margin-top:0; font-size:1rem;">AI-Style Feedback (beta)</h3>
-    <div id="s55-ai-text" style="font-size:0.9rem;"></div>
+  <script>
+    async function getS55AiFeedback() {
+      const textArea     = document.getElementById("s55-response");
+      const feedbackBox  = document.getElementById("s55-ai-box");
+      const feedbackText = document.getElementById("s55-ai-text");
 
-    <div style="margin-top:1rem; font-size:0.85rem; color:#555;">
-      <strong>Example 10/10 response:</strong><br><br>
-      “Your eye is reacting to sleeping in your contact lenses and some of the hygiene habits you mentioned.
-      The surface of the cornea has developed a small irritated area called an infiltrate. This can happen
-      when bacteria build up on a lens or when the eye does not get enough oxygen overnight.<br><br>
-      The first step is to **stop all contact lens wear immediately**. I’m prescribing drops today to
-      treat the irritation and prevent infection. It’s very important that you avoid lenses until the eye
-      is fully healed and I recheck it.<br><br>
-      Going forward, avoid sleeping in lenses, never ‘top off’ solution—use fresh solution and replace your
-      case regularly. Many people who have an event like this do much better switching to daily disposable
-      contact lenses.<br><br>
-      If you notice **worsening pain, sensitivity to light, more redness, discharge, or a drop in vision**,
-      you must contact us or seek emergency care right away.<br><br>
-      I want to see you again **within 24 hours** to make sure this is healing properly and not turning into
-      a true corneal ulcer. With proper treatment and care, most people recover well.”
-    </div>
-  </div>
+      const userResponse = textArea.value.trim();
+      if (!userResponse) {
+        alert("Type something first so the AI has something to grade!");
+        return;
+      }
 
-</div>
+      // Reveal the box immediately
+      feedbackBox.style.display = "block";
+      feedbackText.textContent = "Working on your feedback…";
 
-<script>
-async function getS55Feedback() {
-  const textArea = document.getElementById("s55-response");
-  const box = document.getElementById("s55-ai-box");
-  const output = document.getElementById("s55-ai-text");
+      try {
+        const res = await fetch("https://fpfduimmnaoyjxbmvgmz.supabase.co/functions/v1/ai-feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwZmR1aW1tbmFveWp4Ym12Z216Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjM5MzgsImV4cCI6MjA3OTM5OTkzOH0.-h0Cwwwfjr4s4voZ_KR2lhZgRmPaYLhaOfDCLhRc6gg"
+          },
+          body: JSON.stringify({
+            station_number: 55,
+            user_response: userResponse
+          })
+        });
 
-  const userText = textArea.value.trim();
-  if (!userText) {
-    alert("Please type your response first.");
-    return;
-  }
+        if (!res.ok) {
+          const txt = await res.text();
+          feedbackText.textContent = "Supabase error " + res.status + ":\n" + txt;
+          return;
+        }
 
-  box.style.display = "block";
-  output.textContent = "Working on your feedback…";
+        const data   = await res.json();
+        const rubric = data.rubric || {};
 
-  try {
-    const res = await fetch("YOUR_SUPABASE_EDGE_FUNCTION_URL_HERE", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        station_number: 55,
-        user_response: userText
-      })
-    });
+        const diagnosisScore     = rubric.diagnosis?.score ?? 0;
+        const explanationScore   = rubric.explanation?.score ?? 0;
+        const managementScore    = rubric.management?.score ?? 0;
+        const prognosisScore     = rubric.prognosis_followup?.score ?? 0;
+        const communicationScore = rubric.communication?.score ?? 0;
 
-    const data = await res.json();
-    output.innerHTML = data.feedback || JSON.stringify(data);
-  } catch (err) {
-    output.textContent = "Error: " + err.message;
-  }
-}
-</script>
+        let totalScore = diagnosisScore + explanationScore + managementScore + prognosisScore + communicationScore;
+        if (typeof data.total_score === "number") {
+          totalScore = data.total_score;
+        }
 
+        const overallComment = data.overall_comment || "";
+
+        function badge(score) {
+          let bg = "#fee2e2", color = "#b91c1c"; // 0/2 red
+          if (score === 1) { bg = "#fef3c7"; color = "#92400e"; }  // 1/2 yellow
+          if (score === 2) { bg = "#dcfce7"; color = "#166534"; }  // 2/2 green
+
+          return `<span style="
+            display:inline-block;
+            min-width:2.5rem;
+            padding:2px 8px;
+            border-radius:999px;
+            font-size:0.75rem;
+            font-weight:600;
+            text-align:center;
+            background:${bg};
+            color:${color};
+          ">${score}/2</span>`;
+        }
+
+        feedbackText.innerHTML = `
+          <div>
+            <p style="margin:0 0 6px;">
+              ${badge(diagnosisScore)}
+              &nbsp;<strong>Diagnosis:</strong>
+              ${rubric.diagnosis?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(explanationScore)}
+              &nbsp;<strong>Explanation:</strong>
+              ${rubric.explanation?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(managementScore)}
+              &nbsp;<strong>Management:</strong>
+              ${rubric.management?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 6px;">
+              ${badge(prognosisScore)}
+              &nbsp;<strong>Prognosis &amp; Follow-up:</strong>
+              ${rubric.prognosis_followup?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:0 0 10px;">
+              ${badge(communicationScore)}
+              &nbsp;<strong>Communication:</strong>
+              ${rubric.communication?.comment || "No specific feedback from AI for this domain."}
+            </p>
+
+            <p style="margin:8px 0 4px;"><strong>Total score: ${totalScore}/10</strong></p>
+            <p style="margin:0;">${overallComment}</p>
+          </div>
+        `;
+      } catch (err) {
+        feedbackText.textContent = "Network or setup error: " + err.message;
+      }
+    }
+  </script>
 </body>
 </html>
